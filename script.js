@@ -1,5 +1,3 @@
-// JS externo - script.js
-
 // Interação simples do botão
 const ctaButton = document.getElementById('ctaButton');
 if (ctaButton) {
@@ -23,11 +21,12 @@ reveals.forEach(reveal => {
     observer.observe(reveal);
 });
 
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
+// ✅ MENU HAMBÚRGUER
+const toggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
 
-  toggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-  });
-</script>
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
