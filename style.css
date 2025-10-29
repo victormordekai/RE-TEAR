@@ -146,6 +146,37 @@ nav ul li a:hover {
 .titulo-principal ~ *:hover {
   opacity: 1;
 }
+/* Menu escondido no mobile */
+#nav-menu {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mostrar menu e botão no mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+  }
+
+  #nav-menu.active {
+      display: block;
+  }
+
+  nav ul {
+      flex-direction: column;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+  }
+}
 
 
 /* Hero Section */
