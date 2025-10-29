@@ -48,6 +48,19 @@ img { max-width: 100%; display: block; }
     color: rgb(31, 97, 84); /* Verde */
 }
 
+/* Retornar a raiz */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none; /* remove sublinhado */
+}
+
+.logo-container:hover {
+    opacity: 0.9; /* leve efeito */
+}
+
+
 /* Menu Desktop compactado */
 #nav-menu ul {
     display: flex;
