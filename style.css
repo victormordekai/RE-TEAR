@@ -32,6 +32,21 @@ img { max-width: 100%; display: block; }
 .logo-container img {
     width: 45px;
 }
+/* ===== Logo - cores ===== */
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text .re {
+    color: rgb(45, 52, 104); /* Roxo */
+}
+
+.logo-text .tear {
+    color: rgb(31, 97, 84); /* Verde */
+}
 
 /* Menu Desktop compactado */
 #nav-menu ul {
@@ -59,6 +74,19 @@ img { max-width: 100%; display: block; }
     border: none;
     cursor: pointer;
 }
+/*Cores nav */
+nav ul li a {
+    color: rgb(31, 97, 84); /* Verde padrão */
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(45, 52, 104); /* Roxo no hover */
+    transform: scale(1.08);
+}
+
 
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
