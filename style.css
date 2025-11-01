@@ -170,56 +170,35 @@ img{ max-width:100%; display:block; height:auto; }
   to{ transform: translateY(0); opacity:1; }
 }
 
-/* ----------------------------- */
-/* Hero (Topo) */
-/* ----------------------------- */
-.hero{
-  background:#f2f2f2;
-  padding: 2.5rem 1rem;
-  text-align:center;
-}
-.hero .container{ max-width:900px; margin:0 auto; }
-.hero-logo{ width:160px; margin:0 auto 1rem; display:block; }
-.hero h2{ font-size:1.6rem; margin-bottom:0.6rem; color:var(--accent-1); }
-.hero p{ max-width:720px; margin:0.6rem auto 1.2rem; color:var(--muted); }
-.btn-primary{
-  padding: 0.7rem 1.25rem;
-  background: var(--muted);
-  color: #fff;
-  border: none;
-  border-radius:6px;
-  cursor:pointer;
-  transition: background .18s ease, transform .08s ease;
-}
-.btn-primary:hover{ background: var(--accent-1); transform: translateY(-1px); }
+/* Hero Section */
+.hero { background: #f2f2f2; padding: 2rem 2rem; text-align: center; }
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { max-width: 600px; margin: 0 auto 2rem; }
+.btn-primary { padding: 0.8rem 1.5rem; background: rgb(104, 125, 125); color: #fff; border: none; cursor: pointer; }
+.btn-primary:hover { background: rgb(45, 52, 104); /* Roxo */ }
 
-/* ----------------------------- */
-/* Cards Section */
-/* ----------------------------- */
-.cards{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap:1.25rem;
-  padding: 3rem 1rem;
+/* ===== Cards Section ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 2rem;
 }
-.card{
-  background:#fff;
-  border-radius:10px;
-  border:1px solid #e6e6e6;
-  padding:1rem;
-  text-align:center;
-  transition: transform .28s cubic-bezier(.2,.9,.25,1), box-shadow .28s;
-  will-change: transform;
-}
-.card img{ max-height:160px; object-fit:cover; border-radius:6px; margin-bottom:0.75rem; }
-.card h3{ margin:0.6rem 0 0.4rem; font-size:1.05rem; color:var(--accent-1); }
-.card p{ color:#666; font-size:0.95rem; }
 
-/* hover destaque (desktop) */
-.card:hover{
-  transform: scale(1.06);
-  box-shadow: 0 14px 36px rgba(12,12,12,0.12);
-  z-index:2;
+.card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background: #fff;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Efeito ao passar o mouse */
+.card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 2;
 }
 
 /* mobile touch-friendly: remove hover scale; use :active */
