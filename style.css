@@ -12,7 +12,12 @@
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
-html,body{ height:100%; }
+
+html, body {
+	height:100%;
+    overflow-x: hidden;
+    width: 100%;
+}
 body{
   font-family: Arial, sans-serif;
   line-height:1.6;
@@ -171,11 +176,24 @@ img{ max-width:100%; display:block; height:auto; }
 }
 
 /* Hero Section */
-.hero { background: #f2f2f2; padding: 2rem 2rem; text-align: center; }
+.hero {
+    background: #f2f2f2;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 .hero p { max-width: 600px; margin: 0 auto 2rem; }
 .btn-primary { padding: 0.8rem 1.5rem; background: rgb(104, 125, 125); color: #fff; border: none; cursor: pointer; }
 .btn-primary:hover { background: rgb(45, 52, 104); /* Roxo */ }
+.hero img {
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: 60%;
+    max-width: 500px;
+    height: auto;
+}
 
 /* ===== Cards Section ===== */
 .cards {
@@ -243,8 +261,8 @@ footer{
   opacity:1;
   transform: translateY(0);
 }
-.reveal.left{ transform: translateX(-60px); }
-.reveal.right{ transform: translateX(60px); }
+.reveal.left{ transform: translateX(-30px); }
+.reveal.right{ transform: translateX(30px); }
 .reveal.active.left, .reveal.active.right{ transform: translateX(0); }
 
 /* ----------------------------- */
