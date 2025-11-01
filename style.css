@@ -41,6 +41,7 @@ img{ max-width:100%; display:block; height:auto; }
   height: var(--header-height);
   display:flex;
   align-items:center;
+  padding: 0.5rem 3rem;
   justify-content:space-between;
   gap:1rem;
   padding:0 1rem;
