@@ -699,23 +699,32 @@
        RESPONSIVE
     ======================================== */
 
-    @media(max-width:1100px){
+	@media(max-width:1100px){
 
-      .hero-content,
-      .philosophy-grid,
-      .fronts-grid{
-        grid-template-columns:1fr;
-      }
+	  .hero-content,
+	  .philosophy-grid,
+	  .fronts-grid{
+		grid-template-columns:1fr;
+	  }
 
-      .hero-symbol{
-        margin-top:3rem;
-      }
+	  .hero-symbol{
+		order:-1;
+		margin-top:0;
+	  }
 
-      .hero-core{
-        width:320px;
-        height:320px;
-      }
-    }
+	  .hero-text{
+		text-align:center;
+	  }
+
+	  .hero-actions{
+		justify-content:center;
+	  }
+
+	  .hero-core{
+		width:320px;
+		height:320px;
+	  }
+	}
 
     @media(max-width:768px){
 
@@ -747,10 +756,22 @@
         padding:7rem 0;
       }
 
-      .hero-core{
-        width:240px;
-        height:240px;
-      }
+	  .hero-core{
+		width:50vw;
+		height:50vw;
+
+		min-width:240px;
+		min-height:240px;
+
+		max-width:420px;
+		max-height:420px;
+	  }
+
+	  .hero-core img{
+		width:100%;
+		height:100%;
+		object-fit:contain;
+	  }
 
       .hero-core span{
         font-size:1.2rem;
@@ -777,4 +798,17 @@
 	  margin-bottom:1.5rem;
 	}
 	  
-    }
+	/* ========================================
+	   FOOTER MOBILE
+	======================================== */
+
+	.footer-inner{
+	  flex-direction:column;
+	  align-items:flex-start;
+	}
+
+	.footer-inner .btn{
+	  margin-top:1rem;
+	}	  
+	  
+}
