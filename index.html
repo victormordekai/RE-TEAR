@@ -1,115 +1,477 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RETEAR projeto</title>
 
-    <!-- Ligação com o CSS externo -->
-    <link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/png" href="imagens/logo-corpo.png">
+  <!-- ========================================
+       META TAGS — RETEAR®
+  ========================================= -->
+
+  <!-- Codificação e idioma -->
+  <meta charset="utf-8">
+
+  <meta http-equiv="content-language"
+  content="pt-BR">
+
+  <!-- Responsividade -->
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Título SEO -->
+  <title>
+    RETEAR® | Infraestrutura Operacional Regenerativa para a Indústria Têxtil
+  </title>
+
+  <!-- Descrição SEO -->
+  <meta name="description"
+  content="RETEAR® é um ecossistema modular de infraestrutura operacional humanizada para a indústria têxtil, integrando rastreabilidade, inteligência operacional, automação progressiva, logística, gestão, produtividade e re-ciclo através de frentes estruturais adaptáveis e escaláveis.">
+
+  <!-- Canonical -->
+  <link rel="canonical"
+  href="https://victormordekai.github.io/RE-TEAR/">
+
+  <!-- Keywords -->
+  <meta name="keywords"
+  content="RETEAR, infraestrutura operacional, indústria têxtil, rastreabilidade, automação industrial, inteligência operacional, ESG operacional, logística reversa, gestão produtiva, JACQUARD, supply chain têxtil, ERP têxtil, produtividade industrial, operação regenerativa, re-ciclo, VMORDEKAI, engenharia operacional, transformação industrial">
+
+  <!-- Autor -->
+  <meta name="author"
+  content="Victor Mordekai Ferreira">
+
+  <!-- Direitos -->
+  <meta name="copyright"
+  content="© RETEAR® — Infraestrutura Operacional Regenerativa">
+
+  <!-- Mobile -->
+  <meta name="mobile-web-app-capable"
+  content="yes">
+
+  <meta name="apple-mobile-web-app-capable"
+  content="yes">
+
+  <meta name="theme-color"
+  content="#060606">
+
+  <meta name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent">
+
+  <!-- ========================================
+       OPEN GRAPH
+  ========================================= -->
+
+  <meta property="og:title"
+  content="RETEAR® | Infraestrutura Operacional Regenerativa">
+
+  <meta property="og:description"
+  content="Ecossistema modular para integração entre gestão, produção, logística, rastreabilidade, inteligência operacional e automação progressiva aplicada à indústria têxtil.">
+
+  <meta property="og:image"
+  content="https://victormordekai.github.io/RE-TEAR/imagens/logo-corpo.png">
+
+  <meta property="og:url"
+  content="https://victormordekai.github.io/RE-TEAR/">
+
+  <meta property="og:type"
+  content="website">
+
+  <meta property="og:locale"
+  content="pt_BR">
+
+  <meta property="og:site_name"
+  content="RETEAR®">
+
+  <!-- ========================================
+       TWITTER CARD
+  ========================================= -->
+
+  <meta name="twitter:card"
+  content="summary_large_image">
+
+  <meta name="twitter:title"
+  content="RETEAR® | Infraestrutura Operacional Humanizada">
+
+  <meta name="twitter:description"
+  content="Rastreabilidade, automação progressiva, inteligência operacional e reorganização produtiva para operações têxteis adaptáveis e escaláveis.">
+
+  <meta name="twitter:image"
+  content="https://victormordekai.github.io/RE-TEAR/imagens/logo-corpo.png">
+
+  <!-- ========================================
+       FAVICONS
+  ========================================= -->
+
+  <link rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="imagens/logo-corpo-URL.png">
+
+  <link rel="apple-touch-icon"
+  href="imagens/logo-corpo-URL.png">
+
+  <!-- ========================================
+       INDEXAÇÃO
+  ========================================= -->
+
+  <meta name="robots"
+  content="index, follow">
+
+  <meta name="googlebot"
+  content="index, follow">
+
+  <!-- ========================================
+       PERFORMANCE
+  ========================================= -->
+
+  <link rel="preconnect"
+  href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin>
+
+  <!-- ========================================
+       TIPOGRAFIA
+  ========================================= -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
+
+  <!-- ========================================
+       CSS
+  ========================================= -->
+
+  <link rel="stylesheet"
+  href="style.css">
+
 </head>
+
 <body>
-    <!-- ===== Header ===== -->
-<header class="header">
-	<a href="https://victormordekai.github.io/RE-TEAR/" class="logo-container">
-		<img src="imagens/logo-corpo.png" alt="Logo do Site">
-		<span class="logo-text">
-			<span class="re">RE</span><span class="tear">TEAR</span>
-		</span>
+
+  <div class="noise"></div>
+
+  <!-- ========================================
+       NAV
+  ========================================= -->
+
+  <header class="nav" id="navbar">
+
+    <div class="container nav-inner">
+
+	<a href="#" class="logo">
+
+	  <img
+		src="imagens/logo-corpo.png"
+		alt="RETEAR®"
+		class="logo-symbol"
+	  >
+
+	  <span class="logo-text">
+		<span class="re">RE</span><span class="tear">TEAR®</span>
+	  </span>
+
 	</a>
 
+      <nav class="nav-menu">
+        <a href="#ecossistema">Ecossistema</a>
+        <a href="#filosofia">Filosofia</a>
+        <a href="#jacquard">JACQUARD</a>
+        <a href="#contato">Diagnóstico</a>
+      </nav>
 
-    <!-- Botão Hamburguer -->
-    <button class="menu-toggle" id="menu-toggle">
-        ☰
-    </button>
+    </div>
 
-    <!-- Menu Navegação -->
-    <nav id="nav-menu">
-        <ul>
-            <li><a href="https://forms.gle/DpyJ2SpKYQrD1D4W9" target="_blank">CADASTRE-SE</a></li>
-            <li><a href="https://1drv.ms/b/c/68a5e3c46c91b0bc/ERhV_Ir8TzlFr3hqxRAWnjgBlzY5AOKdtWlAl3aJsV_W_Q?e=7VKa8V" target="_blank">EXTENSÃO</a></li>
-            <li><a href="#">QUEM SOMOS</a></li>
-            <li><a href="https://victormordekai.github.io/VMORDEKAI/" target="_blank">VMORDEKAI lab</a></li>
-        </ul>
-    </nav>
-</header>
+  </header>
 
+  <!-- ========================================
+       HERO
+  ========================================= -->
 
-    <!-- ===== Hero Section ===== -->
-	<section class="hero">
-		<img class="hero-logo" src="imagens/logo.png" alt="Logo">
-		<h2 class="titulo-principal">Conectando resíduos têxteis a novas possibilidades</h2>
-		<br>
-		<p>RETEAR: Prototipagem de Plataforma Digital e Modelo de Negócio para Economia Circular no Setor Têxtil.</p>		
-		<button class="btn-primary" id="ctaButton">Saiba Mais</button>
-	</section>
-	
-    <!-- ===== Cards ===== -->
-    <section class="cards">
-        <div class="card">
-            <img src="imagens/Retalhos.jpg" alt="Imagem 1">
-            <h3>Título 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <section class="hero">
+
+    <div class="hero-gradient">
+      <div class="gradient-orb" id="orb"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-wave" id="wave"></div>
+    </div>
+
+    <div class="container hero-content">
+
+      <div class="hero-text">
+
+        <small>Infraestrutura operacional regenerativa</small>
+
+        <h2>
+          Sistemas criam continuidade.
+        </h2>
+
+        <p>
+          A RETEAR® estrutura operações industriais através de inteligência operacional, rastreabilidade, integração sistêmica e automação progressiva.
+          Não como software genérico, mas como infraestrutura adaptável orientada pela realidade operacional.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary">
+            Estruturar operação
+          </a>
+
+          <a href="#ecossistema" class="btn btn-secondary">
+            Conhecer ecossistema
+          </a>
         </div>
-        <div class="card">
-            <img src="imagens/checklistfacil-industria-textil.webp" alt="Imagem 2">
-            <h3>Título 4</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      </div>
+
+      <div class="hero-symbol">
+
+	  <div class="hero-core">
+		  <img src="imagens/logo.png" alt="RETEAR®">
+	  </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       ECOSSISTEMA
+  ========================================= -->
+
+  <section class="section" id="ecossistema">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <small>Frentes estruturais do ecossistema RETEAR</small>
+
+        <h3>
+          Inteligência operacional aplicada à reorganização produtiva.
+        </h3>
+
+        <p>
+          Cada frente estrutural atua sobre uma camada crítica da operação industrial, conectando gestão, produção, logística, desenvolvimento e re-ciclo através de frameworks metodológicos integrados.
+        </p>
+
+      </div>
+
+      <div class="fronts-grid">
+
+        <article class="front-card">
+          <small>Frente estrutural</small>
+          <h4>MALHA</h4>
+          <p>
+            Integra administração, CRM, inteligência operacional e tomada de decisão em uma estrutura contínua de gestão.
+          </p>
+
+          <div class="front-tags">
+            <span>Administrativo</span>
+            <span>CRM</span>
+            <span>Indicadores</span>
+          </div>
+        </article>
+
+        <article class="front-card">
+          <small>Frente estrutural</small>
+          <h4>LONA</h4>
+          <p>
+            Estrutura supply chain, logística omnichannel, movimentações e rastreabilidade de fluxo operacional.
+          </p>
+
+          <div class="front-tags">
+            <span>Supply Chain</span>
+            <span>Logística</span>
+            <span>Fluxo operacional</span>
+          </div>
+        </article>
+
+		<a 
+		  href="https://wa.me/message/LIKDPGYCWU5CF1?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20frente%20JACQUARD%20para%20implantar%20em%20minha%20empresa"
+		  target="_blank"
+		  rel="noopener noreferrer"
+		  class="front-card front-card-jacquard"
+		  id="jacquard"
+		>
+
+		  <small>MVP operacional inicial</small>
+
+		  <h4>JACQUARD</h4>
+
+		  <p>
+			Núcleo metodológico-industrial voltado para produtividade, ordens de produção, rastreabilidade e integração entre setores produtivos.
+		  </p>
+
+		  <div class="front-tags front-tags-select">
+			<span>Produção</span>
+			<span>Rastreabilidade</span>
+			<span>Indicadores</span>
+		  </div>
+
+		</a>
+
+        <article class="front-card">
+          <small>Frente estrutural</small>
+          <h4>RE-TEAR</h4>
+          <p>
+            Estrutura logística reversa, rastreabilidade de excedentes e reorganização regenerativa da cadeia têxtil.
+          </p>
+
+          <div class="front-tags">
+            <span>ESG</span>
+            <span>Re-ciclo</span>
+            <span>Circularidade</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       PHILOSOPHY
+  ========================================= -->
+
+  <section class="section philosophy" id="filosofia">
+
+    <div class="container philosophy-grid">
+
+      <div>
+
+        <small>Humanized Infrastructure</small>
+
+        <h3>
+          A tecnologia deve nascer da operação real.
+        </h3>
+
+      </div>
+
+      <div>
+
+        <p>
+          O desperdício não é inevitável. A desorganização operacional não é estratégia.
+          A RETEAR opera através de infraestrutura operacional humanizada, integrando gestão prática, interfaces inteligentes e automação progressiva.
+        </p>
+
+        <p>
+          Nosso objetivo não é apenas digitalizar operações.
+          É estruturar ambientes produtivos capazes de reduzir perdas invisíveis, aumentar previsibilidade e transformar dados operacionais em inteligência sistêmica.
+        </p>
+
+        <div class="logic-flow">
+          <span>Problema produtivo</span>
+          <span>Modelagem operacional</span>
+          <span>Estruturação de dados</span>
+          <span>Automação progressiva</span>
         </div>
-        <div class="card">
-            <img src="imagens/circular-economy-sustainable-fashion-reuse-repa-2022-01-26-17-32-24-utc-1024x683.jpg" alt="Imagem 3">
-            <h3>Título 5</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ========================================
+       CTA
+  ========================================= -->
+
+  <section class="cta" id="contato">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <div class="cta-content">
+
+          <h3>
+            Estruture sua operação.
+          </h3>
+
+          <p>
+            A RETEAR® atua através de diagnóstico operacional, rastreabilidade, reorganização produtiva e inteligência aplicada para operações têxteis adaptáveis, rastreáveis e escaláveis.
+          </p>
+
+		<a 
+		  href="https://wa.me/message/LIKDPGYCWU5CF1"
+		  target="_blank"
+		  rel="noopener noreferrer"
+		  class="btn btn-primary"
+		>
+		  Agendar diagnóstico operacional
+		</a>
+
         </div>
-    </section>
-	
-<!-- ===== Footer ===== -->
-    <footer>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
-    </footer>
-	
-    <!-- ===== Seção adicional do layout ===== -->
-    <section class="intro-section">
-        <div class="container" align="center">
-            <h1>Título 6</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in porttitor sapien. Integer placerat metus nec elementum suscipit.</p>
-        </div>
-    </section>
 
-    <section class="big-image">
-		<img src="imagens/Retalhos.jpg" alt="Imagem grande ilustrativa" class="reveal left">
-	</section>
+      </div>
 
-	<section class="content-grid">
-		<div class="reveal">
-			<h3>Título 7</h3>
-			<p>Lorem ipsum dolor sit amet...</p>
-		</div>
-		<div class="reveal right">
-			<img src="imagens/checklistfacil-industria-textil.webp" alt="Imagem 5">
-		</div>
-		<div class="reveal left">
-			<img src="imagens/circular-economy-sustainable-fashion-reuse-repa-2022-01-26-17-32-24-utc-1024x683.jpg" alt="Imagem 6">
-		</div>
-		<div class="reveal">
-			<p>Lorem ipsum dolor sit amet...</p>
-		</div>
-	</section>
+    </div>
 
-    <section class="cta-section">
-		<h3>Quer saber mais?</h3>
-		<p>Entre em contato pelo WhatsApp</p>
-			<br><a href="https://wa.me/message/LIKDPGYCWU5CF1" target="_blank" class="btn-primary">CONTATO</a>
-	</section>
+  </section>
 
-    <!-- ===== Footer ===== -->
-    <footer>
-        <p>Copyright © Victor Ferreira | Curitiba-PR | 2025</p>
-    </footer>
+  <!-- ========================================
+       FOOTER
+  ========================================= -->
 
-    <!-- Ligação com o JavaScript externo -->
-    <script src="script.js"></script>
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        RETEAR® — Infraestrutura operacional regenerativa para integração entre gestão, produção, logística, rastreabilidade e inteligência aplicada.
+      </p>
+
+      <p>
+        VMORDEKAI® Ecosystem Vision<br>
+        Curitiba — PR
+      </p>
+
+    </div>
+
+  </footer>
+
+  <script>
+
+    /* ========================================
+       NAV HIDE ON SCROLL
+    ========================================= */
+
+    const navbar = document.getElementById('navbar');
+
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+
+      const currentScroll = window.pageYOffset;
+
+      if(currentScroll > lastScroll && currentScroll > 120){
+        navbar.classList.add('hide');
+      }else{
+        navbar.classList.remove('hide');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    /* ========================================
+       MOUSE GRADIENT
+    ========================================= */
+
+    const orb = document.getElementById('orb');
+    const wave = document.getElementById('wave');
+
+    window.addEventListener('mousemove', (e) => {
+
+      const x = (e.clientX / window.innerWidth - .5) * 60;
+      const y = (e.clientY / window.innerHeight - .5) * 60;
+
+      orb.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+
+      const waveOffset = (e.clientX / window.innerWidth - .5) * 8;
+
+      wave.style.transform = `translateY(${Math.abs(y) * .08}px) skewX(${waveOffset}deg)`;
+    });
+
+  </script>
+
 </body>
 </html>
