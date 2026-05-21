@@ -755,4 +755,26 @@
       .hero-core span{
         font-size:1.2rem;
       }
+	/* ========================================
+	   CTA MOBILE FIX
+	======================================== */
+
+	.cta-content{
+	  display:flex;
+	  flex-direction:column;
+	  align-items:center;
+	}
+
+	.cta-content .btn{
+	  margin-top:1rem;
+	  text-align:center;
+	  line-height:1.5;
+	  width:100%;
+	  max-width:320px;
+	}
+
+	.cta p{
+	  margin-bottom:1.5rem;
+	}
+	  
     }
