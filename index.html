@@ -158,7 +158,9 @@
   <header class="nav" id="navbar">
 
     <div class="container nav-inner">
-
+		<button class="menu-toggle" id="menu-toggle">
+		  ☰
+		</button>
 	<a href="#" class="logo">
 
 	  <img
@@ -173,7 +175,8 @@
 
 	</a>
 
-      <nav class="nav-menu">
+      <nav class="nav-menu" id="nav-menu">
+	  
         <a href="#ecossistema">Ecossistema</a>
         <a href="#filosofia">Filosofia</a>
         <a href="#jacquard">JACQUARD</a>
@@ -476,26 +479,46 @@
 
   <script>
 
-    /* ========================================
-       NAV HIDE ON SCROLL
-    ========================================= */
+	/* ========================================
+	   NAV HIDE ON SCROLL
+	======================================== */
 
-    const navbar = document.getElementById('navbar');
+	const navbar = document.getElementById('navbar');
 
-    let lastScroll = 0;
+	let lastScroll = 0;
 
-    window.addEventListener('scroll', () => {
+	window.addEventListener('scroll', () => {
 
-      const currentScroll = window.pageYOffset;
+	  const currentScroll = window.pageYOffset;
 
-      if(currentScroll > lastScroll && currentScroll > 120){
-        navbar.classList.add('hide');
-      }else{
-        navbar.classList.remove('hide');
-      }
+	  /* FECHA MENU MOBILE AO SCROLL */
+	  navMenu.classList.remove('active');
 
-      lastScroll = currentScroll;
-    });
+	  if(currentScroll > lastScroll && currentScroll > 120){
+
+		navbar.classList.add('hide');
+
+	  }else{
+
+		navbar.classList.remove('hide');
+	  }
+
+	  lastScroll = currentScroll;
+	});
+
+	/* ========================================
+	   MOBILE MENU
+	======================================== */
+
+	const menuToggle = document.getElementById('menu-toggle');
+
+	const navMenu = document.getElementById('nav-menu');
+
+	menuToggle.addEventListener('click', () => {
+
+	  navMenu.classList.toggle('active');
+
+	});
 
     /* ========================================
        MOUSE GRADIENT
@@ -515,6 +538,7 @@
 
       wave.style.transform = `translateY(${Math.abs(y) * .08}px) skewX(${waveOffset}deg)`;
     });
+	
 
   </script>
 
