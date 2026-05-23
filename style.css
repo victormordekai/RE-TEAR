@@ -462,10 +462,10 @@
     }
 
 	/* ========================================
-	   JACQUARD — MVP PRIORITÁRIO
+	   FRONT CARD PREMIUM — MVP PRIORITÁRIO
 	======================================== */
 
-	.front-card-jacquard{
+	.front-card-premium{
 
 	  background:
 	  linear-gradient(
@@ -484,7 +484,7 @@
 	  transform:translateY(-4px);
 	}
 
-	.front-card-jacquard::before{
+	.front-card-premium::before{
 
 	  opacity:1;
 
@@ -501,7 +501,7 @@
 	  );
 	}
 
-	.front-card-jacquard small{
+	.front-card-premium small{
 
 	  color:
 	  rgba(45,52,104,.78);
@@ -509,13 +509,13 @@
 	  font-weight:600;
 	}
 
-	.front-card-jacquard h4{
+	.front-card-premium h4{
 
 	  color:
 	  rgb(45,52,104);
 	}
 
-	/*======= TAGS JACQUARD ============ */
+	/*======= TAGS PREMIUM ============ */
 
 	.front-tags-select span{
 
