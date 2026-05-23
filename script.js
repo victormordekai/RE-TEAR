@@ -2,43 +2,38 @@
    LOAD CAMPAIGN MODULE
 ======================================== */
 
-async function loadFloatingCampaign(){
+async function loadFloatingCampaign() {
 
-  try{
+  try {
 
-    const response =
-    await fetch('modules/nr1-popup.html');
+    const response = await fetch('modules/nr1-popup.html');
+    const html = await response.text();
 
-    const html =
-    await response.text();
+    const root = document.getElementById('floating-campaign-root');
 
-    document
-      .getElementById('floating-campaign-root')
-      .innerHTML = html;
+    root.innerHTML = html;
 
-    const css =
-    document.createElement('link');
+    // GARANTE QUE O DOM FOI INJETADO ANTES DO JS
+    requestAnimationFrame(() => {
 
-    css.rel = 'stylesheet';
-    css.href = 'modules/nr1-popup.css';
+      const script = document.createElement('script');
+      script.src = 'modules/nr1-popup.js';
 
-    document.head.appendChild(css);
+      script.onload = () => {
 
-    const script =
-    document.createElement('script');
+        if (window.RetearPopup?.init) {
+          window.RetearPopup.init();
+        }
 
-    script.src = 'modules/nr1-popup.js';
+      };
 
-    document.body.appendChild(script);
+      document.body.appendChild(script);
 
-  }catch(error){
+    });
 
-    console.error(
-      'Erro ao carregar campanha:',
-      error
-    );
-
+  } catch (error) {
+    console.error('Erro ao carregar campanha:', error);
   }
 }
 
-loadFloatingCampaign();
+document.addEventListener('DOMContentLoaded', loadFloatingCampaign);
