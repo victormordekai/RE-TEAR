@@ -1,0 +1,28 @@
+/index.html
+/style.css
+/script.js
+
+/modules/
+    nr1-popup.html
+    nr1-popup.css
+    nr1-popup.js
+
+/campaigns/
+    nr1.html
+
+
+/RE-TEAR
+│
+├── imagens/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── modules/
+│   ├── nr1-popup.html
+│   ├── nr1-popup.css
+│   └── nr1-popup.js
+│
+├── campaigns/
+│   └── nr1.html

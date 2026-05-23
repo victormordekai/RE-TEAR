@@ -1,0 +1,673 @@
+<!-- ========================================
+     NR1 FLOATING POPUP MODULE — RETEAR®
+     FILE: modules/nr1-popup.html
+======================================== -->
+
+<div
+  class="campaign-floating-system"
+  id="campaignFloatingSystem"
+>
+
+  <!-- ========================================
+       HUDS
+  ========================================= -->
+
+  <div class="hud hud-1 draggable-element">
+
+    <img
+      src="../imagens/brain.svg"
+      alt="Inteligência operacional"
+    >
+
+  </div>
+
+  <div class="hud hud-2 draggable-element">
+
+    <img
+      src="../imagens/kpi.svg"
+      alt="Indicadores operacionais"
+    >
+
+  </div>
+
+  <div class="hud hud-3 draggable-element">
+
+    <img
+      src="../imagens/guard.svg"
+      alt="Proteção organizacional"
+    >
+
+  </div>
+
+  <!-- ========================================
+       FLOATING CARD
+  ========================================= -->
+
+	<a
+	  href="../campaigns/nr1.html"
+	  class="floating-card"
+	  id="floatingCard"
+	>
+
+    <button
+      class="floating-close"
+      id="floatingClose"
+      type="button"
+    >
+      ×
+    </button>
+
+    <small>
+      GESTÃO DE RISCOS PSICOSSOCIAIS
+    </small>
+
+    <h3>
+      NR-1<br>
+      Com governança, liderança e resultados.
+    </h3>
+
+    <span class="floating-cta">
+      Acessar diagnóstico →
+    </span>
+
+  </a>
+
+</div>
+
+<style>
+
+/* ========================================
+   FLOATING SYSTEM
+======================================== */
+
+.campaign-floating-system{
+  position:fixed;
+
+  right:40px;
+  bottom:40px;
+
+  width:420px;
+  height:420px;
+
+  z-index:9999;
+
+  pointer-events:none;
+
+  animation:
+  floatingEntrance 1s ease;
+}
+
+.campaign-floating-system *{
+  pointer-events:auto;
+}
+
+.campaign-floating-system.hidden{
+  opacity:0;
+
+  visibility:hidden;
+
+  transform:
+  scale(.9);
+
+  transition:
+  opacity .4s ease,
+  transform .4s ease,
+  visibility .4s ease;
+}
+
+/* ========================================
+   FLOATING CARD
+======================================== */
+
+.floating-card{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  transform:
+  translate(-50%,-50%);
+
+  width:290px;
+  height:290px;
+
+  border-radius:50%;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:2rem;
+
+  overflow:hidden;
+
+  text-decoration:none;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(45,52,104,.96),
+    rgba(31,97,84,.92)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.14);
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 0 80px rgba(31,97,84,.18),
+  0 30px 80px rgba(0,0,0,.24);
+
+  color:#fff;
+
+  cursor:grab;
+
+  user-select:none;
+
+  transition:
+  box-shadow .35s ease,
+  transform .35s ease;
+}
+
+.floating-card:hover{
+
+  box-shadow:
+  0 0 120px rgba(31,97,84,.24),
+  0 40px 120px rgba(0,0,0,.30);
+}
+
+.floating-card.dragging{
+  cursor:grabbing;
+
+  transition:none;
+}
+
+.floating-card::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,.10),
+    transparent 60%
+  );
+}
+
+.floating-card small{
+  position:relative;
+  z-index:2;
+
+  font-size:.7rem;
+
+  letter-spacing:.16rem;
+
+  text-transform:uppercase;
+
+  opacity:.78;
+
+  margin-bottom:1rem;
+}
+
+.floating-card h3{
+  position:relative;
+  z-index:2;
+
+  font-family:'Montserrat',sans-serif;
+
+  font-size:1.7rem;
+
+  line-height:1.2;
+
+  font-weight:600;
+
+  margin-bottom:1.4rem;
+}
+
+.floating-cta{
+  position:relative;
+  z-index:2;
+
+  font-size:.92rem;
+
+  opacity:.84;
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.floating-close{
+  position:absolute;
+
+  top:18px;
+  right:18px;
+
+  width:34px;
+  height:34px;
+
+  border:none;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  rgba(255,255,255,.12);
+
+  color:#fff;
+
+  font-size:1.1rem;
+
+  cursor:pointer;
+
+  z-index:20;
+
+  backdrop-filter:blur(12px);
+
+  transition:.25s ease;
+}
+
+.floating-close:hover{
+  background:
+  rgba(255,255,255,.22);
+
+  transform:scale(1.06);
+}
+
+/* ========================================
+   HUDS
+======================================== */
+
+.hud{
+  position:absolute;
+
+  width:78px;
+  height:78px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.06)
+  );
+
+  border:
+  1px solid rgba(255,255,255,.16);
+
+  backdrop-filter:blur(22px);
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,.12),
+  0 0 30px rgba(131,180,187,.10);
+
+  cursor:grab;
+
+  user-select:none;
+
+  transition:
+  transform .35s ease,
+  box-shadow .35s ease;
+}
+
+.hud:hover{
+
+  transform:
+  scale(1.06);
+
+  box-shadow:
+  0 30px 60px rgba(0,0,0,.18),
+  0 0 40px rgba(131,180,187,.18);
+}
+
+.hud.dragging{
+  cursor:grabbing;
+
+  transition:none;
+}
+
+.hud img{
+  width:34px;
+  height:34px;
+
+  object-fit:contain;
+
+  pointer-events:none;
+
+  filter:
+  brightness(0)
+  invert(1)
+  opacity(.92);
+}
+
+/* ========================================
+   HUD POSITIONS
+======================================== */
+
+.hud-1{
+  top:0;
+  right:40px;
+
+  animation:
+  hudFloat1 7s ease-in-out infinite;
+}
+
+.hud-2{
+  top:46%;
+  left:0;
+
+  animation:
+  hudFloat2 9s ease-in-out infinite;
+}
+
+.hud-3{
+  right:0;
+  bottom:40px;
+
+  animation:
+  hudFloat3 8s ease-in-out infinite;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes hudFloat1{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+@keyframes hudFloat2{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(10px);
+  }
+}
+
+@keyframes hudFloat3{
+
+  0%,100%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+@keyframes floatingEntrance{
+
+  from{
+    opacity:0;
+
+    transform:
+    translateY(80px)
+    scale(.82);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:768px){
+
+  .campaign-floating-system{
+    width:300px;
+    height:300px;
+
+    right:10px;
+    bottom:20px;
+  }
+
+  .floating-card{
+    width:220px;
+    height:220px;
+
+    padding:1.5rem;
+  }
+
+  .floating-card h3{
+    font-size:1.2rem;
+  }
+
+  .hud{
+    width:58px;
+    height:58px;
+  }
+
+  .hud img{
+    width:24px;
+    height:24px;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* ========================================
+   SESSION CONTROL
+======================================== */
+
+if(
+  sessionStorage.getItem(
+    'nr1-popup-closed'
+  )
+){
+
+  document
+    .getElementById(
+      'campaignFloatingSystem'
+    )
+    .remove();
+
+}
+
+/* ========================================
+   ELEMENTS
+======================================== */
+
+const system =
+document.getElementById(
+  'campaignFloatingSystem'
+);
+
+const closeButton =
+document.getElementById(
+  'floatingClose'
+);
+
+/* ========================================
+   CLOSE
+======================================== */
+
+closeButton.addEventListener(
+  'click',
+  (e) => {
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+    system.classList.add(
+      'hidden'
+    );
+
+    sessionStorage.setItem(
+      'nr1-popup-closed',
+      'true'
+    );
+
+  }
+);
+
+/* ========================================
+   DRAG SYSTEM
+======================================== */
+
+const draggables =
+document.querySelectorAll(
+  '.draggable-element'
+);
+
+draggables.forEach((element) => {
+
+  let dragging = false;
+
+  let startX = 0;
+  let startY = 0;
+
+  let initialX = 0;
+  let initialY = 0;
+
+  element.addEventListener(
+    'mousedown',
+    (e) => {
+
+      if(
+        e.target.classList.contains(
+          'floating-close'
+        )
+      ){
+        return;
+      }
+
+      dragging = true;
+
+      element.classList.add(
+        'dragging'
+      );
+
+      const rect =
+      element.getBoundingClientRect();
+
+      const parentRect =
+      system.getBoundingClientRect();
+
+      startX = e.clientX;
+      startY = e.clientY;
+
+      initialX =
+      rect.left - parentRect.left;
+
+      initialY =
+      rect.top - parentRect.top;
+
+      e.preventDefault();
+
+    }
+  );
+
+  document.addEventListener(
+    'mousemove',
+    (e) => {
+
+      if(!dragging) return;
+
+      const dx =
+      e.clientX - startX;
+
+      const dy =
+      e.clientY - startY;
+
+      let newX =
+      initialX + dx;
+
+      let newY =
+      initialY + dy;
+
+      const maxX =
+      system.offsetWidth -
+      element.offsetWidth;
+
+      const maxY =
+      system.offsetHeight -
+      element.offsetHeight;
+
+      newX =
+      Math.max(
+        0,
+        Math.min(newX,maxX)
+      );
+
+      newY =
+      Math.max(
+        0,
+        Math.min(newY,maxY)
+      );
+
+      element.style.left =
+      `${newX}px`;
+
+      element.style.top =
+      `${newY}px`;
+
+      element.style.right =
+      'auto';
+
+      element.style.bottom =
+      'auto';
+
+      if(
+        element.classList.contains(
+          'floating-card'
+        )
+      ){
+
+        element.style.transform =
+        'none';
+      }
+
+    }
+  );
+
+  document.addEventListener(
+    'mouseup',
+    () => {
+
+      dragging = false;
+
+      element.classList.remove(
+        'dragging'
+      );
+
+    }
+  );
+
+});
+
+</script>
