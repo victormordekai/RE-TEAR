@@ -95,6 +95,8 @@
     }
 
     .nav-inner{
+	  position:relative;
+	  padding:0 1.5rem;	
       height:88px;
       display:flex;
       align-items:center;
@@ -140,7 +142,7 @@
 	}
 
     .nav-menu{
-      display:flex;
+	  display:flex;
       gap:2rem;
       color:rgba(255,255,255,.82);
       font-size:.85rem;
@@ -812,129 +814,56 @@
 	  margin-top:1rem;
 	}	  
 	  
-/* ========================================
-   MENU TOGGLE
-======================================== */
-
-.menu-toggle{
+	/* ========================================
+	    MENU TOGGLE
+	======================================== */
+		
+  .menu-toggle{  
   display:none;
-
   background:none;
   border:none;
-
   color:var(--white);
-
   font-size:1.8rem;
-
   cursor:pointer;
 }
 
-/* ========================================
-   RESPONSIVE NAV
-======================================== */
-
+/* MOBILE */
 @media(max-width:768px){
 
-  .nav-inner{
-    position:relative;
-  }
-
-  /* MOSTRA HAMBURGUER */
-  .menu-toggle{
-    display:block;
-
-    position:absolute;
-
-    right:0;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    z-index:1300;
-  }
-
-  /* ESCONDE MENU DESKTOP */
-  #nav-menu{
+  .nav-menu{
     display:none;
   }
 
-  /* MENU MOBILE ABERTO */
-  #nav-menu.active{
-
-    display:flex;
-
+  .menu-toggle{
+    display:block;
     position:absolute;
+    right:1rem;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:1300;
+  }
 
+  #nav-menu.active{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
     top:88px;
-    right:0;
+    right:1rem;
 
     width:280px;
 
-    flex-direction:column;
-
-    gap:.8rem;
-
     padding:1rem;
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
       135deg,
       rgba(20,16,22,.96),
       rgba(6,6,6,.94)
     );
 
-    backdrop-filter:blur(20px);
-
-    border:
-    1px solid rgba(255,255,255,.08);
-
     border-radius:20px;
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.28);
-
     z-index:1200;
-
-    animation:menuSlide .22s ease-out;
   }
+}
 
-  #nav-menu a{
-
-    width:100%;
-
-    padding:1rem;
-
-    border-radius:12px;
-
-    text-align:center;
-
-    background:
-    rgba(255,255,255,.03);
-
-    border:
-    1px solid rgba(255,255,255,.04);
-  }
-
-  #nav-menu a:hover{
-
-    background:
-    rgba(46,188,82,.08);
-
-    border-color:
-    rgba(46,188,82,.18);
-  }
-
-  @keyframes menuSlide{
-
-    from{
-      opacity:0;
-      transform:translateY(-10px);
-    }
-
-    to{
-      opacity:1;
-      transform:translateY(0);
-    }
-  }
 }
 

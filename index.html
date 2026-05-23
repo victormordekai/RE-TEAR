@@ -514,40 +514,38 @@
 	======================================== */
 
 	const navbar = document.getElementById('navbar');
-
-	let lastScroll = 0;
-
-	window.addEventListener('scroll', () => {
-
-	  const currentScroll = window.pageYOffset;
-
-	  /* FECHA MENU MOBILE AO SCROLL */
-	  navMenu.classList.remove('active');
-
-	  if(currentScroll > lastScroll && currentScroll > 120){
-
-		navbar.classList.add('hide');
-
-	  }else{
-
-		navbar.classList.remove('hide');
-	  }
-
-	  lastScroll = currentScroll;
-	});
-
-	/* ========================================
-	   MOBILE MENU
-	======================================== */
-
 	const menuToggle = document.getElementById('menu-toggle');
-
 	const navMenu = document.getElementById('nav-menu');
 
-	menuToggle.addEventListener('click', () => {
+	let menuOpen = false;
+	let lastScroll = 0;
 
-	  navMenu.classList.toggle('active');
+	/* TOGGLE MENU */
+	menuToggle.addEventListener('click', (e) => {
+	  e.stopPropagation();
 
+	  menuOpen = !menuOpen;
+	  navMenu.classList.toggle('active', menuOpen);
+	});
+
+	/* FECHAR AO CLICAR FORA */
+	document.addEventListener('click', (e) => {
+	  if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+		menuOpen = false;
+		navMenu.classList.remove('active');
+	  }
+	});
+
+	/* SCROLL NÃO DEVE MATAR O MENU */
+	window.addEventListener('scroll', () => {
+	  const currentScroll = window.pageYOffset;
+
+	  navbar.classList.toggle(
+		'hide',
+		currentScroll > lastScroll && currentScroll > 120
+	  );
+
+	  lastScroll = currentScroll;
 	});
 
     /* ========================================
@@ -569,47 +567,6 @@
       wave.style.transform = `translateY(${Math.abs(y) * .08}px) skewX(${waveOffset}deg)`;
     });
 
-  /* ========================================
-     NAV HIDE ON SCROLL
-  ========================================= */
-
-  const navbar = document.getElementById('navbar');
-
-  let lastScroll = 0;
-
-  window.addEventListener('scroll', () => {
-
-    const currentScroll = window.pageYOffset;
-
-    navMenu.classList.remove('active');
-
-    if(currentScroll > lastScroll && currentScroll > 120){
-
-      navbar.classList.add('hide');
-
-    }else{
-
-      navbar.classList.remove('hide');
-    }
-
-    lastScroll = currentScroll;
-  });
-
-  /* ========================================
-     MOBILE MENU
-  ========================================= */
-
-  const menuToggle =
-  document.getElementById('menu-toggle');
-
-  const navMenu =
-  document.getElementById('nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-
-    navMenu.classList.toggle('active');
-
-  });
 
   /* ========================================
      MOUSE GRADIENT
