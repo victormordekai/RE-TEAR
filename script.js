@@ -6,30 +6,25 @@ async function loadFloatingCampaign() {
 
   try {
 
-    const response = await fetch('modules/nr1-popup.html');
-    const html = await response.text();
+    const response = await fetch('modules/nr1-popup.html')
+  .then(res => res.text())
+  .then(html => {
 
-    const root = document.getElementById('floating-campaign-root');
+    document.getElementById('floating-campaign-root')
+      .innerHTML = html;
 
-    root.innerHTML = html;
+    const script = document.createElement('script');
+    script.src = 'modules/nr1-popup.js';
 
-    // GARANTE QUE O DOM FOI INJETADO ANTES DO JS
-    requestAnimationFrame(() => {
+    script.onload = () => {
+      if (window.RetearPopup?.init) {
+        window.RetearPopup.init();
+      }
+    };
 
-      const script = document.createElement('script');
-      script.src = 'modules/nr1-popup.js';
+    document.body.appendChild(script);
 
-      script.onload = () => {
-
-        if (window.RetearPopup?.init) {
-          window.RetearPopup.init();
-        }
-
-      };
-
-      document.body.appendChild(script);
-
-    });
+  });
 
   } catch (error) {
     console.error('Erro ao carregar campanha:', error);
@@ -37,3 +32,4 @@ async function loadFloatingCampaign() {
 }
 
 document.addEventListener('DOMContentLoaded', loadFloatingCampaign);
+

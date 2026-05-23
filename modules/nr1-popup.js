@@ -1,41 +1,40 @@
 (function () {
 
-  function getPopup() {
-    return document.getElementById('campaignFloatingSystem');
-  }
-
-  function open() {
-    const popup = getPopup();
-    if (!popup) return;
-
-    popup.classList.add('active');
-  }
-
-  function close() {
-    const popup = getPopup();
-    if (!popup) return;
-
-    popup.classList.add('hidden');
-
-    sessionStorage.setItem('nr1-popup-closed', 'true');
-  }
-
   function init() {
-    const popup = getPopup();
-    if (!popup) return;
 
-    // evita reabrir se usuário já fechou
-    if (sessionStorage.getItem('nr1-popup-closed')) return;
+    const system = document.getElementById('campaignFloatingSystem');
+    const closeButton = document.getElementById('floatingClose');
 
-    setTimeout(() => {
-      open();
-    }, 300);
+    if (!system || !closeButton) {
+      console.warn('Popup ainda não está pronto');
+      return;
+    }
+
+    // evita duplicar listener caso reinicialize
+    closeButton.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      system.classList.add('hidden');
+
+      sessionStorage.setItem('nr1-popup-closed', 'true');
+    };
+
+    // restore session
+    if (sessionStorage.getItem('nr1-popup-closed')) {
+      system.remove();
+      return;
+    }
   }
 
+  // EXPÕE API (opcional mas recomendado)
   window.RetearPopup = {
-    open,
-    close,
     init
   };
+
+  // execução segura após carregamento e DOM pronto
+  window.addEventListener('load', () => {
+    setTimeout(init, 300);
+  });
 
 })();
