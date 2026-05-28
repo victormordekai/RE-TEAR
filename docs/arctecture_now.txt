@@ -22,7 +22,12 @@
 │   ├── variables.css
 │   ├── style.css
 │   ├── responsive.css
-│   └── animations.css
+│   ├── animations.css
+│   ├── malha.css
+│   ├── lona.css
+│   ├── jacquard.css
+│   ├── gabardine.css
+│   └── re-tear.css
 │
 ├── /js
 │   └── main.js
@@ -43,5 +48,5 @@
 │   ├── nr1-popup.css
 │   └── nr1-popup.js
 │
-├── campaigns/
-│   └── nr1.html
+└── campaigns/
+    └── nr1.html
