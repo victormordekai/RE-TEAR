@@ -76,13 +76,13 @@
 
   <!-- ========================================
        POP UP OPEN
-  ========================================= -->
+  =========================================
  
  <div id="floating-campaign-root"></div>
 
   <script src="../script.js"></script>
 
-
+--->
   <!-- ====================================== -->
   <!-- NOISE -->
   <!-- ====================================== -->
@@ -563,9 +563,10 @@
     document.querySelectorAll('.fade-up, .scale-in').forEach((el) => {
       observer.observe(el);
     });
+	
   /* ========================================
      OPEN POPUP MODULE
-  ========================================= */
+  =========================================
 
   fetch('../modules/nr1-popup.html')
 
@@ -577,7 +578,7 @@
         'floating-campaign-root'
       ).innerHTML = data;
 
-      /* CARREGA JS DO POPUP */
+      /* CARREGA JS DO POPUP 
 
       const script =
       document.createElement('script');
@@ -597,7 +598,7 @@
       );
 
     });
-
+*/
 	
   </script>
 
