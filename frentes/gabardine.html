@@ -1,734 +1,562 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>GABARDINE® — Creative-tech R&D | RETEAR®</title>
+  <title>GABARDINE© — Creative-tech R&D | RETEAR®</title>
 
-  <meta name="description" content="Creative-tech R&D aplicada à materialização estratégica de marcas, experiências digitais e posicionamento institucional.">
-  <meta name="keywords" content="creative-tech, branding estratégico, UX UI, webdesign institucional, RETEAR, GABARDINE">
+  <meta
+    name="description"
+    content="Creative-tech R&D aplicada à materialização estratégica de marcas, experiências digitais e posicionamento institucional."
+  >
+
+  <meta
+    name="keywords"
+    content="creative-tech, branding estratégico, UX UI, webdesign institucional, RETEAR, GABARDINE"
+  >
+
   <meta name="author" content="RETEAR®">
 
-  <meta property="og:title" content="GABARDINE® — RETEAR®">
-  <meta property="og:description" content="Creative-tech R&D aplicada à materialização estratégica de marcas, operações e experiências digitais.">
+  <meta property="og:title" content="GABARDINE© — RETEAR®">
+
+  <meta
+    property="og:description"
+    content="Creative-tech R&D aplicada à materialização estratégica de marcas, operações e experiências digitais."
+  >
+
   <meta property="og:type" content="website">
 
+  <!-- ====================================== -->
+  <!-- GOOGLE FONTS -->
+  <!-- ====================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ====================================== -->
+  <!-- CSS -->
+  <!-- ====================================== -->
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/bases.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/fronts.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/philosophy.css">
+  <link rel="stylesheet" href="../css/cta.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <!-- ====================================== -->
+  <!-- GABARDINE© -->
+  <!-- ====================================== -->
+
+  <link rel="stylesheet" href="../css/frentes/gabardine.css">
 
-  <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    :root{
-      --bg:#0d0d0f;
-      --bg-soft:#131316;
-      --card:#18181d;
-      --border:rgba(255,255,255,0.08);
-
-      --white:#ffffff;
-      --text:#d2d2d8;
-      --muted:#8b8b93;
-
-      --accent:#c64832;
-      --blue:#83b4bb;
-
-      --radius:24px;
-      --transition:0.35s ease;
-      --max-width:1280px;
-    }
-
-    body{
-      background:var(--bg);
-      color:var(--white);
-      font-family:'Inter',sans-serif;
-      overflow-x:hidden;
-      line-height:1.6;
-      -webkit-font-smoothing:antialiased;
-    }
-
-    body::before{
-      content:'';
-      position:fixed;
-      inset:0;
-      background:
-      radial-gradient(circle at top left, rgba(198,72,50,0.08), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(131,180,187,0.08), transparent 30%);
-      pointer-events:none;
-      z-index:-1;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    .container{
-      width:92%;
-      max-width:var(--max-width);
-      margin:auto;
-    }
-
-    /* NAVBAR */
-
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      z-index:1000;
-      backdrop-filter:blur(16px);
-      background:rgba(13,13,15,0.82);
-      border-bottom:1px solid rgba(255,255,255,0.05);
-    }
-
-    .navbar{
-      height:82px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .logo{
-      font-size:1rem;
-      font-weight:600;
-      letter-spacing:0.16em;
-    }
-
-    .logo span{
-      color:var(--accent);
-    }
-
-    nav{
-      display:flex;
-      gap:2rem;
-    }
-
-    nav a{
-      color:var(--muted);
-      font-size:0.92rem;
-      transition:var(--transition);
-    }
-
-    nav a:hover{
-      color:var(--white);
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding-top:100px;
-      position:relative;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:4rem;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-flex;
-      gap:0.5rem;
-      align-items:center;
-      padding:0.5rem 1rem;
-      border:1px solid var(--border);
-      border-radius:999px;
-      background:rgba(255,255,255,0.03);
-      color:var(--blue);
-      font-size:0.82rem;
-      margin-bottom:1.5rem;
-    }
-
-    h1{
-      font-size:clamp(3rem,7vw,6.2rem);
-      line-height:0.95;
-      letter-spacing:-0.05em;
-      margin-bottom:2rem;
-      max-width:900px;
-    }
-
-    .hero p{
-      color:var(--text);
-      font-size:1.08rem;
-      max-width:720px;
-      margin-bottom:2rem;
-    }
-
-    .hero-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1rem;
-    }
-
-    .hero-tags span{
-      padding:0.85rem 1.1rem;
-      border-radius:999px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      color:var(--white);
-      font-size:0.85rem;
-    }
-
-    .hero-visual{
-      position:relative;
-    }
-
-    .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      border:1px solid rgba(255,255,255,0.06);
-      border-radius:32px;
-      padding:2rem;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-card::before{
-      content:'';
-      position:absolute;
-      width:420px;
-      height:420px;
-      background:radial-gradient(circle, rgba(198,72,50,0.18), transparent 60%);
-      top:-100px;
-      right:-100px;
-    }
-
-    .hero-card small{
-      color:var(--blue);
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      display:block;
-      margin-bottom:1rem;
-    }
-
-    .hero-card h3{
-      font-size:2rem;
-      line-height:1.1;
-      margin-bottom:1.5rem;
-    }
-
-    .hero-card p{
-      color:var(--text);
-      font-size:0.96rem;
-    }
-
-    /* SECTIONS */
-
-    section{
-      padding:120px 0;
-      position:relative;
-    }
-
-    .section-header{
-      margin-bottom:4rem;
-    }
-
-    .section-header small{
-      color:var(--blue);
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      display:block;
-      margin-bottom:1rem;
-    }
-
-    .section-header h2{
-      font-size:clamp(2rem,4vw,4rem);
-      line-height:1;
-      letter-spacing:-0.04em;
-      max-width:900px;
-      margin-bottom:1.5rem;
-    }
-
-    .section-header p{
-      max-width:760px;
-      color:var(--text);
-    }
-
-    /* GRID */
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:2rem;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,0.05);
-      border-radius:var(--radius);
-      padding:2rem;
-      transition:var(--transition);
-    }
-
-    .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(255,255,255,0.1);
-    }
-
-    .card h3{
-      margin-bottom:1rem;
-      font-size:1.3rem;
-    }
-
-    .card p{
-      color:var(--text);
-      font-size:0.95rem;
-    }
-
-    /* FEATURE LIST */
-
-    .feature-list{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1.5rem;
-    }
-
-    .feature-item{
-      padding:1.8rem;
-      border-radius:24px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.05);
-    }
-
-    .feature-item span{
-      display:block;
-      margin-bottom:1rem;
-      color:var(--accent);
-      font-size:0.9rem;
-      letter-spacing:0.08em;
-      text-transform:uppercase;
-    }
-
-    .feature-item h4{
-      font-size:1.2rem;
-      margin-bottom:1rem;
-    }
-
-    .feature-item p{
-      color:var(--text);
-      font-size:0.92rem;
-    }
-
-    /* MANIFEST */
-
-    .manifest{
-      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-      border-top:1px solid rgba(255,255,255,0.04);
-      border-bottom:1px solid rgba(255,255,255,0.04);
-    }
-
-    .manifest h2{
-      max-width:1000px;
-      font-size:clamp(2rem,4vw,4.5rem);
-      line-height:1.05;
-      letter-spacing:-0.05em;
-      margin-bottom:2rem;
-    }
-
-    .manifest p{
-      max-width:850px;
-      color:var(--text);
-      font-size:1.05rem;
-    }
-
-    /* CTA */
-
-    .cta{
-      text-align:center;
-    }
-
-    .cta-box{
-      padding:4rem;
-      border-radius:32px;
-      background:
-      linear-gradient(180deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.015));
-
-      border:1px solid rgba(255,255,255,0.05);
-    }
-
-    .cta-box h2{
-      font-size:clamp(2rem,4vw,4rem);
-      line-height:1;
-      letter-spacing:-0.04em;
-      margin-bottom:1.5rem;
-    }
-
-    .cta-box p{
-      max-width:720px;
-      margin:auto;
-      color:var(--text);
-      margin-bottom:2rem;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.7rem;
-      padding:1rem 1.5rem;
-      border-radius:999px;
-      background:var(--accent);
-      color:var(--white);
-      font-weight:600;
-      transition:var(--transition);
-    }
-
-    .btn:hover{
-      transform:translateY(-4px);
-    }
-
-    footer{
-      padding:60px 0;
-      border-top:1px solid rgba(255,255,255,0.04);
-    }
-
-    footer p{
-      color:var(--muted);
-      font-size:0.88rem;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:980px){
-
-      .hero-grid,
-      .grid-2,
-      .feature-list{
-        grid-template-columns:1fr;
-      }
-
-      nav{
-        display:none;
-      }
-
-      .hero{
-        padding-top:140px;
-      }
-
-      .cta-box{
-        padding:2rem;
-      }
-
-    }
-
-  </style>
 </head>
 
 <body>
 
-<!-- ========================================= -->
-<!-- NAVBAR | MESMA ESTRUTURA DO INDEX RETEAR -->
-<!-- ========================================= -->
+  <!-- ====================================== -->
+  <!-- NOISE -->
+  <!-- ====================================== -->
 
-<header class="navbar-container">
+  <div class="noise"></div>
 
-  <div class="navbar">
+  <!-- ====================================== -->
+  <!-- NAV -->
+  <!-- ====================================== -->
 
-    <!-- LOGO -->
-    <!-- utilizar exatamente os mesmos assets do index -->
+  <header class="nav">
 
-    <a href="index.html" class="logo-container">
+    <div class="container nav-inner">
 
-      <!-- mesmo caminho do index -->
-      <img 
-        src="imagens/logo_corpo.png" 
-        alt="RETEAR®"
-        class="logo"
+      <a href="../index.html" class="logo">
+
+        <img
+          src="../assets/img/logo-corpo.png" 
+          alt="RETEAR®"
+          class="logo-symbol"
+        >
+
+        <div class="logo-text">
+          <span class="re">RE</span><span class="tear">TEAR®</span>
+        </div>
+
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+
+        <a href="#">
+          Home
+        </a>
+
+        <a href="#estrutura">
+          Infraestrutura
+        </a>
+		
+        <a href="index.html#ecossistema">
+          Frentes
+        </a>
+
+        <a href="#contato">
+          Contato
+        </a>
+
+      </nav>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Abrir menu"
       >
+        ☰
+      </button>
 
-    </a>
+    </div>
 
-    <!-- MENU -->
+  </header>
 
-    <nav class="nav-menu">
+  <!-- ====================================== -->
+  <!-- HERO -->
+  <!-- ====================================== -->
 
-      <!-- manter mesmas âncoras/links do index -->
-      <!-- ou apontar para index quando necessário -->
+  <section class="hero gabardine-hero">
 
-      <a href="index.html#ecosystem">Ecossistema</a>
+    <div class="hero-gradient">
 
-      <a href="index.html#fronts">Frentes</a>
+      <div class="gradient-orb"></div>
 
-      <a href="index.html#infrastructure">Infraestrutura</a>
+      <div class="hero-grid"></div>
 
-      <a href="index.html#contact">Contato</a>
+      <div class="hero-wave"></div>
 
-    </nav>
+    </div>
 
-    <!-- MENU MOBILE -->
+    <div class="container hero-content">
 
-    <button class="menu-toggle" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-    </button>
+      <div class="hero-text fade-up">
 
-  </div>
+        <small>
+          Frente estrutural
+        </small>
 
-</header>
+        <h2>
+          GABARDINE · Creative-tech 
+		</h2>
+		  <br>
+		<h1>
+		  R&D aplicada à materialização estratégica de marcas, operações e experiências digitais.
+        </h1>
 
-<section class="hero">
+        <p>
+          A GABARDINE© estrutura presença institucional através da integração entre branding estratégico, UX/UI design, web experience e desenvolvimento visual-tecnológico, conectando percepção, posicionamento e experiência digital em arquiteturas coerentes com os objetivos operacionais das empresas.
+        </p>
 
-  <div class="container hero-grid">
+        <div class="hero-actions">
 
-    <div>
+          <a href="#estrutura" class="btn btn-primary">
+            Explorar estrutura
+          </a>
 
-      <div class="eyebrow">
-        Frente estrutural · GABARDINE®
+          <a href="#contato" class="btn btn-secondary">
+            Diagnóstico estratégico
+          </a>
+
+        </div>
+
       </div>
 
-      <h1>
-        Creative-tech R&D aplicada à materialização estratégica de marcas, operações e experiências digitais.
-      </h1>
+      <div class="hero-symbol scale-in">
 
-      <p>
-        A GABARDINE® estrutura presença institucional através da integração entre branding estratégico, UX/UI design, web experience e desenvolvimento visual-tecnológico, conectando percepção, posicionamento e experiência digital em arquiteturas coerentes com os objetivos operacionais das empresas.
-      </p>
+        <div class="gabardine-panel">
 
-      <div class="hero-tags">
-        <span>Creative-tech R&D</span>
-        <span>Brand positioning</span>
-        <span>Web experience (UX/UI)</span>
+          <small>
+            INFRAESTRUTURA FRONT-END
+          </small>
+
+          <h3>
+            Marca, interface e experiência como infraestrutura estratégica.
+          </h3>
+
+          <p>
+            A GABARDINE© atua como camada front-end do ecossistema RETEAR®, integrando inteligência criativa, experiência institucional e materialização digital às demais estruturas operacionais e tecnológicas da organização.
+          </p>
+
+          <div class="gabardine-tags">
+
+            <span>Creative-tech R&D</span>
+
+            <span>Brand positioning</span>
+
+            <span>UX/UI Systems</span>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
 
-    <div class="hero-visual">
+  </section>
 
-      <div class="hero-card">
+  <!-- ====================================== -->
+  <!-- MANIFEST -->
+  <!-- ====================================== -->
 
-        <small>INFRAESTRUTURA FRONT-END</small>
+  <section class="section gabardine-manifest">
+
+    <div class="container">
+
+      <div class="manifest-box fade-up">
 
         <h3>
-          Marca, interface e experiência como infraestrutura estratégica.
+          Mais do que websites ou identidade visual, a GABARDINE© estrutura percepção, posicionamento e experiência digital como ativos estratégicos.
         </h3>
 
         <p>
-          A GABARDINE® atua como camada front-end do ecossistema RETEAR®, integrando inteligência criativa, experiência institucional e materialização digital às demais estruturas operacionais e tecnológicas da organização.
+          Sua atuação combina pesquisa aplicada, inteligência criativa, arquitetura visual e desenvolvimento visual-tecnológico para transformar presença institucional em infraestrutura digital coerente, escalável e orientada à percepção de valor.
         </p>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- ====================================== -->
+  <!-- ESTRUTURA -->
+  <!-- ====================================== -->
 
-<section class="manifest">
+  <section class="section" id="estrutura">
 
-  <div class="container">
+    <div class="container">
 
-    <h2>
-      Mais do que websites ou identidade visual, a GABARDINE® estrutura percepção, posicionamento e experiência digital como ativos estratégicos.
-    </h2>
+      <div class="section-head fade-up">
 
-    <p>
-      Sua atuação combina pesquisa aplicada, inteligência criativa, arquitetura visual e desenvolvimento visual-tecnológico para transformar presença institucional em infraestrutura digital coerente, escalável e orientada à percepção de valor.
-    </p>
+        <small>
+          Estrutura operacional
+        </small>
 
-  </div>
+        <h3>
+          Desenvolvimento institucional orientado à experiência, posicionamento e materialização digital.
+        </h3>
 
-</section>
-
-<section>
-
-  <div class="container">
-
-    <div class="section-header">
-
-      <small>Estrutura operacional</small>
-
-      <h2>
-        Desenvolvimento institucional orientado à experiência, posicionamento e materialização digital.
-      </h2>
-
-      <p>
-        A GABARDINE® opera na convergência entre branding, experiência digital e tecnologia aplicada, estruturando ecossistemas visuais capazes de fortalecer autoridade institucional e consolidar percepção premium.
-      </p>
-
-    </div>
-
-    <div class="feature-list">
-
-      <div class="feature-item">
-        <span>01</span>
-        <h4>Creative-tech R&D</h4>
         <p>
-          Pesquisa aplicada para integração entre percepção visual, posicionamento estratégico e experiência digital.
+          A GABARDINE© opera na convergência entre branding, experiência digital e tecnologia aplicada, estruturando ecossistemas visuais capazes de fortalecer autoridade institucional e consolidar percepção premium.
         </p>
+
       </div>
 
-      <div class="feature-item">
-        <span>02</span>
-        <h4>Brand positioning</h4>
+      <div class="fronts-grid">
+
+        <article class="front-card fade-up">
+
+          <small>
+            01
+          </small>
+
+          <h4>
+            Creative-tech R&D
+          </h4>
+
+          <p>
+            Pesquisa aplicada para integração entre percepção visual, posicionamento estratégico e experiência digital.
+          </p>
+
+          <div class="front-tags">
+
+            <span>Pesquisa aplicada</span>
+
+            <span>Direção criativa</span>
+
+          </div>
+
+        </article>
+
+        <article class="front-card fade-up">
+
+          <small>
+            02
+          </small>
+
+          <h4>
+            Brand positioning
+          </h4>
+
+          <p>
+            Estruturação narrativa e institucional orientada à legitimidade, diferenciação e percepção de valor.
+          </p>
+
+          <div class="front-tags">
+
+            <span>Branding</span>
+
+            <span>Posicionamento</span>
+
+          </div>
+
+        </article>
+
+        <article class="front-card fade-up">
+
+          <small>
+            03
+          </small>
+
+          <h4>
+            UX/UI Design
+          </h4>
+
+          <p>
+            Arquitetura de interfaces e experiências digitais coerentes com objetivos operacionais e comerciais.
+          </p>
+
+          <div class="front-tags">
+
+            <span>UX Systems</span>
+
+            <span>UI Architecture</span>
+
+          </div>
+
+        </article>
+
+        <article class="front-card fade-up">
+
+          <small>
+            04
+          </small>
+
+          <h4>
+            Digital Infrastructure
+          </h4>
+
+          <p>
+            Construção de ativos digitais preparados para evolução futura, automações e expansão progressiva.
+          </p>
+
+          <div class="front-tags">
+
+            <span>Escalabilidade</span>
+
+            <span>Integrações</span>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====================================== -->
+  <!-- GRID -->
+  <!-- ====================================== -->
+
+  <section class="section">
+
+    <div class="container gabardine-grid">
+
+      <div class="gabardine-card fade-up">
+
+        <small>
+          Atuação
+        </small>
+
+        <h3>
+          O que a GABARDINE® desenvolve
+        </h3>
+
         <p>
-          Estruturação narrativa e institucional orientada à legitimidade, diferenciação e percepção de valor.
+          Websites institucionais, ecossistemas visuais, experiências digitais, interfaces estratégicas, arquitetura visual aplicada, narrativas institucionais e estruturas digitais orientadas à percepção e posicionamento.
         </p>
+
       </div>
 
-      <div class="feature-item">
-        <span>03</span>
-        <h4>UX/UI Design</h4>
+      <div class="gabardine-card fade-up">
+
+        <small>
+          Objetivo estrutural
+        </small>
+
+        <h3>
+          Porque empresas buscam essa frente
+        </h3>
+
         <p>
-          Arquitetura de interfaces e experiências digitais coerentes com objetivos operacionais e comerciais.
+          Para reduzir desalinhamentos entre branding, operação e experiência digital, elevando percepção institucional, clareza estratégica e maturidade tecnológica da presença digital.
         </p>
+
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- ====================================== -->
+  <!-- ECOSSISTEMA -->
+  <!-- ====================================== -->
 
-<section>
+  <section class="section philosophy">
 
-  <div class="container grid-2">
+    <div class="container">
 
-    <div class="card">
+      <div class="philosophy-grid">
 
-      <h3>
-        O que a GABARDINE® desenvolve
-      </h3>
+        <div class="fade-up">
 
-      <p>
-        Websites institucionais, ecossistemas visuais, experiências digitais, interfaces estratégicas, arquitetura visual aplicada, narrativas institucionais e estruturas digitais orientadas à percepção e posicionamento.
-      </p>
+          <h3>
+            A camada front-end estratégica do ecossistema RETEAR®.
+          </h3>
 
-    </div>
+        </div>
 
-    <div class="card">
+        <div class="fade-up">
 
-      <h3>
-        Porque empresas buscam essa frente
-      </h3>
+          <p>
+            Enquanto outras frentes estruturam governança, rastreabilidade, logística e inteligência operacional, a GABARDINE® organiza a manifestação digital-comercial das empresas através de experiências, interfaces e posicionamento institucional.
+          </p>
 
-      <p>
-        Para reduzir desalinhamentos entre branding, operação e experiência digital, elevando percepção institucional, clareza estratégica e maturidade tecnológica da presença digital.
-      </p>
+          <div class="logic-flow">
 
-    </div>
+            <span>
+              Branding estrutural
+            </span>
 
-  </div>
+            <span>
+              UX/UI systems
+            </span>
 
-</section>
+            <span>
+              Digital positioning
+            </span>
 
-<section>
+            <span>
+              Institutional experience
+            </span>
 
-  <div class="container">
+          </div>
 
-    <div class="section-header">
+        </div>
 
-      <small>Integração ecossistêmica</small>
-
-      <h2>
-        A camada front-end estratégica do ecossistema RETEAR®.
-      </h2>
-
-      <p>
-        Enquanto outras frentes estruturam governança, rastreabilidade, logística e inteligência operacional, a GABARDINE® organiza a manifestação digital-comercial das empresas através de experiências, interfaces e posicionamento institucional.
-      </p>
+      </div>
 
     </div>
 
-    <div class="grid-2">
+  </section>
 
-      <div class="card">
-        <h3>Maturidade digital</h3>
+  <!-- ====================================== -->
+  <!-- CTA -->
+  <!-- ====================================== -->
+
+  <section class="cta" id="contato">
+
+    <div class="container">
+
+      <div class="cta-box fade-up">
+
+        <div class="cta-content">
+
+          <h3>
+            Estruture sua presença digital como infraestrutura estratégica.
+          </h3>
+
+          <p>
+            A GABARDINE® conecta branding, experiência e tecnologia para transformar percepção institucional em estruturas digitais coerentes, legitimadas e preparadas para evolução operacional.
+          </p>
+
+          <a href="https://wa.me/message/LIKDPGYCWU5CF1" class="btn btn-primary">
+            Iniciar diagnóstico estratégico
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ====================================== -->
+  <!-- FOOTER -->
+  <!-- ====================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
         <p>
-          Estrutura empresas com baixa ou média maturidade digital em arquiteturas institucionais mais coerentes, profissionais e escaláveis.
+          GABARDINE© · Creative-tech R&D<br>
+          RETEAR® Infrastructure-tech ecosystem
         </p>
-      </div>
 
-      <div class="card">
-        <h3>Infraestrutura validável</h3>
-        <p>
-          Constrói ativos digitais preparados para evolução futura, integrações, automações e expansão progressiva do ecossistema operacional.
-        </p>
+        <a
+          href="../index.html"
+          class="btn btn-primary"
+        >
+          Voltar ao ecossistema
+        </a>
+
       </div>
 
     </div>
 
-  </div>
+  </footer>
 
-</section>
+  <!-- ====================================== -->
+  <!-- SCRIPT -->
+  <!-- ====================================== -->
 
-<section class="cta">
+  <script>
 
-  <div class="container">
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-    <div class="cta-box">
-
-      <h2>
-        Estruture sua presença digital como infraestrutura estratégica.
-      </h2>
-
-      <p>
-        A GABARDINE® conecta branding, experiência e tecnologia para transformar percepção institucional em estruturas digitais coerentes, legitimadas e preparadas para evolução operacional.
-      </p>
-
-      <a href="#" class="btn">
-        Iniciar diagnóstico estratégico
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <div class="container">
-    <p>
-      RETEAR® · Infrastructure-tech ecosystem
-    </p>
-  </div>
-
-</footer>
-
-<script>
-
-  const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-      if(entry.isIntersecting){
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
     });
 
-  }, { threshold:0.12 });
+    const observer = new IntersectionObserver((entries) => {
 
-  document.querySelectorAll('.card, .feature-item, .hero-card').forEach((el)=>{
+      entries.forEach(entry => {
 
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(40px)';
-    el.style.transition = '0.8s ease';
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
 
-    observer.observe(el);
+      });
 
-  });
+    }, { threshold: 0.12 });
 
-</script>
+    document.querySelectorAll('.fade-up, .scale-in').forEach((el) => {
+      observer.observe(el);
+    });
+
+  </script>
 
 </body>
+
 </html>
