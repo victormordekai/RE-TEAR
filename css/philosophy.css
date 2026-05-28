@@ -1,0 +1,93 @@
+/* ========================================
+   philosophy.css
+======================================== */
+
+.philosophy{
+  background:var(--bg-dark);
+
+  color:var(--white);
+
+  overflow:hidden;
+}
+
+.philosophy::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at top left,
+    rgba(46,188,82,.18),
+    transparent 30%
+  ),
+
+  radial-gradient(
+    circle at bottom right,
+    rgba(131,180,187,.16),
+    transparent 28%
+  );
+
+  opacity:.7;
+}
+
+.philosophy-grid{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:4rem;
+
+  align-items:start;
+}
+
+.philosophy h3{
+  font-size:clamp(2rem,5vw,5rem);
+
+  line-height:.95;
+
+  font-weight:500;
+
+  letter-spacing:-.18rem;
+
+  margin-bottom:2rem;
+}
+
+.philosophy p{
+  line-height:1.9;
+
+  color:rgba(255,255,255,.72);
+
+  margin-bottom:1.5rem;
+}
+
+.logic-flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+
+  margin-top:3rem;
+}
+
+.logic-flow span{
+  padding:1rem 1.2rem;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,.06);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(12px);
+
+  font-size:.8rem;
+
+  letter-spacing:.08rem;
+
+  text-transform:uppercase;
+}

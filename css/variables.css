@@ -1,23 +1,27 @@
-:root{
+/* ========================================
+   variables.css
+======================================== */
 
-  /* COLORS */
+:root{
   --bg:#dcdcdc;
   --bg-dark:#060606;
 
-  /* TEXT */
   --text:#111111;
   --text-soft:rgba(0,0,0,.68);
 
-  /* ACCENTS */
+  --white:#ffffff;
+
   --accent-green:#2ebc52;
+  --accent-blue:#83b4bb;
+  --accent-red:#c64832;
+  --accent-purple:#141016;
 
-  /* BORDERS */
   --border:rgba(0,0,0,.08);
+  --glass:rgba(255,255,255,.08);
 
-  /* LAYOUT */
   --max-width:1440px;
 
-  /* MOTION */
-  --transition:all .5s cubic-bezier(.19,1,.22,1);
-
+  --transition:
+  all .5s cubic-bezier(.19,1,.22,1);
 }
+

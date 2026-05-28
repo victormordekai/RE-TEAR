@@ -1,0 +1,93 @@
+/* ========================================
+   cta.css
+======================================== */
+
+.cta{
+  position:relative;
+
+  padding:8rem 0;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+    rgba(10,10,10,.52),
+    rgba(10,10,10,.52)
+  ),
+
+  url("imagens/Retalhos.png");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+
+  overflow:hidden;
+}
+
+.cta-box{
+  position:relative;
+
+  padding:6rem 3rem;
+
+  border-radius:40px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(20,16,22,.96),
+    rgba(6,6,6,.96)
+  );
+
+  overflow:hidden;
+
+  color:var(--white);
+}
+
+.cta-box::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at center,
+    rgba(46,188,82,.18),
+    transparent 42%
+  );
+}
+
+.cta-content{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.cta h3{
+  font-size:clamp(2rem,4vw,4rem);
+
+  font-weight:500;
+
+  margin-bottom:1.5rem;
+
+  letter-spacing:-.1rem;
+}
+
+.cta p{
+  max-width:760px;
+
+  margin:0 auto 1.5rem;
+
+  line-height:1.9;
+
+  color:rgba(255,255,255,.7);
+}
+
+.cta-content .btn{
+  margin-top:1rem;
+  text-align:center;
+  width:auto;
+}

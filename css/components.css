@@ -1,7 +1,73 @@
-.btn{}
-.btn-primary{}
+/* ========================================
+   components.css
+======================================== */
 
-.front-card{}
-.front-tags{}
+.front-card-premium{
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.52),
+    rgba(131,180,187,.16)
+  );
 
-.logic-flow{}
+  border:
+  1px solid rgba(131,180,187,.28);
+
+  box-shadow:
+  0 30px 80px rgba(0,0,0,.08),
+  0 0 40px rgba(131,180,187,.08);
+
+  transform:translateY(-4px);
+}
+
+.front-card-premium::before{
+  opacity:1;
+
+  background:
+  radial-gradient(
+    circle at top right,
+    rgba(131,180,187,.18),
+    transparent 46%
+  ),
+
+  radial-gradient(
+    circle at bottom left,
+    rgba(46,188,82,.10),
+    transparent 36%
+  );
+}
+
+.front-card-premium small{
+  color:rgba(45,52,104,.78);
+  font-weight:600;
+}
+
+.front-card-premium h4{
+  color:rgb(45,52,104);
+}
+
+.front-tags-select span{
+  padding:.6rem 1rem;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(46,188,82,.14),
+    rgba(131,180,187,.12)
+  );
+
+  border:
+  1px solid rgba(46,188,82,.14);
+
+  font-size:.72rem;
+
+  text-transform:uppercase;
+
+  letter-spacing:.08rem;
+
+  color:rgba(22,72,64,.92);
+
+  font-weight:500;
+}

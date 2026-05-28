@@ -1,17 +1,78 @@
+/* ========================================
+   base.css
+======================================== */
+
 *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
+  scroll-behavior:smooth;
 }
 
 body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at 20% 30%,
+    rgba(255,255,255,.5),
+    transparent 30%
+  ),
+
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(255,255,255,.28),
+    transparent 25%
+  ),
+
+  radial-gradient(
+    circle at 60% 80%,
+    rgba(255,255,255,.24),
+    transparent 35%
+  );
+
+  z-index:-2;
+  opacity:.7;
+}
+
+.noise{
+  position:fixed;
+  inset:0;
+
+  opacity:.035;
+
+  z-index:-1;
+  pointer-events:none;
+
+  background-image:
+  url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
 a{
+  text-decoration:none;
+  color:inherit;
 }
 
 img{
+  max-width:100%;
+  display:block;
 }
 
 .container{
+  width:min(var(--max-width),92%);
+  margin:0 auto;
 }
