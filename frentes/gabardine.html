@@ -570,7 +570,7 @@
      OPEN POPUP MODULE
   ========================================= */
 
-  fetch('modules/nr1-popup.html')
+  fetch('../modules/nr1-popup.html')
 
     .then(response => response.text())
 
@@ -586,7 +586,7 @@
       document.createElement('script');
 
       script.src =
-      'modules/nr1-popup.js';
+      '../modules/nr1-popup.js';
 
       document.body.appendChild(script);
 
