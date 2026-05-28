@@ -1,0 +1,47 @@
+/RE-TEAR/
+│
+│
+├── index.html
+│
+├── /Frentes
+│   ├── malha.html
+│   ├── lona.html
+│   ├── jacquard.html
+│   ├── gabardine.html
+│   └── re-tear.html
+│
+├── modules/
+│   ├── nr1-popup.html
+│   ├── nr1-popup.css
+│   └── nr1-popup.js
+│
+├── campaigns/
+│   └── nr1.html
+│
+├── /css
+│   ├── variables.css
+│   ├── style.css
+│   ├── responsive.css
+│   └── animations.css
+│
+├── /js
+│   └── main.js
+│
+├── /docs
+│   ├── .pdf
+│   └── others
+│   
+├── /assets
+│   ├── /img
+│   ├── /icons
+│   ├── /logos
+│   ├── /social
+│   └── /banners
+│
+├── modules/
+│   ├── nr1-popup.html
+│   ├── nr1-popup.css
+│   └── nr1-popup.js
+│
+├── campaigns/
+│   └── nr1.html

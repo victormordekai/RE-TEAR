@@ -1,0 +1,24 @@
+:root {
+
+  --background: #fffaf7;
+  --surface: #ffffff;
+
+  --primary: #c98e8a;
+  --primary-dark: #8d5d59;
+
+  --accent: #e8d5cc;
+  --text: #332927;
+  --text-soft: #726665;
+
+  --border: rgba(0,0,0,0.06);
+
+  --shadow-soft: 0 20px 60px rgba(0,0,0,0.06);
+
+  --radius-lg: 28px;
+  --radius-md: 18px;
+
+  --container: 1240px;
+
+  --transition: all .35s ease;
+
+}

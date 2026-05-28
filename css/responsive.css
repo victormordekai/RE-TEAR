@@ -1,0 +1,188 @@
+@media (max-width: 1024px) {
+
+  .hero-grid,
+  .institutional-grid,
+  .faq-grid,
+  .products-grid,
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .cta-box {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footer-grid {
+  grid-template-columns: 1fr;
+
+  gap: 50px;
+}
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 100px 0;
+  }
+
+  .hero {
+    min-height: 88vh;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    line-height: 1.12;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .institutional-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .navbar {
+	height: 76px;
+	padding: 0 24px;
+  }
+
+  .navbar-brand img {
+	max-height: 42px;
+  }
+
+  .cta-box {
+    padding: 50px 30px;
+  }
+
+}
+/* ========================================= */
+/* PRODUCTS MOBILE                           */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  .products-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .product-card img {
+    aspect-ratio: 4 / 5;
+  }
+
+}
+
+/* ========================================= */
+/* TESTIMONIAL SECTION                       */
+/* ========================================= */
+
+@media (max-width: 768px) {
+
+  .testimonial-section {
+    padding: 120px 0;
+  }
+
+  .testimonial-box {
+    padding: 48px 32px;
+  }
+
+  .testimonial-box p {
+    font-size: 1.35rem;
+  }
+
+}
+
+/* ========================================= */
+/* NAVBAR RESPONSIVE                       */
+/* ========================================= */
+
+@media (max-width: 1024px) {
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+
+    top: 90px;
+    right: 4%;
+
+    width: 260px;
+
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    background: rgba(255,255,255,0.92);
+
+    backdrop-filter: blur(18px);
+
+    border-radius: 24px;
+
+    border:
+      1px solid rgba(0,0,0,0.05);
+
+    box-shadow:
+      0 18px 50px rgba(0,0,0,0.12);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+      translateY(-12px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+
+    z-index: 1200;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform:
+      translateY(0);
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+}
