@@ -74,6 +74,18 @@
 
 <body>
 
+  <!-- ========================================
+       POP UP OPEN
+  ========================================= -->
+ 
+ <div id="floating-campaign-root"></div>
+
+  <script src="script.js"></script>
+
+
+  <div class="noise"></div>
+
+
   <!-- ====================================== -->
   <!-- NOISE -->
   <!-- ====================================== -->
@@ -554,7 +566,42 @@
     document.querySelectorAll('.fade-up, .scale-in').forEach((el) => {
       observer.observe(el);
     });
+  /* ========================================
+     OPEN POPUP MODULE
+  ========================================= */
 
+  fetch('modules/nr1-popup.html')
+
+    .then(response => response.text())
+
+    .then(data => {
+
+      document.getElementById(
+        'floating-campaign-root'
+      ).innerHTML = data;
+
+      /* CARREGA JS DO POPUP */
+
+      const script =
+      document.createElement('script');
+
+      script.src =
+      'modules/nr1-popup.js';
+
+      document.body.appendChild(script);
+
+    })
+
+    .catch(error => {
+
+      console.error(
+        'Erro ao carregar popup:',
+        error
+      );
+
+    });
+
+	
   </script>
 
 </body>
