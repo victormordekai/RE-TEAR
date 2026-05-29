@@ -539,31 +539,97 @@
   <!-- SCRIPT -->
   <!-- ====================================== -->
 
-  <script>
+<script>
 
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+  const navbar =
+  document.getElementById('navbar');
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+  const menuToggle =
+  document.getElementById('menu-toggle');
+
+  const navMenu =
+  document.getElementById('nav-menu');
+
+  let lastScroll = 0;
+
+  /* ========================================
+     TOGGLE MENU
+  ========================================= */
+
+  menuToggle.addEventListener('click', (e) => {
+
+    e.stopPropagation();
+
+    navMenu.classList.toggle('active');
+
+  });
+
+  /* ========================================
+     FECHAR AO CLICAR FORA
+  ========================================= */
+
+  document.addEventListener('click', (e) => {
+
+    const clickedOutside =
+      !navMenu.contains(e.target) &&
+      !menuToggle.contains(e.target);
+
+    if (clickedOutside) {
+
+      navMenu.classList.remove('active');
+
+    }
+
+  });
+
+  /* ========================================
+     NAV HIDE + CLOSE MENU ON SCROLL
+  ========================================= */
+
+  window.addEventListener('scroll', () => {
+
+    const currentScroll =
+    window.pageYOffset;
+
+    navMenu.classList.remove('active');
+
+    if (
+      currentScroll > lastScroll &&
+      currentScroll > 120
+    ) {
+
+      navbar.classList.add('hide');
+
+    } else {
+
+      navbar.classList.remove('hide');
+
+    }
+
+    lastScroll = currentScroll;
+
+  });
+
+  /* ========================================
+     ANIMATIONS
+  ========================================= */
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+
     });
 
-    const observer = new IntersectionObserver((entries) => {
+  }, { threshold: 0.12 });
 
-      entries.forEach(entry => {
+  document.querySelectorAll('.fade-up, .scale-in').forEach((el) => {
+    observer.observe(el);
+  });
 
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-
-      });
-
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade-up, .scale-in').forEach((el) => {
-      observer.observe(el);
-    });
-	
   /* ========================================
      OPEN POPUP MODULE
   =========================================
