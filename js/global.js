@@ -1,21 +1,28 @@
- /* ========================================
-     NAV
-  ========================================= */
+/* ========================================
+   GLOBAL.JS — RETEAR®
+   Infraestrutura global compartilhada
+========================================= */
 
-  const navbar =
-  document.getElementById('navbar');
+/* ========================================
+   NAVBAR + MENU MOBILE
+========================================= */
 
-  const menuToggle =
-  document.getElementById('menu-toggle');
+const navbar =
+document.getElementById('navbar');
 
-  const navMenu =
-  document.getElementById('nav-menu');
+const menuToggle =
+document.getElementById('menu-toggle');
 
-  let lastScroll = 0;
+const navMenu =
+document.getElementById('nav-menu');
 
-  /* ========================================
-     TOGGLE MENU
-  ========================================= */
+let lastScroll = 0;
+
+/* ========================================
+   TOGGLE MENU
+========================================= */
+
+if (menuToggle && navMenu) {
 
   menuToggle.addEventListener('click', (e) => {
 
@@ -25,38 +32,48 @@
 
   });
 
-  /* ========================================
-     FECHAR AO CLICAR FORA
-  ========================================= */
+}
 
-  document.addEventListener('click', (e) => {
+/* ========================================
+   FECHAR MENU AO CLICAR FORA
+========================================= */
 
-    const clickedOutside =
-      !navMenu.contains(e.target) &&
-      !menuToggle.contains(e.target);
+document.addEventListener('click', (e) => {
 
-    if (clickedOutside) {
+  if (!navMenu || !menuToggle) return;
 
-      navMenu.classList.remove('active');
+  const clickedOutside =
+    !navMenu.contains(e.target) &&
+    !menuToggle.contains(e.target);
 
-    }
-
-  });
-
-  /* ========================================
-     NAV HIDE + CLOSE MENU ON SCROLL
-  ========================================= */
-
-  window.addEventListener('scroll', () => {
-
-    const currentScroll =
-    window.pageYOffset;
-
-    /* ESCONDE MENU MOBILE */
+  if (clickedOutside) {
 
     navMenu.classList.remove('active');
 
-    /* ESCONDE NAVBAR */
+  }
+
+});
+
+/* ========================================
+   NAVBAR HIDE ON SCROLL
+========================================= */
+
+window.addEventListener('scroll', () => {
+
+  const currentScroll =
+  window.pageYOffset;
+
+  /* FECHA MENU MOBILE */
+
+  if (navMenu) {
+
+    navMenu.classList.remove('active');
+
+  }
+
+  /* CONTROLE NAVBAR */
+
+  if (navbar) {
 
     if (
       currentScroll > lastScroll &&
@@ -71,19 +88,23 @@
 
     }
 
-    lastScroll = currentScroll;
+  }
 
-  });
+  lastScroll = currentScroll;
 
-  /* ========================================
-     HERO GRADIENT
-  ========================================= */
+});
 
-  const orb =
-  document.getElementById('orb');
+/* ========================================
+   HERO INTERACTIVE GRADIENT
+========================================= */
 
-  const wave =
-  document.getElementById('wave');
+const orb =
+document.getElementById('orb');
+
+const wave =
+document.getElementById('wave');
+
+if (orb && wave) {
 
   window.addEventListener('mousemove', (e) => {
 
@@ -104,35 +125,71 @@
 
   });
 
-	/* ========================================
-	   OPEN POPUP MODULE
-	======================================== */
+}
 
-	fetch('/RE-TEAR/modules/nr1-popup.html')
+/* ========================================
+   INTERSECTION OBSERVER
+========================================= */
 
-	  .then(response => response.text())
+const observer =
+new IntersectionObserver((entries) => {
 
-	  .then(data => {
+  entries.forEach(entry => {
 
-		document.getElementById(
-		  'floating-campaign-root'
-		).innerHTML = data;
+    if (entry.isIntersecting) {
 
-		const script =
-		document.createElement('script');
+      entry.target.classList.add('active');
 
-		script.src =
-		'/RE-TEAR/modules/nr1-popup.js';
+    }
 
-		document.body.appendChild(script);
+  });
 
-	  })
+}, {
+  threshold: 0.12
+});
 
-	  .catch(error => {
+document
+.querySelectorAll('.fade-up, .scale-in')
+.forEach((el) => {
 
-		console.error(
-		  'Erro ao carregar popup:',
-		  error
-		);
+  observer.observe(el);
 
-	  });
+});
+
+/* ========================================
+   FLOATING POPUP MODULE
+========================================= */
+
+const popupRoot =
+document.getElementById('floating-campaign-root');
+
+if (popupRoot) {
+
+  fetch('../modules/nr1-popup.html')
+  
+    .then(response => response.text())
+
+    .then(data => {
+
+      popupRoot.innerHTML = data;
+
+      const script =
+      document.createElement('script');
+
+      script.src =
+      '../modules/nr1-popup.js';
+
+      document.body.appendChild(script);
+
+    })
+
+    .catch(error => {
+
+      console.error(
+        'Erro ao carregar popup:',
+        error
+      );
+
+    });
+
+}
