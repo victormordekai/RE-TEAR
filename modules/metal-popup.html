@@ -1,0 +1,856 @@
+<!--```html-->
+<!-- =========================================================
+     RETEAR® — LIQUID MERCURY INSTITUTIONAL POPUP
+     VERSION: SYSTEM ENTITY / METABALL OVERLAY
+     ARCHITECTURE:
+     HTML + CSS + JS + SVG FILTER + CANVAS MOTION
+========================================================== -->
+
+<div
+  class="liquid-entity-system"
+  id="liquidEntitySystem"
+>
+
+  <!-- =========================================
+       SVG FILTERS
+  ========================================== -->
+
+  <svg width="0" height="0">
+
+    <filter id="liquid-goo">
+
+      <feGaussianBlur
+        in="SourceGraphic"
+        stdDeviation="18"
+        result="blur"
+      />
+
+      <feColorMatrix
+        in="blur"
+        mode="matrix"
+        values="
+          1 0 0 0 0
+          0 1 0 0 0
+          0 0 1 0 0
+          0 0 0 28 -12
+        "
+        result="goo"
+      />
+
+      <feBlend
+        in="SourceGraphic"
+        in2="goo"
+      />
+
+    </filter>
+
+  </svg>
+
+  <!-- =========================================
+       LIQUID FIELD
+  ========================================== -->
+
+  <div class="liquid-field">
+
+    <div class="liquid-core draggable-liquid">
+
+      <div class="liquid-inner-glow"></div>
+
+      <div class="liquid-noise"></div>
+
+      <div class="liquid-content">
+
+        <small>
+          INFRAESTRUTURA OPERACIONAL ADAPTATIVA
+        </small>
+
+        <h3>
+          NR-1<br>
+          Inteligência operacional aplicada à gestão de riscos.
+        </h3>
+
+        <span>
+          RETEAR®
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- =========================================
+         ORBITAL NODES
+    ========================================== -->
+
+    <div class="liquid-node node-a draggable-liquid"></div>
+    <div class="liquid-node node-b draggable-liquid"></div>
+    <div class="liquid-node node-c draggable-liquid"></div>
+
+  </div>
+
+  <!-- =========================================
+       CANVAS OVERLAY
+  ========================================== -->
+
+  <canvas
+    class="liquid-particles"
+    id="liquidParticles"
+  ></canvas>
+
+  <!-- =========================================
+       CLOSE
+  ========================================== -->
+
+  <button
+    class="liquid-close"
+    id="liquidClose"
+    type="button"
+  >
+    ×
+  </button>
+
+</div>
+
+<style>
+
+/* =========================================================
+   ROOT SYSTEM
+========================================================= */
+
+.liquid-entity-system{
+  position:fixed;
+
+  right:40px;
+  bottom:40px;
+
+  width:460px;
+  height:460px;
+
+  z-index:999999;
+
+  pointer-events:none;
+
+  isolation:isolate;
+
+  animation:
+  liquidEntrance 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.liquid-entity-system *{
+  pointer-events:auto;
+}
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.liquid-field{
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  filter:url(#liquid-goo);
+}
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.liquid-core{
+  position:absolute;
+
+  top:50%;
+  left:50%;
+
+  width:290px;
+  height:290px;
+
+  transform:
+  translate(-50%,-50%);
+
+  border-radius:
+  46% 54% 58% 42% /
+  42% 38% 62% 58%;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(131,180,187,.18),
+    rgba(30,40,70,.94) 35%,
+    rgba(18,20,28,.98) 100%
+  );
+
+  border:
+  1px solid rgba(255,255,255,.06);
+
+  backdrop-filter:
+  blur(40px);
+
+  overflow:hidden;
+
+  box-shadow:
+  0 0 120px rgba(131,180,187,.12),
+  0 60px 140px rgba(0,0,0,.42),
+  inset 0 0 60px rgba(255,255,255,.04);
+
+  animation:
+  liquidMorph 14s ease-in-out infinite,
+  liquidFloat 10s ease-in-out infinite;
+
+  cursor:grab;
+}
+
+/* =========================================================
+   INNER GLOW
+========================================================= */
+
+.liquid-inner-glow{
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at 30% 20%,
+    rgba(255,255,255,.10),
+    transparent 42%
+  ),
+  radial-gradient(
+    circle at 70% 80%,
+    rgba(131,180,187,.10),
+    transparent 45%
+  );
+
+  mix-blend-mode:screen;
+
+  animation:
+  pulseGlow 8s ease-in-out infinite;
+}
+
+/* =========================================================
+   NOISE LAYER
+========================================================= */
+
+.liquid-noise{
+  position:absolute;
+  inset:-50%;
+
+  background-image:
+  radial-gradient(
+    rgba(255,255,255,.03) 1px,
+    transparent 1px
+  );
+
+  background-size:
+  12px 12px;
+
+  opacity:.25;
+
+  animation:
+  noiseFlow 18s linear infinite;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.liquid-content{
+  position:relative;
+
+  z-index:10;
+
+  width:100%;
+  height:100%;
+
+  padding:3rem;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  color:#fff;
+}
+
+.liquid-content small{
+  font-size:.68rem;
+
+  letter-spacing:.18rem;
+
+  text-transform:uppercase;
+
+  opacity:.72;
+
+  margin-bottom:1rem;
+}
+
+.liquid-content h3{
+  font-family:'Montserrat',sans-serif;
+
+  font-size:1.8rem;
+
+  line-height:1.2;
+
+  font-weight:600;
+
+  max-width:240px;
+
+  margin-bottom:1rem;
+}
+
+.liquid-content span{
+  font-size:.85rem;
+
+  opacity:.58;
+
+  letter-spacing:.12rem;
+}
+
+/* =========================================================
+   LIQUID NODES
+========================================================= */
+
+.liquid-node{
+  position:absolute;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(131,180,187,.16),
+    rgba(20,20,30,.95)
+  );
+
+  backdrop-filter:
+  blur(24px);
+
+  border:
+  1px solid rgba(255,255,255,.04);
+
+  box-shadow:
+  0 0 60px rgba(131,180,187,.08);
+
+  animation:
+  nodeFloat 12s ease-in-out infinite;
+
+  cursor:grab;
+}
+
+.node-a{
+  width:120px;
+  height:120px;
+
+  top:30px;
+  right:50px;
+
+  animation-delay:-2s;
+}
+
+.node-b{
+  width:90px;
+  height:90px;
+
+  bottom:70px;
+  left:20px;
+
+  animation-delay:-6s;
+}
+
+.node-c{
+  width:70px;
+  height:70px;
+
+  right:20px;
+  bottom:40px;
+
+  animation-delay:-4s;
+}
+
+/* =========================================================
+   CANVAS
+========================================================= */
+
+.liquid-particles{
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  pointer-events:none;
+
+  opacity:.7;
+
+  mix-blend-mode:screen;
+}
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.liquid-close{
+  position:absolute;
+
+  top:20px;
+  right:20px;
+
+  width:38px;
+  height:38px;
+
+  border:none;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,.08);
+
+  color:#fff;
+
+  font-size:1rem;
+
+  backdrop-filter:blur(20px);
+
+  cursor:pointer;
+
+  z-index:999;
+
+  transition:
+  transform .3s ease,
+  background .3s ease;
+}
+
+.liquid-close:hover{
+  transform:scale(1.08);
+
+  background:
+  rgba(255,255,255,.16);
+}
+
+/* =========================================================
+   HIDDEN
+========================================================= */
+
+.liquid-entity-system.hidden{
+  opacity:0;
+
+  transform:
+  scale(.86)
+  translateY(60px);
+
+  transition:
+  opacity .6s ease,
+  transform .6s ease;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes liquidMorph{
+
+  0%,100%{
+    border-radius:
+    46% 54% 58% 42% /
+    42% 38% 62% 58%;
+  }
+
+  25%{
+    border-radius:
+    58% 42% 40% 60% /
+    60% 44% 56% 40%;
+  }
+
+  50%{
+    border-radius:
+    38% 62% 52% 48% /
+    46% 60% 40% 54%;
+  }
+
+  75%{
+    border-radius:
+    52% 48% 62% 38% /
+    36% 54% 46% 64%;
+  }
+}
+
+@keyframes liquidFloat{
+
+  0%,100%{
+    transform:
+    translate(-50%,-50%)
+    translateY(0px);
+  }
+
+  50%{
+    transform:
+    translate(-50%,-50%)
+    translateY(-12px);
+  }
+}
+
+@keyframes nodeFloat{
+
+  0%,100%{
+    transform:
+    translateY(0px)
+    scale(1);
+  }
+
+  50%{
+    transform:
+    translateY(-14px)
+    scale(1.05);
+  }
+}
+
+@keyframes pulseGlow{
+
+  0%,100%{
+    opacity:.7;
+  }
+
+  50%{
+    opacity:1;
+  }
+}
+
+@keyframes noiseFlow{
+
+  from{
+    transform:
+    translate(0,0);
+  }
+
+  to{
+    transform:
+    translate(-120px,-80px);
+  }
+}
+
+@keyframes liquidEntrance{
+
+  from{
+    opacity:0;
+
+    transform:
+    translateY(120px)
+    scale(.72);
+  }
+
+  to{
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+  .liquid-entity-system{
+    width:320px;
+    height:320px;
+
+    right:10px;
+    bottom:20px;
+  }
+
+  .liquid-core{
+    width:210px;
+    height:210px;
+  }
+
+  .liquid-content{
+    padding:2rem;
+  }
+
+  .liquid-content h3{
+    font-size:1.2rem;
+  }
+
+  .node-a{
+    width:80px;
+    height:80px;
+  }
+
+  .node-b{
+    width:60px;
+    height:60px;
+  }
+
+  .node-c{
+    width:50px;
+    height:50px;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* =========================================================
+   SESSION CONTROL
+========================================================= */
+
+if(
+  sessionStorage.getItem(
+    'liquid-entity-closed'
+  )
+){
+
+  document
+    .getElementById(
+      'liquidEntitySystem'
+    )
+    .remove();
+
+}
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const liquidSystem =
+document.getElementById(
+  'liquidEntitySystem'
+);
+
+const liquidClose =
+document.getElementById(
+  'liquidClose'
+);
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+liquidClose.addEventListener(
+  'click',
+  (e)=>{
+
+    e.preventDefault();
+
+    e.stopPropagation();
+
+    liquidSystem.classList.add(
+      'hidden'
+    );
+
+    sessionStorage.setItem(
+      'liquid-entity-closed',
+      'true'
+    );
+
+  }
+);
+
+/* =========================================================
+   PARTICLE ENGINE
+========================================================= */
+
+const canvas =
+document.getElementById(
+  'liquidParticles'
+);
+
+const ctx =
+canvas.getContext('2d');
+
+function resizeCanvas(){
+
+  canvas.width =
+  canvas.offsetWidth;
+
+  canvas.height =
+  canvas.offsetHeight;
+}
+
+resizeCanvas();
+
+window.addEventListener(
+  'resize',
+  resizeCanvas
+);
+
+const particles = [];
+
+for(let i=0;i<40;i++){
+
+  particles.push({
+
+    x:
+    Math.random() *
+    canvas.width,
+
+    y:
+    Math.random() *
+    canvas.height,
+
+    r:
+    Math.random() * 2 + 1,
+
+    dx:
+    (Math.random()-.5) * .3,
+
+    dy:
+    (Math.random()-.5) * .3
+
+  });
+
+}
+
+function animateParticles(){
+
+  ctx.clearRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  particles.forEach((p)=>{
+
+    p.x += p.dx;
+    p.y += p.dy;
+
+    if(
+      p.x < 0 ||
+      p.x > canvas.width
+    ){
+      p.dx *= -1;
+    }
+
+    if(
+      p.y < 0 ||
+      p.y > canvas.height
+    ){
+      p.dy *= -1;
+    }
+
+    ctx.beginPath();
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.r,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle =
+    'rgba(131,180,187,.18)';
+
+    ctx.fill();
+
+  });
+
+  requestAnimationFrame(
+    animateParticles
+  );
+}
+
+animateParticles();
+
+/* =========================================================
+   DRAG SYSTEM
+========================================================= */
+
+const draggableLiquids =
+document.querySelectorAll(
+  '.draggable-liquid'
+);
+
+draggableLiquids.forEach((element)=>{
+
+  let dragging = false;
+
+  let startX = 0;
+  let startY = 0;
+
+  let initialX = 0;
+  let initialY = 0;
+
+  element.addEventListener(
+    'mousedown',
+    (e)=>{
+
+      dragging = true;
+
+      const rect =
+      element.getBoundingClientRect();
+
+      const parent =
+      liquidSystem.getBoundingClientRect();
+
+      startX = e.clientX;
+      startY = e.clientY;
+
+      initialX =
+      rect.left - parent.left;
+
+      initialY =
+      rect.top - parent.top;
+
+      e.preventDefault();
+
+    }
+  );
+
+  document.addEventListener(
+    'mousemove',
+    (e)=>{
+
+      if(!dragging) return;
+
+      const dx =
+      e.clientX - startX;
+
+      const dy =
+      e.clientY - startY;
+
+      element.style.left =
+      `${initialX + dx}px`;
+
+      element.style.top =
+      `${initialY + dy}px`;
+
+      element.style.right =
+      'auto';
+
+      element.style.bottom =
+      'auto';
+
+      if(
+        element.classList.contains(
+          'liquid-core'
+        )
+      ){
+
+        element.style.transform =
+        'none';
+      }
+
+    }
+  );
+
+  document.addEventListener(
+    'mouseup',
+    ()=>{
+
+      dragging = false;
+
+    }
+  );
+
+});
+
+</script>
+```
