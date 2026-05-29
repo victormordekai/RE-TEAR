@@ -165,7 +165,7 @@ document.getElementById('floating-campaign-root');
 
 if (popupRoot) {
 
-  fetch('../modules/nr1-popup.html')
+  fetch('https://victormordekai.github.io/RE-TEAR/modules/nr1-popup.html')
   
     .then(response => response.text())
 
@@ -177,7 +177,7 @@ if (popupRoot) {
       document.createElement('script');
 
       script.src =
-      '../modules/nr1-popup.js';
+      'https://victormordekai.github.io/RE-TEAR/modules/nr1-popup.js';
 
       document.body.appendChild(script);
 
