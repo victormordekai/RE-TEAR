@@ -91,3 +91,10 @@
 
   text-transform:uppercase;
 }
+/* Link para a arquitetura institucional */
+.philosophy .philosophy-link {
+  margin-top: 1.5rem;
+  color: var(--white);
+  border-color: rgba(255,255,255,.25);
+}
+.philosophy .philosophy-link:hover { color: #111; }
