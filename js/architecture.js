@@ -1,7 +1,8 @@
 /* ========================================
    ARQUITETURA OPERACIONAL — RETEAR®
-   Acordeões independentes por grupo, com
-   apenas um painel aberto em cada conjunto.
+   Interações exclusivas dos acordeões.
+   A navegação é controlada integralmente
+   por js/global.js, como no index.html.
 ========================================= */
 
 document.querySelectorAll('[data-accordion-group]').forEach((group) => {
@@ -17,22 +18,3 @@ document.querySelectorAll('[data-accordion-group]').forEach((group) => {
     });
   });
 });
-
-/* Menu mobile: mantém o estado acessível no botão. */
-const menuButton = document.getElementById('menu-toggle');
-const menu = document.getElementById('nav-menu');
-
-if (menuButton && menu) {
-  menuButton.addEventListener('click', () => {
-    menuButton.setAttribute(
-      'aria-expanded',
-      menu.classList.contains('active') ? 'true' : 'false'
-    );
-  });
-
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menuButton.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
