@@ -39,3 +39,18 @@ Este repositório contém a primeira versão do site institucional do projeto, d
 
 ## 📂 Estrutura do Projeto
 
+
+
+## Footer institucional — atualização V001.7
+- Footer vertical padronizado nas páginas principais e de frente.
+- Foto de Victor Mordekai incorporada em assets/img/victor_mordekai.png.
+- LinkedIn associado à fotografia e ao link de perfil profissional.
+- WhatsApp configurado para +55 41 99758-4893 com mensagem inicial de agendamento.
+- Links VMORDEKAI® direcionados ao portfólio institucional.
+- Navbar e HUD premium V001.6 preservados.
+
+
+## V001.9 — Padronização de CTAs e navegação do footer
+- Botões LinkedIn e WhatsApp do footer alinhados à linguagem visual dos CTAs primários.
+- Links da navegação do footer com sublinhado animado em hover/focus, seguindo o navbar.
+- Todos os destinos WhatsApp do site padronizados para a mesma mensagem inicial de diagnóstico.

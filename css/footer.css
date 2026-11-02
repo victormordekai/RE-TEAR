@@ -1,30 +1,21 @@
-/* ========================================
-   footer.css
-======================================== */
-
-footer{
-  padding:4rem 0;
-
-  background:#000;
-
-  color:rgba(255,255,255,.52);
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:space-between;
-
-  gap:2rem;
-
-  flex-wrap:wrap;
-}
-
-.footer-inner p{
-  line-height:1.8;
-  max-width:520px;
-}
-
-
-
-/* Identificação de versão institucional */
-.site-version { display:inline-block; margin-top:.35rem; color:inherit; opacity:.68; font-size:.78em; letter-spacing:.04em; }
+/* RETEAR® — Footer institucional editorial */
+.retear-footer{--rf-bg:#050505;--rf-text:rgba(255,255,255,.9);--rf-muted:rgba(255,255,255,.62);--rf-line:rgba(255,255,255,.14);--rf-accent:var(--accent-blue,#83b4bb);display:block;position:relative;isolation:isolate;padding:clamp(3.6rem,6vw,5.8rem) clamp(1.25rem,5vw,4rem) 1.5rem;color:var(--rf-text);background:var(--rf-bg);border-top:1px solid var(--rf-line);font-family:inherit}
+.retear-footer *{box-sizing:border-box}.retear-footer__container{width:min(100%,1240px);margin:0 auto}.retear-footer a{color:inherit;text-decoration:none;transition:color .2s ease,border-color .2s ease,background .2s ease,transform .2s ease}.retear-footer a:hover{color:var(--rf-accent)}.retear-footer a:focus-visible{outline:2px solid var(--rf-accent);outline-offset:4px;border-radius:3px}
+.retear-footer__main{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(130px,.55fr) minmax(170px,.7fr);gap:clamp(2rem,5vw,5.5rem);align-items:start;padding-bottom:clamp(3rem,5vw,4.5rem)}
+.retear-footer__identity{min-width:0;max-width:690px}.retear-footer__brand{display:inline-flex;align-items:center;gap:13px;margin:0 0 1.5rem}.retear-footer__brand-symbol{display:block;width:48px;height:48px;object-fit:contain;flex:0 0 auto}.retear-footer__brand-wordmark{display:flex;align-items:center;font-size:clamp(1.08rem,1.45vw,1.32rem);letter-spacing:.22rem;font-weight:500;line-height:1}.retear-footer__brand-wordmark .re{color:rgb(45,52,104)}.retear-footer__brand-wordmark .tear{color:rgb(31,97,84)}
+.retear-footer__positioning{margin:0;color:#fff;font-size:clamp(1.02rem,1.5vw,1.28rem);font-weight:600;letter-spacing:-.025em}.retear-footer__description{max-width:620px;margin:.75rem 0 0;color:var(--rf-muted);font-size:.94rem;line-height:1.8}.retear-footer__purpose{margin-top:2rem;padding-top:1.35rem;border-top:1px solid var(--rf-line);max-width:610px}.retear-footer__purpose h2{margin:0 0 .55rem;color:#fff;font-size:clamp(1.2rem,2vw,1.55rem);font-weight:500;letter-spacing:-.035em}.retear-footer__purpose p{margin:0;color:var(--rf-muted);font-size:.9rem;line-height:1.75}
+.retear-footer__contact{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-top:1.65rem}/* Contatos: mesma linguagem dos CTAs .btn .btn-primary, adaptada ao fundo escuro do footer */
+.retear-footer__contact-link{min-height:44px;display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:.82rem 1.35rem;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(255,255,255,.055);color:var(--white,#fff);font-size:.78rem;font-weight:600;letter-spacing:.08rem;text-transform:uppercase;line-height:1;box-shadow:0 10px 30px rgba(0,0,0,.12);transition:var(--transition,all .3s ease)}
+.retear-footer__contact-link:hover{transform:translateY(-3px);background:var(--accent-green,#83b4bb);border-color:var(--accent-green,#83b4bb);color:#000}
+/* Mantém o texto e os ícones escuros no hover/foco, como no CTA AGENDAR DIAGNÓSTICO. */
+.retear-footer .retear-footer__contact-link:hover,.retear-footer .retear-footer__contact-link:focus-visible{color:#000!important}
+.retear-footer .retear-footer__contact-link:hover .retear-footer__contact-icon,.retear-footer .retear-footer__contact-link:focus-visible .retear-footer__contact-icon{color:#000!important;border-color:currentColor}
+.retear-footer__contact-link--primary{border-color:rgba(255,255,255,.28)}.retear-footer__contact-icon{display:inline-grid;place-items:center;width:19px;height:19px;border:1px solid currentColor;border-radius:3px;font-size:.72rem;font-weight:700}.retear-footer__whatsapp-icon{font-size:1.05rem;line-height:1}
+.retear-footer__founder{display:flex;align-items:center;gap:1.15rem;margin-top:2rem;padding:1.25rem 1.35rem;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.018);max-width:570px}.retear-footer__portrait{display:block;flex:0 0 104px;width:104px;height:104px;overflow:hidden;border:1px solid rgba(255,255,255,.3);border-radius:50%;background:#111}.retear-footer__portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 31%;filter:grayscale(100%)}.retear-footer__portrait:hover{border-color:var(--rf-accent);transform:scale(1.025)}.retear-footer__founder-copy p{margin:.15rem 0;color:var(--rf-muted);font-size:.87rem;line-height:1.65}.retear-footer__founder-name{display:inline-block;color:#fff!important;font-size:1rem;font-weight:650}.retear-footer__founder-link{display:inline-block;margin-top:.35rem;color:var(--rf-accent)!important;font-size:.84rem}
+.retear-footer__navigation,.retear-footer__ecosystem{display:flex;flex-direction:column;align-items:flex-start;gap:1.05rem;padding-top:.35rem}.retear-footer__navigation h2,.retear-footer__ecosystem h2{margin:0 0 .15rem;color:#fff;font-family:inherit;font-size:1.22rem;font-weight:500;letter-spacing:-.02em}.retear-footer__navigation>a,.retear-footer__ecosystem>a{position:relative;display:inline-block;width:max-content;max-width:100%;color:var(--rf-muted);font-size:.88rem;line-height:1.45;transition:var(--transition,color .2s ease)}
+.retear-footer__navigation>a::after,.retear-footer__ecosystem>a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--accent-green,#83b4bb);transition:var(--transition,width .3s ease)}
+.retear-footer__navigation>a:hover,.retear-footer__ecosystem>a:hover{color:#fff}
+.retear-footer__navigation>a:hover::after,.retear-footer__ecosystem>a:hover::after,.retear-footer__navigation>a:focus-visible::after,.retear-footer__ecosystem>a:focus-visible::after{width:100%}.retear-footer__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.7rem 1.5rem;padding-top:1.25rem;border-top:1px solid var(--rf-line)}.retear-footer__bottom p{margin:0;color:rgba(255,255,255,.45);font-size:.74rem;line-height:1.7}.retear-footer__back-top{position:relative;color:rgba(255,255,255,.7);font-size:.78rem}.retear-footer__back-top::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent-green,#83b4bb);transition:var(--transition,width .3s ease)}.retear-footer__back-top:hover::after,.retear-footer__back-top:focus-visible::after{width:100%}
+@media(max-width:800px){.retear-footer__main{grid-template-columns:minmax(0,1.5fr) minmax(130px,.7fr);gap:2.5rem 2rem}.retear-footer__identity{grid-column:1/-1;max-width:100%}.retear-footer__purpose{max-width:100%}.retear-footer__founder{max-width:620px}.retear-footer__navigation,.retear-footer__ecosystem{padding-top:0}}
+@media(max-width:560px){.retear-footer{padding:3.1rem 1.15rem 1.2rem}.retear-footer__main{display:flex;flex-direction:column;align-items:center;gap:2.4rem;text-align:center;padding-bottom:2.6rem}.retear-footer__identity{display:flex;flex-direction:column;align-items:center;width:100%}.retear-footer__brand{justify-content:center}.retear-footer__description{font-size:.88rem}.retear-footer__purpose{width:100%;padding-top:1.25rem}.retear-footer__contact{width:100%;flex-direction:column}.retear-footer__contact-link{width:min(100%,320px)}.retear-footer__founder{width:100%;max-width:390px;justify-content:center;text-align:left;padding:1rem}.retear-footer__portrait{flex-basis:86px;width:86px;height:86px}.retear-footer__navigation,.retear-footer__ecosystem{align-items:center;gap:.85rem}.retear-footer__bottom{flex-direction:column;align-items:center;text-align:center;gap:.35rem}}
+@media(prefers-reduced-motion:reduce){.retear-footer a,.retear-footer a::after{transition:none}.retear-footer__contact-link:hover,.retear-footer__portrait:hover{transform:none}}

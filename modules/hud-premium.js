@@ -8,7 +8,7 @@
 
   const CLOSED_KEY = 'retear-hud-premium-closed';
   const ROTATION_MS = 7000;
-  const ICONS = ['brain', 'chart-pie', 'dashboard', 'guard', 'kpi', 'puzzle', 'strategy', 'target'];
+  const ICONS = ['brain', 'chart-pie', 'dashboard', 'guard', 'kpi', 'puzzle', 'strategy', 'target', 'tree'];
   const SATELLITE_INTERVALS = [4700, 6300, 7900];
   const SATELLITE_START_DELAYS = [1250, 3450, 5650];
 
