@@ -1,0 +1,8 @@
+brain.svg
+chart-pie.svg
+dashboard.svg
+guard.svg
+kpi.svg
+puzzle.svg
+strategy.svg
+target.svg

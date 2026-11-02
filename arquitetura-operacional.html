@@ -15,9 +15,9 @@
   <link rel="stylesheet" href="css/navigation.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/architecture.css">
+  <link rel="stylesheet" href="css/hud-premium.css">
 </head>
 <body>
   <div class="noise"></div>
@@ -156,7 +156,30 @@
       <a href="index.html" class="btn btn-primary">Voltar ao site</a>
     </div>
   </footer>
-  <script src="js/global.js"></script>
+  <div id="floating-campaign-root">
+<!-- RETEAR® | HUD ORBITAL PREMIUM — estrutura circular preservada da V001.0 -->
+<aside class="hud-premium" id="hudPremium" aria-label="Destaques do ecossistema RETEAR" aria-roledescription="carrossel">
+  <div class="hud-premium__satellites" aria-hidden="true">
+    <span class="hud-premium__satellite hud-premium__satellite--1"><img src="assets/icon/brain.svg" alt=""></span>
+    <span class="hud-premium__satellite hud-premium__satellite--2"><img src="assets/icon/chart-pie.svg" alt=""></span>
+    <span class="hud-premium__satellite hud-premium__satellite--3"><img src="assets/icon/dashboard.svg" alt=""></span>
+  </div>
+
+  <button class="hud-premium__close" id="hudPremiumClose" type="button" aria-label="Fechar destaques">×</button>
+
+  <a class="hud-premium__card" id="hudPremiumCard" href="#" aria-live="polite">
+    <span class="hud-premium__eyebrow"><i></i> ECOSSISTEMA RETEAR</span>
+    <small class="hud-premium__category" id="hudPremiumCategory"></small>
+    <h3 class="hud-premium__title" id="hudPremiumTitle"></h3>
+    <p class="hud-premium__description" id="hudPremiumDescription"></p>
+    <div class="hud-premium__tags" id="hudPremiumTags"></div>
+    <span class="hud-premium__cta">Conhecer frente <b aria-hidden="true">↗</b></span>
+    <span class="hud-premium__controls" id="hudPremiumDots" aria-label="Selecionar destaque"></span>
+  </a>
+</aside>
+
+</div>
+<script src="js/global.js"></script>
   <script src="js/architecture.js"></script>
 </body>
 </html>

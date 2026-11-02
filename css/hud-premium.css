@@ -1,0 +1,160 @@
+/* =====================================================
+   RETEAR® — HUD ORBITAL PREMIUM
+   Linguagem visual restaurada da referência V001.0:
+   núcleo circular + satélites translúcidos em órbita.
+===================================================== */
+.hud-premium {
+  --hud-ink: #fff;
+  --hud-aqua: #83B4BB;
+  position: fixed;
+  z-index: 9999;
+  right: clamp(12px, 3vw, 40px);
+  bottom: clamp(12px, 3vw, 40px);
+  width: 420px;
+  height: 420px;
+  isolation: isolate;
+  color: var(--hud-ink);
+  pointer-events: none;
+  animation: hudOrbitalEnter .9s cubic-bezier(.2,.75,.25,1) both;
+}
+.hud-premium * { box-sizing: border-box; }
+.hud-premium[hidden] { display:none !important; }
+
+/* Núcleo circular — proporção e materialidade da V001.0 */
+.hud-premium__card {
+  position: absolute;
+  z-index: 2;
+  top: 50%; left: 50%;
+  width: 290px; height: 290px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  padding: 31px 29px 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  pointer-events: auto;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 30% 15%, rgba(131,180,187,.23), transparent 48%),
+    linear-gradient(135deg, rgba(45,52,104,.97), rgba(31,97,84,.95));
+  border: 1px solid rgba(255,255,255,.19);
+  box-shadow: 0 0 80px rgba(31,97,84,.2), 0 30px 80px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.12);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transition: box-shadow .35s ease, filter .35s ease;
+}
+.hud-premium__card::before {
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.13), transparent 57%);
+}
+.hud-premium__card:hover {
+  box-shadow: 0 0 105px rgba(31,97,84,.28), 0 38px 90px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.16);
+  filter: saturate(1.08);
+}
+.hud-premium__eyebrow, .hud-premium__category, .hud-premium__title,
+.hud-premium__description, .hud-premium__tags, .hud-premium__cta, .hud-premium__controls { position:relative; z-index:1; }
+.hud-premium__eyebrow {
+  display:flex; align-items:center; gap:7px; margin-bottom:10px;
+  color:rgba(255,255,255,.65); font-size:.49rem; font-weight:700;
+  letter-spacing:.16em; white-space:nowrap;
+}
+.hud-premium__eyebrow i { width:6px; height:6px; border-radius:50%; background:var(--hud-aqua); box-shadow:0 0 11px rgba(131,180,187,.9); }
+.hud-premium__category {
+  display:block; max-width:220px; margin-bottom:8px;
+  color:#b9dce0; font-size:.52rem; font-weight:700;
+  letter-spacing:.12em; line-height:1.4; text-transform:uppercase;
+}
+.hud-premium__title {
+  max-width:225px; margin:0 0 8px; color:#fff;
+  font-size:1.62rem; font-weight:650; letter-spacing:-.045em; line-height:1.02;
+  text-wrap:balance;
+}
+.hud-premium__description {
+  display:-webkit-box; max-width:218px; margin:0 0 10px;
+  overflow:hidden; color:rgba(255,255,255,.78); font-size:.66rem;
+  line-height:1.42; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+}
+.hud-premium__tags { display:flex; justify-content:center; flex-wrap:wrap; gap:4px; max-width:220px; margin-bottom:9px; }
+.hud-premium__tags span {
+  padding:4px 7px; border:1px solid rgba(131,180,187,.3); border-radius:999px;
+  background:rgba(131,180,187,.11); color:#e0f0f1; font-size:.47rem;
+  letter-spacing:.035em; line-height:1.15; text-transform:uppercase; white-space:nowrap;
+}
+.hud-premium__cta { display:inline-flex; align-items:center; gap:7px; color:#fff; font-size:.58rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.hud-premium__cta b { color:#b9dce0; font-size:.9rem; transition:transform .2s ease; }
+.hud-premium__card:hover .hud-premium__cta b { transform:translate(3px,-3px); }
+.hud-premium__controls { display:flex; align-items:center; justify-content:center; gap:6px; min-height:10px; margin-top:9px; }
+.hud-premium__dot { width:5px; height:5px; padding:0; border:0; border-radius:99px; background:rgba(255,255,255,.34); cursor:pointer; transition:width .25s, background .25s; }
+.hud-premium__dot[aria-current="true"] { width:15px; background:#a9d0d4; }
+
+/* Três HUDs orbitais — posições e levitação preservadas da V001.0.
+   Os símbolos são trocados individualmente pelo JS; os HUDs não orbitam. */
+.hud-premium__satellites { position:absolute; z-index:3; inset:0; pointer-events:none; }
+.hud-premium__satellite {
+  position:absolute; width:78px; height:78px; display:flex; align-items:center; justify-content:center;
+  border-radius:50%; border:1px solid rgba(255,255,255,.16);
+  background:
+    radial-gradient(circle at top, rgba(131,180,187,.18), rgba(131,180,187,.05) 40%, rgba(255,255,255,.06) 80%),
+    linear-gradient(135deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+  box-shadow:0 20px 40px rgba(0,0,0,.12), 0 0 30px rgba(131,180,187,.10);
+  -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px);
+  user-select:none; transition:box-shadow .35s ease;
+}
+.hud-premium__satellite img {
+  display:block; width:34px; height:34px; object-fit:contain;
+  filter:brightness(0) invert(1) opacity(.92);
+  opacity:1; transform:scale(1);
+  transition:opacity .38s ease, transform .38s ease;
+}
+.hud-premium__satellite.is-swapping img { opacity:0; transform:scale(.72); }
+.hud-premium__satellite:hover { box-shadow:0 30px 60px rgba(0,0,0,.18), 0 0 40px rgba(131,180,187,.18); }
+.hud-premium__satellite--1 { top:0; right:40px; animation:hudFloat1 7s ease-in-out infinite; }
+.hud-premium__satellite--2 { top:46%; left:0; animation:hudFloat2 9s ease-in-out infinite; }
+.hud-premium__satellite--3 { right:0; bottom:40px; animation:hudFloat3 8s ease-in-out infinite; }
+@keyframes hudFloat1 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+@keyframes hudFloat2 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(10px); } }
+@keyframes hudFloat3 { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+
+.hud-premium__close {
+  position:absolute; z-index:4; top:2px; right:2px; width:31px; height:31px;
+  display:flex; align-items:center; justify-content:center; padding:0;
+  border:1px solid rgba(255,255,255,.18); border-radius:50%;
+  background:rgba(20,15,22,.62); color:#fff; font-size:20px; line-height:1;
+  cursor:pointer; pointer-events:auto; -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+  transition:background .25s, transform .25s;
+}
+.hud-premium__close:hover { background:rgba(255,255,255,.2); transform:rotate(90deg) scale(1.05); }
+.hud-premium.is-changing .hud-premium__card > :not(:first-child) { animation:hudOrbitalContent .35s ease both; }
+.hud-premium.is-closing { animation:hudOrbitalExit .35s ease both; }
+
+@keyframes hudSatelliteFloat { 0%,100% { margin-top:0; } 50% { margin-top:-6px; } }
+@keyframes hudOrbitalEnter { from { opacity:0; transform:translateY(55px) scale(.86); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes hudOrbitalExit { to { opacity:0; transform:translateY(25px) scale(.88); } }
+@keyframes hudOrbitalContent { from { opacity:.25; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+
+@media (max-width:600px) {
+  .hud-premium { width:320px; height:320px; right:8px; bottom:12px; }
+  .hud-premium__card { width:220px; height:220px; padding:20px 19px 16px; }
+  .hud-premium__satellite { width:58px; height:58px; }
+  .hud-premium__satellite img { width:24px; height:24px; }
+  .hud-premium__satellite--1 { top:0; right:24px; }
+  .hud-premium__satellite--2 { top:46%; left:0; }
+  .hud-premium__satellite--3 { right:0; bottom:24px; }
+  .hud-premium__close { top:0; right:0; width:27px; height:27px; font-size:18px; }
+  .hud-premium__eyebrow { margin-bottom:6px; font-size:.42rem; }
+  .hud-premium__category { max-width:175px; margin-bottom:5px; font-size:.43rem; }
+  .hud-premium__title { max-width:180px; margin-bottom:5px; font-size:1.25rem; }
+  .hud-premium__description { max-width:176px; margin-bottom:6px; font-size:.55rem; line-height:1.35; -webkit-line-clamp:2; }
+  .hud-premium__tags { max-width:180px; gap:3px; margin-bottom:5px; }
+  .hud-premium__tags span { padding:3px 5px; font-size:.39rem; }
+  .hud-premium__cta { font-size:.49rem; }
+  .hud-premium__controls { margin-top:5px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hud-premium, .hud-premium *, .hud-premium *::before, .hud-premium *::after { animation:none !important; transition:none !important; }
+}

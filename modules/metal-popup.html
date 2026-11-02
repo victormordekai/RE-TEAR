@@ -84,27 +84,30 @@
 	<div class="liquid-node node-a draggable-liquid">
 
 	  <img
-		src="../assets/icon/brain.svg"
-		alt="Inteligência operacional"
-	  >
+        src="../assets/icon/brain.svg"
+        alt="Inteligência operacional"
+        data-icon-node="0"
+      >
 
 	</div>
 
 	<div class="liquid-node node-b draggable-liquid">
 
 	  <img
-		src="../assets/icon/kpi.svg"
-		alt="Indicadores operacionais"
-	  >
+        src="../assets/icon/kpi.svg"
+        alt="Indicadores operacionais"
+        data-icon-node="1"
+      >
 
 	</div>
 
 	<div class="liquid-node node-c draggable-liquid">
 
 	  <img
-		src="../assets/icon/guard.svg"
-		alt="Governança organizacional"
-	  >
+        src="../assets/icon/guard.svg"
+        alt="Governança organizacional"
+        data-icon-node="2"
+      >
 
 	</div>
 
@@ -406,6 +409,23 @@ linear-gradient(
   animation-delay:-4s;
 }
 
+.liquid-node img{
+  display:block;
+  width:54%;
+  height:54%;
+  position:absolute;
+  inset:23%;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+  opacity:.9;
+  transition:opacity .35s ease, transform .45s ease;
+}
+
+.liquid-node img.is-switching{
+  opacity:0;
+  transform:scale(.72) rotate(-12deg);
+}
+
 /* =========================================================
    CANVAS
 ========================================================= */
@@ -667,6 +687,45 @@ document.getElementById(
 );
 
 /* =========================================================
+   ORBITAL ICON ROTATION — 8 RETEAR SYMBOLS
+========================================================= */
+const orbitalIcons = [
+  { file: 'brain.svg', alt: 'Inteligência operacional' },
+  { file: 'chart-pie.svg', alt: 'Análise e distribuição de indicadores' },
+  { file: 'dashboard.svg', alt: 'Painel de gestão' },
+  { file: 'guard.svg', alt: 'Governança e proteção organizacional' },
+  { file: 'kpi.svg', alt: 'Indicadores de desempenho' },
+  { file: 'puzzle.svg', alt: 'Integração de sistemas e processos' },
+  { file: 'strategy.svg', alt: 'Estratégia organizacional' },
+  { file: 'target.svg', alt: 'Metas e direcionamento' }
+];
+
+const orbitalNodes = Array.from(
+  document.querySelectorAll('[data-icon-node]')
+);
+let orbitalStep = 0;
+let orbitalTimer = null;
+const orbitalReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function rotateOrbitalIcons() {
+  orbitalNodes.forEach((img, nodeIndex) => {
+    const icon = orbitalIcons[(orbitalStep + nodeIndex * 2) % orbitalIcons.length];
+    img.classList.add('is-switching');
+    window.setTimeout(() => {
+      img.src = `../assets/icon/${icon.file}`;
+      img.alt = icon.alt;
+      img.onload = () => img.classList.remove('is-switching');
+      img.onerror = () => img.classList.remove('is-switching');
+    }, 220);
+  });
+  orbitalStep = (orbitalStep + 1) % orbitalIcons.length;
+}
+
+if (orbitalNodes.length && !orbitalReducedMotion) {
+  orbitalTimer = window.setInterval(rotateOrbitalIcons, 2800);
+}
+
+/* =========================================================
    CLOSE
 ========================================================= */
 
@@ -681,6 +740,8 @@ liquidClose.addEventListener(
     liquidSystem.classList.add(
       'hidden'
     );
+
+    if (orbitalTimer) window.clearInterval(orbitalTimer);
 
     sessionStorage.setItem(
       'liquid-entity-closed',

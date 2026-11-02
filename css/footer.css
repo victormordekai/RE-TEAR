@@ -24,3 +24,7 @@ footer{
   max-width:520px;
 }
 
+
+
+/* Identificação de versão institucional */
+.site-version { display:inline-block; margin-top:.35rem; color:inherit; opacity:.68; font-size:.78em; letter-spacing:.04em; }

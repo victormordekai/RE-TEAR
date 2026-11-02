@@ -157,39 +157,26 @@ document
 });
 
 /* ========================================
-   FLOATING POPUP MODULE
+   HUD PREMIUM — COMPATÍVEL COM FILE:// E HTTP(S)
+   O HTML é incorporado diretamente nas páginas para
+   evitar fetch(), bloqueado por navegadores em arquivo local.
 ========================================= */
+(function loadRetearHudPremium() {
+  const hud = document.getElementById('hudPremium');
+  if (!hud || hud.dataset.scriptRequested === 'true') return;
+  hud.dataset.scriptRequested = 'true';
 
-const popupRoot =
-document.getElementById('floating-campaign-root');
+  if (window.RetearHudPremium) {
+    window.RetearHudPremium.init();
+    return;
+  }
 
-if (popupRoot) {
-
-  fetch('https://victormordekai.github.io/RE-TEAR/modules/nr1-popup.html')
-  
-    .then(response => response.text())
-
-    .then(data => {
-
-      popupRoot.innerHTML = data;
-
-      const script =
-      document.createElement('script');
-
-      script.src =
-      'https://victormordekai.github.io/RE-TEAR/modules/nr1-popup.js';
-
-      document.body.appendChild(script);
-
-    })
-
-    .catch(error => {
-
-      console.error(
-        'Erro ao carregar popup:',
-        error
-      );
-
-    });
-
-}
+  const script = document.createElement('script');
+  script.src = 'modules/hud-premium.js';
+  script.onload = () => window.RetearHudPremium?.init();
+  script.onerror = () => {
+    console.error('Não foi possível carregar modules/hud-premium.js');
+    hud.dataset.scriptRequested = 'false';
+  };
+  document.body.appendChild(script);
+})();
