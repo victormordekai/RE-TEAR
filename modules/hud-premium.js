@@ -6,7 +6,7 @@
 (function () {
   'use strict';
 
-  const CLOSED_KEY = 'retear-hud-premium-closed';
+  const CLOSED_KEY = `retear-hud-premium-closed:${window.location.pathname}`;
   const ROTATION_MS = 7000;
   const ICONS = ['brain', 'chart-pie', 'dashboard', 'guard', 'kpi', 'puzzle', 'strategy', 'target', 'tree'];
   const SATELLITE_INTERVALS = [4700, 6300, 7900];
@@ -22,10 +22,33 @@
 
   function init() {
     const hud = document.getElementById('hudPremium');
-    if (!hud || hud.dataset.initialized === 'true') return;
+    if (!hud || hud.dataset.initialized === 'true' || hud.dataset.initializing === 'true') return;
+    hud.dataset.initializing = 'true';
 
-    const sourceCards = Array.from(document.querySelectorAll('.front-card.front-card-premium'));
-    if (!sourceCards.length || storageClosed()) { hud.remove(); return; }
+    if (storageClosed()) { hud.remove(); return; }
+
+    // Os destaques premium são sempre os cards oficiais do index.html,
+    // independentemente da página em que o visitante esteja.
+    async function loadIndexCards() {
+      let sourceDocument = document;
+      const isHome = /(?:^|\/)index\.html?$/.test(window.location.pathname) || window.location.pathname === '/';
+      if (!isHome) {
+        try {
+          const response = await fetch(new URL(hud.dataset.indexUrl || '../index.html', window.location.href), { cache: 'no-cache' });
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          sourceDocument = new DOMParser().parseFromString(await response.text(), 'text/html');
+        } catch (error) {
+          console.warn('HUD Premium: não foi possível carregar os destaques do index.html.', error);
+          hud.remove();
+          return;
+        }
+      }
+      const sourceCards = Array.from(sourceDocument.querySelectorAll('.front-card.front-card-premium'));
+      if (!sourceCards.length) { hud.remove(); return; }
+      initializeWithCards(sourceCards);
+    }
+
+    function initializeWithCards(sourceCards) {
 
     const elements = {
       close: document.getElementById('hudPremiumClose'),
@@ -50,42 +73,44 @@
 
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || false;
 
-    // Três HUDs fixos: cada satélite troca apenas seu SVG, em cadência própria.
-    // A levitação é exclusivamente CSS e nunca há rotação orbital.
+    // Mantém a animação homologada: fora da NR-1, os satélites continuam
+    // alternando ícones individualmente. Na campanha, ficam restritos a brain/kpi/guard.
     const satellites = Array.from(hud.querySelectorAll('.hud-premium__satellite'));
     const satelliteTimers = [];
-    function chooseIcon(slot) {
-      const occupied = new Set(satellites
-        .filter((node) => node !== slot)
-        .map((node) => node.dataset.icon)
-        .filter(Boolean));
-      const previous = slot.dataset.icon;
-      let options = ICONS.filter((name) => name !== previous && !occupied.has(name));
-      if (!options.length) options = ICONS.filter((name) => name !== previous);
-      return options[Math.floor(Math.random() * options.length)];
+    if (hud.dataset.fixedSatellites === 'true') {
+      satellites.forEach((slot) => {
+        const image = slot.querySelector('img');
+        const initial = image?.getAttribute('src')?.match(/([^/]+)\.svg$/)?.[1];
+        if (initial) slot.dataset.icon = initial;
+      });
+    } else {
+      function chooseIcon(slot) {
+        const occupied = new Set(satellites.filter((node) => node !== slot).map((node) => node.dataset.icon).filter(Boolean));
+        const previous = slot.dataset.icon;
+        let options = ICONS.filter((name) => name !== previous && !occupied.has(name));
+        if (!options.length) options = ICONS.filter((name) => name !== previous);
+        return options[Math.floor(Math.random() * options.length)];
+      }
+      function swapSatellite(slot) {
+        const icon = chooseIcon(slot); const image = slot.querySelector('img'); if (!image) return;
+        slot.classList.add('is-swapping');
+        window.setTimeout(() => {
+          image.src = `${hud.dataset.assetBase || 'assets/icon/'}${icon}.svg`; slot.dataset.icon = icon;
+          window.requestAnimationFrame(() => slot.classList.remove('is-swapping'));
+        }, 390);
+      }
+      if (!reduceMotion) satellites.forEach((slot, index) => {
+        const image = slot.querySelector('img');
+        const initial = image?.getAttribute('src')?.match(/([^/]+)\.svg$/)?.[1];
+        if (initial) slot.dataset.icon = initial;
+        const start = window.setTimeout(() => {
+          swapSatellite(slot);
+          const timer = window.setInterval(() => swapSatellite(slot), SATELLITE_INTERVALS[index] || 6100);
+          satelliteTimers.push(timer);
+        }, SATELLITE_START_DELAYS[index] || 2000);
+        satelliteTimers.push(start);
+      });
     }
-    function swapSatellite(slot) {
-      const icon = chooseIcon(slot);
-      const image = slot.querySelector('img');
-      if (!image) return;
-      slot.classList.add('is-swapping');
-      window.setTimeout(() => {
-        image.src = `assets/icon/${icon}.svg`;
-        slot.dataset.icon = icon;
-        window.requestAnimationFrame(() => slot.classList.remove('is-swapping'));
-      }, 390);
-    }
-    if (!reduceMotion) satellites.forEach((slot, index) => {
-      const image = slot.querySelector('img');
-      const initial = image?.getAttribute('src')?.match(/([^/]+)\.svg$/)?.[1];
-      if (initial) slot.dataset.icon = initial;
-      const start = window.setTimeout(() => {
-        swapSatellite(slot);
-        const timer = window.setInterval(() => swapSatellite(slot), SATELLITE_INTERVALS[index] || 6100);
-        satelliteTimers.push(timer);
-      }, SATELLITE_START_DELAYS[index] || 2000);
-      satelliteTimers.push(start);
-    });
 
     let current = 0;
     let rotation = null;
@@ -163,9 +188,21 @@
     document.addEventListener('visibilitychange', () => document.hidden ? stopRotation() : startRotation());
 
     hud.dataset.initialized = 'true';
+    delete hud.dataset.initializing;
     render(0, false);
     startRotation();
+    }
+
+    loadIndexCards();
   }
 
   window.RetearHudPremium = { init };
+
+  // Inicialização autônoma: a campanha não depende do carregador de global.js.
+  // O init é idempotente e pode ser chamado novamente sem duplicar eventos.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
 })();

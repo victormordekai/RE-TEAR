@@ -1,3 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="NR-1 na prática: governança organizacional, rastreabilidade decisória e liderança operacional com a RETEAR®.">
+  <title>NR-1 na Prática | RETEAR®</title>
+  <link rel="icon" href="../assets/icon/tree.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css"><link rel="stylesheet" href="../css/bases.css">
+  <link rel="stylesheet" href="../css/navigation.css"><link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/sections.css"><link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/fronts.css"><link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/philosophy.css"><link rel="stylesheet" href="../css/cta.css">
+  <link rel="stylesheet" href="../css/footer.css"><link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/hud-premium.css">
+</head>
+<body id="top">
+  <aside class="hud-premium" id="hudPremium" data-fixed-satellites="true" data-asset-base="../assets/icon/" data-index-url="../index.html" aria-label="Destaques do ecossistema RETEAR" aria-roledescription="carrossel">
+    <div class="hud-premium__satellites" aria-hidden="true">
+      <span class="hud-premium__satellite hud-premium__satellite--1"><img src="../assets/icon/brain.svg" alt=""></span>
+      <span class="hud-premium__satellite hud-premium__satellite--2"><img src="../assets/icon/kpi.svg" alt=""></span>
+      <span class="hud-premium__satellite hud-premium__satellite--3"><img src="../assets/icon/guard.svg" alt=""></span>
+    </div>
+    <button class="hud-premium__close" id="hudPremiumClose" type="button" aria-label="Fechar destaques">×</button>
+    <a class="hud-premium__card" id="hudPremiumCard" href="#" aria-live="polite">
+      <span class="hud-premium__eyebrow"><i></i> ECOSSISTEMA RETEAR</span><small class="hud-premium__category" id="hudPremiumCategory"></small>
+      <h3 class="hud-premium__title" id="hudPremiumTitle"></h3><p class="hud-premium__description" id="hudPremiumDescription"></p>
+      <div class="hud-premium__tags" id="hudPremiumTags"></div><span class="hud-premium__cta">Conhecer frente <b aria-hidden="true">↗</b></span>
+      <span class="hud-premium__controls" id="hudPremiumDots" aria-label="Selecionar destaque"></span>
+    </a>
+  </aside>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="nav" id="navbar"><div class="container nav-inner">
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
+    <a href="../index.html" class="logo" aria-label="RETEAR — página inicial"><img src="../assets/logo/logo-corpo.png" alt="" class="logo-symbol"><span class="logo-text"><span class="re">RE</span><span class="tear">TEAR®</span></span></a>
+    <nav class="nav-menu" id="nav-menu" aria-label="Navegação principal">
+      <a href="../index.html#ecossistema">Ecossistema</a><a href="../index.html#filosofia">Filosofia</a><a href="../index.html#jacquard">MVPs</a><a href="../index.html#contato">Diagnóstico</a>
+    </nav>
+  </div></header>
+  <main>
 <!-- ========================================
      NR-1 PREMIUM SECTION — RETEAR®
 ======================================== -->
@@ -66,24 +108,19 @@
 
 	  <!-- IMAGE CARD -->
 
+	<div class="overlay overlay-top nr1-governance-chip">
+	  <span>Governança operacional</span>
+	  <strong>Monitoramento contínuo</strong>
+	</div>
+
 	<div class="visual-card">
 
 		<img
 		  src="../imagens/costureira-editorial.jpg"
 		  alt="Costureira industrial contemporânea"
 		>
-	
+		
 		<!-- OVERLAYS -->
-
-		<div class="overlay overlay-top">
-
-		  <span>Governança operacional</span>
-
-		  <strong>
-			Monitoramento contínuo
-		  </strong>
-
-		</div>
 
 		<div class="overlay overlay-bottom">
 
@@ -99,54 +136,22 @@
 
 	  <!-- HUDS ORBITAIS -->
 
-	  <div class="hud hud-1 draggable-hud">
-
-			<img
-			  src="../imagens/brain.svg"
-			  alt="Inteligência operacional e comunicação ativa"
-			>
-
-		  </div>
-
-		  <div class="hud hud-2 draggable-hud">
-
-			<img
-			  src="../imagens/kpi.svg"
-			  alt="Indicadores operacionais KPIs"
-			>
-
-		  </div>
-
-		  <div class="hud hud-3 draggable-hud">
-
-			<img
-			  src="../imagens/guard.svg"
-			  alt="Proteção organizacional psicossocial"
-			>
-
-		  </div>
-
-		<!-- FLOATING CARD -->
-
-		<div class="floating-card" id="floatingCard">
-
-		  <button
-			class="floating-close"
-			id="floatingClose"
-		  >
-			×
-		  </button>
-
-		  <small>
-			GESTÃO DE RISCOS PSICOSSOCIAIS
-		  </small>
-
-		  <h3>
-			NR-1<br>
-			Com governança, liderança e resultados.
-		  </h3>
-
-		</div>
+      <button class="hud hud-1 draggable-hud" type="button" data-topic="compreender" aria-label="Compreender: diagnóstico organizacional" aria-controls="nr1HudDetail" aria-expanded="false">
+        <img src="../imagens/brain.svg" alt="">
+      </button>
+      <button class="hud hud-2 draggable-hud" type="button" data-topic="monitorar" aria-label="Monitorar: indicadores e evolução" aria-controls="nr1HudDetail" aria-expanded="false">
+        <img src="../imagens/kpi.svg" alt="">
+      </button>
+      <button class="hud hud-3 draggable-hud" type="button" data-topic="prevenir" aria-label="Prevenir: governança e estruturação" aria-controls="nr1HudDetail" aria-expanded="false">
+        <img src="../imagens/guard.svg" alt="">
+      </button>
+      <section class="nr1-hud-detail hud-info-cards" id="nr1HudDetail" role="dialog" aria-labelledby="nr1HudDetailTitle" aria-describedby="nr1HudDetailDescription" aria-live="polite" hidden>
+        <button class="nr1-hud-detail__close" type="button" aria-label="Fechar explicação">×</button>
+        <small class="nr1-hud-detail__eyebrow">ATUAÇÃO RETEAR · NR-1</small>
+        <h3 class="nr1-hud-detail__title" id="nr1HudDetailTitle"></h3>
+        <p class="nr1-hud-detail__description" id="nr1HudDetailDescription"></p>
+        <p class="nr1-hud-detail__actions"></p>
+      </section>
       
 	  </div> <!-- fecha .nr1-visual -->
 
@@ -202,97 +207,19 @@
 
     </div>
 
-	<!-- ========================================
-		 FOOTER
-	======================================== -->
-
-	<div class="nr1-footer">
-
-	  <div class="footer-brand">
-
-	<a href="https://victormordekai.github.io/RE-TEAR/" class="footer-logo-wrap">
-
-	  <img
-		src="../imagens/logo-corpo.png"
-		alt="RETEAR®"
-		class="footer-symbol"
-	  >
-
-	  <span class="footer-logo">
-		<span class="re">RE</span><span class="tear">TEAR®</span>
-	  </span>
-
-	</a>
-
-		<p class="footer-slogan">
-		  Governança • Liderança • Resultados
-		</p>
-
-	  </div>
-
-	  <div class="footer-links">
-
-		<a href="https://victormordekai.github.io/RE-TEAR/">
-		  HOME (Website)
-		</a>
-
-		<a href="#">
-		  Instagram
-		</a>
-
-		<a href="#">
-		  LinkedIn
-		</a>
-
-	  </div>
-
-	</div>
-
-	<div class="footer-copy">
-
-	  <p>
-		A RETEAR conecta estratégia, pessoas e operação para transformar conformidade em vantagem competitiva.
-	  </p>
-
-	  <p>
-		A adequação à NR-1 é integrada pelas frentes estruturais do ecossistema:
-		<strong>JACQUARD</strong> através da rastreabilidade operacional, gestão de processos e inteligência aplicada;
-		<strong>LONA</strong> na estruturação documental, fluxos organizacionais e integração prática entre operação e conformidade;
-		<strong>MALHA</strong> pela regeneração da governança, fortalecimento da comunicação assertiva, monitoramento organizacional e liderança operacional;
-		e pela frente <strong>RE-TEAR</strong> com práticas contínuas de desenvolvimento humano, palestras, acompanhamento organizacional e consolidação ESG aplicada à realidade industrial.
-	  </p>
-
-	</div>
-	
-	    <div class="nr1-actions">
-
-          <a
-            href="https://wa.me/5541997584893?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20com%20a%20RETEAR%C2%AE%20e%20conhecer%20melhor%20as%20solu%C3%A7%C3%B5es%20para%20minha%20opera%C3%A7%C3%A3o."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="nr1-btn"
-          >
-            VAMOS CONVERSAR?
-            <span>→</span>
-          </a>
-
-        </div>
-	<br><br>
-	    <div class="nr1-actions">
-
-          <a
-            href="https://victormordekai.github.io/RE-TEAR/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="nr1-badge"
-          >
-            <span>CONHECER ECOSSISTEMA</span>
-          </a>
-
-        </div>
+    <section class="nr1-governance-summary" aria-labelledby="nr1-governance-title">
+      <div class="nr1-governance-summary__intro">
+        <span class="nr1-governance-summary__eyebrow">GOVERNANÇA APLICADA À REALIDADE ORGANIZACIONAL</span>
+        <h2 id="nr1-governance-title">Conformidade que se transforma em gestão.</h2>
+        <p>A RETEAR conecta estratégia, pessoas e operação para transformar a conformidade em capacidade organizacional.</p>
+        <p>A adequação à NR-1 requer mais do que documentos e ferramentas: exige compreender os riscos, estruturar processos, definir responsabilidades e desenvolver práticas contínuas de prevenção e acompanhamento.</p>
+        <p>Por meio da governança de processos, a RETEAR diagnostica necessidades, estrutura soluções e fortalece a gestão, integrando pessoas, procedimentos e tecnologias conforme a realidade de cada organização.</p>
+        <p>A atuação pode envolver revisão de processos, organização documental, capacitação de lideranças e equipes, aprimoramento da comunicação, indicadores de monitoramento e integração de ferramentas existentes — com novos recursos somente quando necessários.</p>
+      </div>
+      <p class="nr1-governance-summary__closing"><strong>A conformidade com normas e padrões não se sustenta apenas em documentos e softwares. Sustenta-se em processos, pessoas e gestão, fortalecidos pela capacitação e pela governança.</strong></p>
+    </section>
 
 </section>
-
 <style>
 
 /* ========================================
@@ -899,680 +826,300 @@ a {
 
 }
 
+
+
 /* ========================================
-   FLOATING CARD
+   NR-1 — HUD INFO CARDS + DIAGRAMAÇÃO EDITORIAL
+   Camada independente: não altera dimensões nem fluxo da imagem.
 ======================================== */
+.nr1-visual { position:relative; isolation:isolate; }
+.nr1-visual .visual-card { position:relative; z-index:10; }
+.nr1-visual .hud { z-index:40; cursor:pointer; touch-action:pan-y; }
+.nr1-visual .hud:focus-visible,
+.nr1-hud-detail__close:focus-visible { outline:3px solid rgba(131,180,187,.95); outline-offset:4px; }
 
-.floating-card{
+.nr1-visual .hud-info-cards {
   position:absolute;
-
-  z-index:50;
-
-  top:50%;
-  left:50%;
-
-  transform:
-  translate(-50%,-50%);
-
-  width:280px;
-  aspect-ratio:1/1;
-
-  border-radius:50%;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-
-  text-align:center;
-
-  padding:2rem;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(45,52,104,.96),
-    rgba(31,97,84,.92)
-  );
-
-  color:#fff;
-
-  border:
-  1px solid rgba(255,255,255,.16);
-
-  backdrop-filter:blur(20px);
-
-  box-shadow:
-  0 0 80px rgba(31,97,84,.22);
-
-  cursor:grab;
-
-  user-select:none;
-
-  overflow:visible;
-
-  transition:
-  opacity .35s ease,
-  box-shadow .3s ease;
+  z-index:60;
+  inset:50% auto auto 50%;
+  width:min(490px, calc(100% - 36px));
+  max-height:min(78%, 560px);
+  overflow:auto;
+  padding:clamp(1.5rem, 3vw, 2.35rem);
+  border:1px solid rgba(255,255,255,.62);
+  border-radius:30px;
+  color:#252b31;
+  background:linear-gradient(145deg, rgba(255,255,255,.91), rgba(246,250,250,.82));
+  box-shadow:0 28px 90px rgba(8,20,28,.24), inset 0 1px 0 rgba(255,255,255,.86);
+  -webkit-backdrop-filter:blur(24px) saturate(1.18);
+  backdrop-filter:blur(24px) saturate(1.18);
+  transform:translate(-50%,-50%);
+  opacity:1;
+  visibility:visible;
+  animation:nr1HudCardIn .28s cubic-bezier(.2,.75,.25,1) both;
+}
+.nr1-visual .hud-info-cards[hidden] { display:none !important; }
+.nr1-hud-detail::before {
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:radial-gradient(circle at 100% 0, rgba(131,180,187,.20), transparent 48%);
+}
+.nr1-hud-detail__close {
+  position:absolute; z-index:2; top:12px; right:14px;
+  width:36px; height:36px; display:grid; place-items:center;
+  border:1px solid rgba(20,15,22,.09); border-radius:50%;
+  background:rgba(255,255,255,.68); color:#242a30;
+  font-size:1.45rem; line-height:1; cursor:pointer;
+  transition:background .2s ease, transform .2s ease;
+}
+.nr1-hud-detail__close:hover { background:#fff; transform:rotate(90deg); }
+.nr1-hud-detail__eyebrow {
+  position:relative; display:inline-flex; align-items:center; gap:.55rem;
+  margin:0 2.5rem 1rem 0; color:#557b82;
+  font-size:.67rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+}
+.nr1-hud-detail__eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#83B4BB; box-shadow:0 0 0 4px rgba(131,180,187,.15); }
+.nr1-hud-detail__title {
+  position:relative; margin:0 0 .9rem; color:#20272d;
+  font-size:clamp(1.35rem, 2.3vw, 1.85rem); font-weight:650;
+  letter-spacing:-.045em; line-height:1.12; text-wrap:balance;
+}
+.nr1-hud-detail__description,
+.nr1-hud-detail__actions {
+  position:relative; margin:0; color:#56636a;
+  font-size:.94rem; line-height:1.75;
+}
+.nr1-hud-detail__actions {
+  margin-top:1.1rem; padding:1rem 1.1rem;
+  border:1px solid rgba(45,52,104,.09); border-radius:16px;
+  background:rgba(131,180,187,.11); color:#35494e;
+}
+@keyframes nr1HudCardIn {
+  from { opacity:0; transform:translate(-50%,-47%) scale(.975); }
+  to { opacity:1; transform:translate(-50%,-50%) scale(1); }
 }
 
-.floating-card.dragging{
-  transition:none;
+/* Método 30/60/90 — três cards editoriais alinhados */
+.nr1-method {
+  position:relative; z-index:2;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(1rem,2vw,1.5rem);
+  margin:clamp(3rem,6vw,5.5rem) 0;
 }
-
-.floating-card.hidden{
-  opacity:0;
+.nr1-method .method-card {
+  position:relative; min-width:0; min-height:250px;
+  padding:clamp(1.5rem,2.6vw,2.25rem);
+  overflow:hidden; border:1px solid rgba(255,255,255,.76);
+  border-radius:26px;
+  background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(245,249,249,.67));
+  box-shadow:0 18px 55px rgba(24,44,50,.07), inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px);
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.nr1-method .method-card::after {
+  content:""; position:absolute; width:190px; height:190px; right:-95px; top:-105px;
+  border-radius:50%; background:radial-gradient(circle,rgba(131,180,187,.23),transparent 70%);
   pointer-events:none;
 }
-
-/* ========================================
-   CLOSE BUTTON
-======================================== */
-
-.floating-close{
-  position:absolute;
-
-  top:-12px;
-  right:-12px;
-
-  width:42px;
-  height:42px;
-
-  border:none;
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(255,255,255,.92),
-    rgba(220,220,220,.96)
-  );
-
-  color:#111;
-
-  font-size:1.35rem;
-  font-weight:700;
-
-  cursor:pointer;
-
-  z-index:999;
-
-  box-shadow:
-  0 10px 24px rgba(0,0,0,.22);
-
-  transition:
-  transform .25s ease,
-  box-shadow .25s ease;
+.nr1-method .method-card:hover { transform:translateY(-6px); border-color:rgba(131,180,187,.65); box-shadow:0 26px 65px rgba(24,44,50,.11); }
+.nr1-method .method-icon {
+  position:relative; z-index:1; display:grid; place-items:center;
+  width:42px; height:42px; margin-bottom:1.5rem;
+  border:1px solid rgba(45,52,104,.12); border-radius:14px;
+  background:rgba(131,180,187,.16); color:#385d64;
+  font-size:.76rem; font-weight:800; letter-spacing:.08em;
 }
-
-.floating-close:hover{
-  transform:scale(1.08);
-
-  box-shadow:
-  0 16px 32px rgba(0,0,0,.28);
+.nr1-method .method-card h4 {
+  position:relative; z-index:1; margin:0 0 .8rem;
+  color:#222b30; font-size:clamp(1.35rem,2vw,1.8rem);
+  font-weight:650; letter-spacing:-.055em; line-height:1.05;
 }
+.nr1-method .method-card p { position:relative; z-index:1; margin:0; color:#647176; font-size:.94rem; line-height:1.75; }
 
-/* ========================================
-   METHOD
-======================================== */
-
-.nr1-method{
-  margin-top:4rem;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  gap:2rem;
+/* Síntese de governança — texto institucional + excerto de fechamento */
+.nr1-governance-summary {
+  position:relative; z-index:2; display:grid; grid-template-columns:minmax(0,1fr);
+  gap:1.8rem; align-items:start; margin:0 0 1rem; padding:clamp(2rem,5vw,4.25rem);
+  border:1px solid rgba(255,255,255,.78); border-radius:34px;
+  background:linear-gradient(135deg,rgba(255,255,255,.83),rgba(242,247,247,.72));
+  box-shadow:0 24px 75px rgba(24,44,50,.075), inset 0 1px 0 rgba(255,255,255,.9);
+  -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
 }
-
-/* ========================================
-   METHOD
-======================================== */
-
-.nr1-method{
-  margin-top:4rem;
-
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-
-  gap:2rem;
+.nr1-governance-summary__intro { min-width:0; }
+.nr1-governance-summary__eyebrow { display:inline-block; margin:0 0 1.2rem; color:#52777e; font-size:.68rem; font-weight:800; letter-spacing:.16em; line-height:1.6; }
+.nr1-governance-summary__intro h2 { max-width:900px; margin:0 0 1.4rem; color:#20282d; font-size:clamp(2rem,4vw,3.65rem); font-weight:600; letter-spacing:-.075em; line-height:1.02; text-wrap:balance; }
+.nr1-governance-summary__intro p { max-width:980px; margin:0 0 1rem; color:#647176; font-size:1rem; line-height:1.85; }
+.nr1-governance-summary__closing {
+  position:relative; display:block; width:100%; max-width:none; margin:.2rem 0 0;
+  padding:1.45rem clamp(1.35rem,3vw,2.4rem); border:1px solid rgba(131,180,187,.28);
+  border-left:4px solid #83B4BB; border-radius:8px 20px 20px 8px;
+  background:linear-gradient(100deg,rgba(131,180,187,.15),rgba(255,255,255,.56));
+  color:#34484d; font-size:clamp(1rem,1.35vw,1.12rem); line-height:1.8;
+  box-shadow:0 12px 34px rgba(24,44,50,.045);
 }
+.nr1-governance-summary__closing strong { font-weight:620; }
 
-.method-card{
-  padding:2.4rem;
-
-  border-radius:28px;
-
-  background:
-  rgba(255,255,255,.66);
-
-  border:
-  1px solid rgba(255,255,255,.6);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 20px 60px rgba(0,0,0,.04);
-
-  transition:
-  transform .35s ease,
-  box-shadow .35s ease;
+/* Tablets e mobile: abertura primeiro, imagem integral logo abaixo, HUDs dentro do quadro. */
+.nr1-hero { grid-template-columns:minmax(0,1fr) minmax(0,1fr); }
+.nr1-content, .nr1-visual { min-width:0; }
+.nr1-visual { width:100%; max-width:100%; }
+.nr1-governance-chip { top:2rem; left:clamp(4.5rem,11%,8rem); right:2rem; width:auto; max-width:calc(100% - clamp(6.5rem,14%,10rem)); min-width:0; padding:1rem 1.35rem; }
+.nr1-governance-chip strong { display:block; font-size:1rem; line-height:1.35; }
+@media (max-width:1050px) {
+  .nr1-hero { grid-template-columns:minmax(0,1fr); gap:2.4rem; padding:clamp(1.5rem,4vw,3rem); }
+  .nr1-content { order:1; }
+  .nr1-visual { order:2; width:min(100%,760px); margin:0 auto; min-height:0; aspect-ratio:1.28 / 1; }
+  .nr1-visual .visual-card { width:100%; height:100%; }
+  .nr1-visual .hud-1 { top:13%; right:3%; }
+  .nr1-visual .hud-2 { top:43%; left:3%; }
+  .nr1-visual .hud-3 { bottom:12%; right:5%; }
+  .nr1-governance-chip { top:1.1rem; left:12%; right:1.1rem; max-width:none; z-index:30; }
 }
-
-.method-card:hover{
-  transform:translateY(-6px);
-
-  box-shadow:
-  0 28px 70px rgba(0,0,0,.08);
+@media (max-width:700px) {
+  .nr1-banner { padding:6.5rem 1rem 4rem; }
+  .nr1-container { width:100%; }
+  .nr1-hero { padding:1.2rem; gap:2rem; border-radius:28px; }
+  .nr1-content h1 { font-size:clamp(2.15rem,10vw,3.25rem); }
+  .nr1-visual { width:100%; aspect-ratio:1.08 / 1; }
+  .nr1-visual .visual-card { height:100%; border-radius:24px; clip-path:polygon(7% 0%,100% 0%,100% 100%,0% 100%); }
+  .nr1-visual .hud { width:58px; height:58px; }
+  .nr1-visual .hud img { width:27px; height:27px; }
+  .nr1-visual .hud-1 { top:17%; right:3%; }
+  .nr1-visual .hud-2 { top:47%; left:3%; }
+  .nr1-visual .hud-3 { bottom:12%; right:5%; }
+  .nr1-governance-chip { position:absolute; top:-.15rem; left:0; right:0; z-index:35; max-width:none; padding:.8rem 1rem; border-radius:14px; background:rgba(20,15,22,.78); border-color:rgba(255,255,255,.2); color:#fff; -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); }
+  .nr1-governance-chip span { font-size:.62rem; margin-bottom:.2rem; }
+  .nr1-governance-chip strong { font-size:.84rem; }
+  .nr1-method { grid-template-columns:1fr; margin:2.5rem 0; }
+  .nr1-method .method-card { min-height:unset; }
+  .nr1-method .method-icon { margin-bottom:1rem; }
+  .nr1-governance-summary { padding:1.45rem; border-radius:24px; gap:1.25rem; }
+  .nr1-governance-summary__intro h2 { letter-spacing:-.055em; }
+  .nr1-governance-summary__intro p { font-size:.94rem; line-height:1.78; }
+  .nr1-governance-summary__closing { padding:1.1rem 1.15rem; font-size:.96rem; line-height:1.72; }
+  .nr1-visual .hud-info-cards { width:calc(100% - 18px); max-height:78%; padding:1.15rem; border-radius:20px; }
+  .nr1-hud-detail__title { font-size:1.25rem; }
+  .nr1-hud-detail__description, .nr1-hud-detail__actions { font-size:.85rem; }
 }
-
-.method-icon{
-  width:64px;
-  height:64px;
-
-  border-radius:18px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  margin-bottom:1.6rem;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(45,52,104,.12),
-    rgba(31,97,84,.14)
-  );
-
-  color:var(--accent-1);
-
-  font-weight:700;
-
-  transition:
-  transform .3s ease;
-}
-
-.method-card:hover .method-icon{
-  transform:scale(1.04);
-}
-
-.method-card h4{
-  font-family:'Montserrat',sans-serif;
-
-  font-size:1.3rem;
-
-  margin-bottom:1rem;
-
-  color:#161616;
-}
-
-.method-card p{
-  line-height:1.9;
-
-  color:var(--muted);
-}
-
-/* ========================================
-   FOOTER
-======================================== */
-
-.nr1-footer{
-  margin-top:5rem;
-
-  padding-top:3rem;
-
-  border-top:
-  1px solid rgba(0,0,0,.08);
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:2rem;
-}
-
-.footer-logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-}
-
-.footer-symbol{
-  width:54px;
-  height:54px;
-
-  object-fit:contain;
-
-  flex-shrink:0;
-
-  filter:
-  drop-shadow(0 10px 24px rgba(31,97,84,.14));
-}
-
-.footer-logo{
-  font-size:1.5rem;
-
-  font-weight:700;
-
-  letter-spacing:.18rem;
-}
-
-.footer-logo .re{
-  color:var(--accent-1);
-}
-
-.footer-logo .tear{
-  color:var(--accent-2);
-}
-
-.footer-brand p{
-  margin-top:.6rem;
-
-  color:var(--muted);
-}
-
-.footer-links{
-  display:flex;
-
-  gap:2rem;
-}
-
-.footer-links a{
-  text-decoration:none;
-
-  color:var(--muted);
-
-  transition:var(--transition);
-}
-
-.footer-links a:hover{
-  color:var(--accent-1);
-}
-
-.footer-copy{
-  margin-top:2rem;
-
-  padding-top:2rem;
-
-  border-top:
-  1px solid rgba(0,0,0,.06);
-}
-
-.footer-copy p{
-  max-width:1100px;
-
-  line-height:2;
-
-  color:rgba(0,0,0,.62);
-
-  margin-bottom:1.2rem;
-
-  font-size:.96rem;
-}
-
-.footer-copy strong{
-  color:var(--accent-1);
-
-  font-weight:600;
-}
-
-/* ========================================
-   RESPONSIVE
-======================================== */
-
-@media(max-width:1200px){
-
-  .nr1-hero{
-    grid-template-columns:1fr;
-  }
-
-  .nr1-visual{
-    min-height:auto;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-  }
-
-  .floating-card{
-
-    position:relative;
-
-    top:auto;
-    left:auto;
-
-    transform:none;
-
-    margin-top:-90px;
-
-    width:clamp(220px,52vw,320px);
-    aspect-ratio:1/1;
-
-    height:auto;
-
-    border-radius:50%;
-
-    padding:2rem;
-
-    z-index:60;
-  }
-}
-
-@media(max-width:900px){
-
-  .nr1-method{
-    grid-template-columns:1fr;
-  }
-
-  .visual-card{
-    min-height:560px;
-  }
-}
-
-@media(max-width:768px){
-
-  .nr1-banner{
-    padding:6rem 1rem;
-  }
-
-  .nr1-hero{
-    padding:2rem;
-  }
-
-  .nr1-content h1{
-    letter-spacing:-.08rem;
-  }
-
-  .nr1-subtitle{
-    font-size:1.05rem;
-  }
-
-  .visual-card{
-    min-height:440px;
-
-    clip-path:none;
-
-    border-radius:28px;
-  }
-
-@media(max-width:768px){
-
-  .floating-card{
-
-    width:240px;
-
-    padding:1.6rem;
-  }
-
-  .floating-card h3{
-    font-size:1rem;
-    line-height:1.3;
-  }
-}
-
-  .nr1-footer{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .footer-links{
-    flex-wrap:wrap;
-  }
-
- .footer-logo-wrap{
-    align-items:center;
-  }
-
-  .footer-symbol{
-    width:46px;
-    height:46px;
-  }
-
-  .footer-copy p{
-    font-size:.92rem;
-    line-height:1.9;
-  }
-  
-  .overlay{
-    max-width:220px;
-  }
-}
+@media (prefers-reduced-motion:reduce) { .nr1-method .method-card, .nr1-hud-detail__close { transition:none; } .nr1-visual .hud-info-cards { animation:none; } }
 
 </style>
-
 <script>
 
 /* ========================================
-   ORB MOTION
+   NR-1 TOPIC HUDS — contextual overlay, drag-safe
 ======================================== */
-
-const orb =
-document.querySelector('.gradient-orb');
-
-window.addEventListener('mousemove', (e) => {
-
-  const x =
-  (e.clientX / window.innerWidth - 0.5) * 40;
-
-  const y =
-  (e.clientY / window.innerHeight - 0.5) * 40;
-
-  orb.style.transform =
-  `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-
-});
-
-/* ========================================
-   FLOATING CARD
-======================================== */
-
-const floatingCard =
-document.getElementById('floatingCard');
-
-const closeBtn =
-document.getElementById('floatingClose');
-
-const visual =
-document.querySelector('.nr1-visual');
-
-let floatingDragging = false;
-
-let startX = 0;
-let startY = 0;
-
-let initialX = 0;
-let initialY = 0;
-
-/* CLOSE */
-
-closeBtn.addEventListener('click', () => {
-
-  floatingCard.classList.add('hidden');
-
-});
-
-/* DRAG START */
-
-if(window.innerWidth > 1200){
-
-floatingCard.addEventListener('mousedown', (e) => {
-
-  if(e.target === closeBtn) return;
-
-  floatingDragging = true;
-
-  floatingCard.classList.add('dragging');
-
-  const rect =
-  floatingCard.getBoundingClientRect();
-
-  const parentRect =
-  visual.getBoundingClientRect();
-
-  startX = e.clientX;
-  startY = e.clientY;
-
-  initialX =
-  rect.left - parentRect.left;
-
-  initialY =
-  rect.top - parentRect.top;
-
-});
-}
-
-/* DRAG MOVE */
-
-document.addEventListener('mousemove', (e) => {
-
-  if(!floatingDragging) return;
-
-  e.preventDefault();
-
-  const dx =
-  e.clientX - startX;
-
-  const dy =
-  e.clientY - startY;
-
-  let newX =
-  initialX + dx;
-
-  let newY =
-  initialY + dy;
-
-  const parentRect =
-  visual.getBoundingClientRect();
-
-  const maxX =
-  parentRect.width -
-  floatingCard.offsetWidth;
-
-  const maxY =
-  parentRect.height -
-  floatingCard.offsetHeight;
-
-  newX =
-  Math.max(0, Math.min(newX, maxX));
-
-  newY =
-  Math.max(0, Math.min(newY, maxY));
-
-  floatingCard.style.left =
-  `${newX}px`;
-
-  floatingCard.style.top =
-  `${newY}px`;
-
-  floatingCard.style.transform =
-  'none';
-
-});
-
-/* DRAG END */
-
-document.addEventListener('mouseup', () => {
-
-  floatingDragging = false;
-
-  floatingCard.classList.remove('dragging');
-
-});
-
-/* ========================================
-   DRAGGABLE HUDS
-======================================== */
-
-const huds =
-document.querySelectorAll('.draggable-hud');
-
-huds.forEach((hud) => {
-
-  let dragging = false;
-
-  let startX = 0;
-  let startY = 0;
-
-  let initialX = 0;
-  let initialY = 0;
-
-  hud.addEventListener('mousedown', (e) => {
-
-    dragging = true;
-
-    hud.classList.add('dragging');
-
-    const rect =
-    hud.getBoundingClientRect();
-
-    const parentRect =
-    visual.getBoundingClientRect();
-
-    startX = e.clientX;
-    startY = e.clientY;
-
-    initialX =
-    rect.left - parentRect.left;
-
-    initialY =
-    rect.top - parentRect.top;
-
+(() => {
+  'use strict';
+  const visual = document.querySelector('.nr1-visual');
+  const buttons = Array.from(document.querySelectorAll('.draggable-hud'));
+  const panel = document.getElementById('nr1HudDetail');
+  if (!visual || !panel || !buttons.length) return;
+
+  const closeButton = panel.querySelector('.nr1-hud-detail__close');
+  const title = panel.querySelector('.nr1-hud-detail__title');
+  const description = panel.querySelector('.nr1-hud-detail__description');
+  const actions = panel.querySelector('.nr1-hud-detail__actions');
+  const content = {
+    compreender: {
+      title: 'Compreender — Diagnóstico organizacional',
+      description: 'Identificar fatores de risco relacionados ao trabalho, compreender a dinâmica operacional e reconhecer fragilidades nos processos, nas relações e na organização das atividades.',
+      actions: 'Ações RETEAR: diagnóstico organizacional, análise de processos, levantamento de necessidades e identificação de oportunidades de melhoria.'
+    },
+    monitorar: {
+      title: 'Monitorar — Indicadores e evolução',
+      description: 'Acompanhar a efetividade das medidas implementadas, identificar desvios e orientar ajustes contínuos com base em evidências.',
+      actions: 'Ações RETEAR: definição de indicadores, acompanhamento organizacional, análise de resultados e melhoria contínua.'
+    },
+    prevenir: {
+      title: 'Prevenir — Governança e estruturação',
+      description: 'Transformar o diagnóstico em medidas organizacionais aplicáveis, com responsabilidades definidas, processos estruturados e práticas preventivas incorporadas à rotina.',
+      actions: 'Ações RETEAR: revisão de procedimentos, organização documental, capacitação, fortalecimento da comunicação e estruturação de planos de ação.'
+    }
+  };
+  let activeButton = null;
+
+  function closePanel({restoreFocus = false} = {}) {
+    panel.hidden = true;
+    buttons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+    if (restoreFocus && activeButton) activeButton.focus();
+    activeButton = null;
+  }
+
+  function openPanel(button) {
+    const item = content[button.dataset.topic];
+    if (!item) return;
+    title.textContent = item.title;
+    description.textContent = item.description;
+    actions.textContent = item.actions;
+    panel.hidden = false;
+    buttons.forEach(candidate => candidate.setAttribute('aria-expanded', String(candidate === button)));
+    activeButton = button;
+    closeButton?.focus({preventScroll:true});
+  }
+
+  closeButton?.addEventListener('click', () => closePanel({restoreFocus:true}));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !panel.hidden) closePanel({restoreFocus:true});
+  });
+  document.addEventListener('pointerdown', event => {
+    if (!panel.hidden && !panel.contains(event.target) && !buttons.some(button => button.contains(event.target))) closePanel();
   });
 
-  document.addEventListener('mousemove', (e) => {
-
-    if(!dragging) return;
-
-    e.preventDefault();
-
-    const dx =
-    e.clientX - startX;
-
-    const dy =
-    e.clientY - startY;
-
-    let newX =
-    initialX + dx;
-
-    let newY =
-    initialY + dy;
-
-    const parentRect =
-    visual.getBoundingClientRect();
-
-    const maxX =
-    parentRect.width -
-    hud.offsetWidth;
-
-    const maxY =
-    parentRect.height -
-    hud.offsetHeight;
-
-    newX =
-    Math.max(0, Math.min(newX, maxX));
-
-    newY =
-    Math.max(0, Math.min(newY, maxY));
-
-    hud.style.left =
-    `${newX}px`;
-
-    hud.style.top =
-    `${newY}px`;
-
+  // Arraste apenas com mouse/pen; toque permanece reservado à interação nativa.
+  buttons.forEach(button => {
+    let drag = null;
+    let suppressClick = false;
+    button.addEventListener('pointerdown', event => {
+      if (event.pointerType === 'touch' || event.button !== 0) return;
+      const buttonRect = button.getBoundingClientRect();
+      const parentRect = visual.getBoundingClientRect();
+      drag = {pointerId:event.pointerId, x:event.clientX, y:event.clientY,
+        left:buttonRect.left-parentRect.left, top:buttonRect.top-parentRect.top, moved:false};
+      try { button.setPointerCapture(event.pointerId); } catch (_) {}
+    });
+    button.addEventListener('pointermove', event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      const dx = event.clientX-drag.x, dy = event.clientY-drag.y;
+      if (Math.hypot(dx,dy) > 7) drag.moved = true;
+      if (!drag.moved) return;
+      suppressClick = true;
+      const parentRect = visual.getBoundingClientRect();
+      button.style.left = `${Math.max(0,Math.min(drag.left+dx,parentRect.width-button.offsetWidth))}px`;
+      button.style.top = `${Math.max(0,Math.min(drag.top+dy,parentRect.height-button.offsetHeight))}px`;
+      button.style.right = 'auto'; button.style.bottom = 'auto';
+      button.classList.add('dragging');
+    });
+    const finish = event => {
+      if (!drag || drag.pointerId !== event.pointerId) return;
+      const moved = drag.moved;
+      drag = null;
+      button.classList.remove('dragging');
+      if (moved) window.setTimeout(() => { suppressClick = false; }, 0);
+    };
+    button.addEventListener('pointerup', finish);
+    button.addEventListener('pointercancel', () => { drag = null; button.classList.remove('dragging'); });
+    button.addEventListener('click', event => {
+      if (suppressClick) { event.preventDefault(); event.stopPropagation(); suppressClick = false; return; }
+      openPanel(button);
+    });
   });
-
-  document.addEventListener('mouseup', () => {
-
-    dragging = false;
-
-    hud.classList.remove('dragging');
-
-  });
-});
-  
+})();
 </script>
+
+  </main>
+  <footer class="retear-footer" aria-label="Rodapé institucional RETEAR"><div class="retear-footer__container"><div class="retear-footer__main">
+    <section class="retear-footer__identity" aria-label="Identidade institucional e contato">
+      <a class="retear-footer__brand" href="../index.html" aria-label="RETEAR — página inicial"><img src="../assets/logo/logo-corpo.png" alt="" class="retear-footer__brand-symbol" loading="lazy"><span class="retear-footer__brand-wordmark"><span class="re">RE</span><span class="tear">TEAR®</span></span></a>
+      <p class="retear-footer__positioning">Infraestrutura operacional humanizada.</p><p class="retear-footer__description">Gestão prática, interfaces inteligentes e automação progressiva para estruturar operações adaptáveis, rastreáveis e escaláveis.</p>
+      <section class="retear-footer__purpose" aria-label="Propósito institucional"><h2>Estruturas humanizadas.</h2><p>Tecnologia, processos e gestão organizados em torno das pessoas e da realidade operacional.</p></section>
+      <div class="retear-footer__contact" aria-label="Canais de contato">
+        <a class="retear-footer__contact-link retear-footer__contact-link--primary" href="https://www.linkedin.com/in/victormordekai/" target="_blank" rel="noopener noreferrer" aria-label="Acessar LinkedIn de Victor Mordekai"><span class="retear-footer__contact-icon" aria-hidden="true">in</span><span>LinkedIn</span></a>
+        <a class="retear-footer__contact-link" href="https://wa.me/5541997584893?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20com%20a%20RETEAR%C2%AE%20e%20conhecer%20melhor%20as%20solu%C3%A7%C3%B5es%20para%20minha%20opera%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Agendar diagnóstico pelo WhatsApp"><span class="retear-footer__whatsapp-icon" aria-hidden="true">◉</span><span>WhatsApp · Agendar diagnóstico</span></a>
+      </div>
+      <section class="retear-footer__founder" aria-label="Idealização e autoria"><a class="retear-footer__portrait" href="https://www.linkedin.com/in/victormordekai/" target="_blank" rel="noopener noreferrer" aria-label="Acessar perfil profissional de Victor Mordekai no LinkedIn"><img src="../assets/img/victor_mordekai.png" alt="Victor Mordekai" loading="lazy"></a><div class="retear-footer__founder-copy"><a class="retear-footer__founder-name" href="https://www.linkedin.com/in/victormordekai/" target="_blank" rel="noopener noreferrer">Victor Mordekai</a><p>Fundador e idealizador da RETEAR®</p><a class="retear-footer__founder-link" href="https://www.linkedin.com/in/victormordekai/" target="_blank" rel="noopener noreferrer">LinkedIn · Perfil profissional <span aria-hidden="true">↗</span></a></div></section>
+    </section>
+    <nav class="retear-footer__navigation" aria-label="Navegação institucional"><h2>RETEAR</h2><a href="../index.html">Início</a><a href="../arquitetura-operacional.html">Arquitetura operacional</a><a href="../frentes/gabardine.html">Gabardine</a><a href="https://wa.me/5541997584893?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20com%20a%20RETEAR%C2%AE%20e%20conhecer%20melhor%20as%20solu%C3%A7%C3%B5es%20para%20minha%20opera%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Contato</a></nav>
+    <nav class="retear-footer__ecosystem" aria-label="Ecossistema e conexões"><h2>Ecossistema</h2><a href="../index.html#ecossistema">Frentes estruturais</a><a href="../index.html#filosofia">Filosofia</a><a href="../index.html#jacquard">Soluções e MVPs</a><a href="https://victormordekai.github.io/VMORDEKAI/portfolio-1.html" target="_blank" rel="noopener noreferrer">VMORDEKAI® <span aria-hidden="true">↗</span></a></nav>
+  </div><div class="retear-footer__bottom"><p>© 2026 RETEAR® — Todos os direitos reservados. — V001.12 11.26</p><a href="#top" class="retear-footer__back-top">Voltar ao topo ↑</a></div></div></footer>
+  <script src="../modules/hud-premium.js"></script><script src="../js/global.js"></script><script src="../js/footer.js" defer></script>
+</body></html>
