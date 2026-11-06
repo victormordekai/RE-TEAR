@@ -18,3 +18,14 @@ document.querySelectorAll('[data-accordion-group]').forEach((group) => {
     });
   });
 });
+
+
+// Deep links to a department open the corresponding accordion automatically.
+document.addEventListener('DOMContentLoaded', () => {
+  const targetId = decodeURIComponent(window.location.hash.slice(1));
+  if (!targetId) return;
+  const target = document.getElementById(targetId);
+  if (!(target instanceof HTMLDetailsElement)) return;
+  target.open = true;
+  requestAnimationFrame(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+});

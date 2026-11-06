@@ -28,7 +28,9 @@ if (menuToggle && navMenu) {
 
     e.stopPropagation();
 
-    navMenu.classList.toggle('active');
+    const isOpen = navMenu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
 
   });
 
@@ -49,10 +51,22 @@ document.addEventListener('click', (e) => {
   if (clickedOutside) {
 
     navMenu.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir menu');
 
   }
 
 });
+
+if (navMenu) {
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      menuToggle?.setAttribute('aria-label', 'Abrir menu');
+    });
+  });
+}
 
 /* ========================================
    NAVBAR HIDE ON SCROLL
@@ -68,6 +82,8 @@ window.addEventListener('scroll', () => {
   if (navMenu) {
 
     navMenu.classList.remove('active');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Abrir menu');
 
   }
 
