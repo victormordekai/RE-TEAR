@@ -15,6 +15,12 @@
   isolation: isolate;
   color: var(--hud-ink);
   pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.hud-premium.is-ready {
+  visibility: visible;
+  opacity: 1;
   animation: hudOrbitalEnter .9s cubic-bezier(.2,.75,.25,1) both;
 }
 .hud-premium * { box-sizing: border-box; }
@@ -130,7 +136,7 @@
 }
 .hud-premium__close:hover { background:rgba(255,255,255,.2); transform:rotate(90deg) scale(1.05); }
 .hud-premium.is-changing .hud-premium__card > :not(:first-child) { animation:hudOrbitalContent .35s ease both; }
-.hud-premium.is-closing { animation:hudOrbitalExit .35s ease both; }
+.hud-premium.is-closing { visibility:visible; animation:hudOrbitalExit .35s ease both; }
 
 @keyframes hudSatelliteFloat { 0%,100% { margin-top:0; } 50% { margin-top:-6px; } }
 @keyframes hudOrbitalEnter { from { opacity:0; transform:translateY(55px) scale(.86); } to { opacity:1; transform:translateY(0) scale(1); } }
@@ -156,5 +162,5 @@
   .hud-premium__controls { margin-top:5px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .hud-premium, .hud-premium *, .hud-premium *::before, .hud-premium *::after { animation:none !important; transition:none !important; }
+  .hud-premium, .hud-premium.is-ready, .hud-premium *, .hud-premium *::before, .hud-premium *::after { animation:none !important; transition:none !important; }
 }

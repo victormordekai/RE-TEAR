@@ -157,26 +157,48 @@ document
 });
 
 /* ========================================
-   HUD PREMIUM — COMPATÍVEL COM FILE:// E HTTP(S)
-   O HTML é incorporado diretamente nas páginas para
-   evitar fetch(), bloqueado por navegadores em arquivo local.
+   HUD PREMIUM — COMPONENTE GLOBAL COMPARTILHADO
+   Resolve a raiz do projeto a partir do próprio global.js,
+   carrega o CSS antes do módulo e funciona em páginas internas.
 ========================================= */
-(function loadRetearHudPremium() {
-  const hud = document.getElementById('hudPremium');
-  if (!hud || hud.dataset.scriptRequested === 'true') return;
-  hud.dataset.scriptRequested = 'true';
+(function loadRetearHudPremiumGlobal() {
+  const currentScript = document.currentScript;
+  const scriptUrl = currentScript?.src || new URL('js/global.js', window.location.href).href;
+  const siteRoot = new URL('../', scriptUrl);
+  const cssUrl = new URL('css/hud-premium.css', siteRoot).href;
+  const moduleUrl = new URL('modules/hud-premium.js', siteRoot).href;
 
-  if (window.RetearHudPremium) {
-    window.RetearHudPremium.init();
-    return;
+  function loadModule() {
+    if (window.RetearHudPremium) {
+      window.RetearHudPremium.init();
+      return;
+    }
+    if (document.querySelector('script[data-retear-hud-premium]')) return;
+    const moduleScript = document.createElement('script');
+    moduleScript.src = moduleUrl;
+    moduleScript.dataset.retearHudPremium = 'true';
+    moduleScript.onload = () => window.RetearHudPremium?.init();
+    moduleScript.onerror = () => console.error('RETEAR®: falha ao carregar o componente global HUD Premium.', moduleUrl);
+    document.body.appendChild(moduleScript);
   }
 
-  const script = document.createElement('script');
-  script.src = 'modules/hud-premium.js';
-  script.onload = () => window.RetearHudPremium?.init();
-  script.onerror = () => {
-    console.error('Não foi possível carregar modules/hud-premium.js');
-    hud.dataset.scriptRequested = 'false';
-  };
-  document.body.appendChild(script);
+  const stylesheetExists = Array.from(document.querySelectorAll('link[rel="stylesheet"][href]'))
+    .some((link) => {
+      try { return new URL(link.href, document.baseURI).href === cssUrl; }
+      catch (_) { return false; }
+    });
+
+  if (stylesheetExists) {
+    loadModule();
+  } else {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = cssUrl;
+    stylesheet.onload = loadModule;
+    stylesheet.onerror = () => {
+      console.error('RETEAR®: falha ao carregar o CSS do HUD Premium.', cssUrl);
+      loadModule();
+    };
+    document.head.appendChild(stylesheet);
+  }
 })();
