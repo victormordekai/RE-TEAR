@@ -178,6 +178,8 @@ document
    carrega o CSS antes do módulo e funciona em páginas internas.
 ========================================= */
 (function loadRetearHudPremiumGlobal() {
+  // Páginas de campanha de Frente única podem desligar o carrossel: <body data-hud-premium="off">
+  if (document.body && document.body.dataset.hudPremium === 'off') return;
   const currentScript = document.currentScript;
   const scriptUrl = currentScript?.src || new URL('js/global.js', window.location.href).href;
   const siteRoot = new URL('../', scriptUrl);

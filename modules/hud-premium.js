@@ -37,8 +37,7 @@
       title: 'FEITURA',
       description: 'Conecta demanda produtiva e capacidade produtiva, estruturando pessoas, processos, tempo e valor em uma rede orientada à realização do produto.',
       tags: ['Demanda', 'Capacidade', 'Produção'],
-      href: 'https://victormordekai.github.io/FEITURA/index.html',
-      target: '_blank', rel: 'noopener noreferrer'
+      href: 'campaigns/feitura.html', target: '_self', rel: ''
     },
     {
       category: 'Programa temático',
