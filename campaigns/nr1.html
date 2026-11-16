@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/fronts.css"><link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/philosophy.css"><link rel="stylesheet" href="../css/cta.css">
   <link rel="stylesheet" href="../css/footer.css"><link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/hud-premium.css">
+  <link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/hud-premium.css"><link rel="stylesheet" href="../css/campaign-fx.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="../imagens/logo-corpo-URL.png">
   <link rel="apple-touch-icon" href="../imagens/logo-corpo-URL.png">
@@ -118,7 +118,7 @@
 
       <!-- RIGHT VISUAL -->
 
-	<div class="nr1-visual">
+	<div class="nr1-visual" data-campaign-scope>
 
 	  <!-- IMAGE CARD -->
 
@@ -127,7 +127,7 @@
 	  <strong>Monitoramento contínuo</strong>
 	</div>
 
-	<div class="visual-card">
+	<div class="visual-card" data-campaign-media>
 
 		<img
 		  src="../imagens/costureira-editorial.jpg"
@@ -150,13 +150,13 @@
 
 	  <!-- HUDS ORBITAIS -->
 
-      <button class="hud hud-1 draggable-hud" type="button" data-topic="compreender" aria-label="Compreender: diagnóstico organizacional" aria-controls="nr1HudDetail" aria-expanded="false">
+      <button class="hud hud-1 draggable-hud" type="button" data-campaign-hud data-topic="compreender" aria-label="Compreender: diagnóstico organizacional" aria-controls="nr1HudDetail" aria-expanded="false">
         <img src="../imagens/brain.svg" alt="">
       </button>
-      <button class="hud hud-2 draggable-hud" type="button" data-topic="monitorar" aria-label="Monitorar: indicadores e evolução" aria-controls="nr1HudDetail" aria-expanded="false">
+      <button class="hud hud-2 draggable-hud" type="button" data-campaign-hud data-topic="monitorar" aria-label="Monitorar: indicadores e evolução" aria-controls="nr1HudDetail" aria-expanded="false">
         <img src="../imagens/kpi.svg" alt="">
       </button>
-      <button class="hud hud-3 draggable-hud" type="button" data-topic="prevenir" aria-label="Prevenir: governança e estruturação" aria-controls="nr1HudDetail" aria-expanded="false">
+      <button class="hud hud-3 draggable-hud" type="button" data-campaign-hud data-topic="prevenir" aria-label="Prevenir: governança e estruturação" aria-controls="nr1HudDetail" aria-expanded="false">
         <img src="../imagens/guard.svg" alt="">
       </button>
       <section class="nr1-hud-detail hud-info-cards" id="nr1HudDetail" role="dialog" aria-labelledby="nr1HudDetailTitle" aria-describedby="nr1HudDetailDescription" aria-live="polite" hidden>

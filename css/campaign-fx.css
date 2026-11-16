@@ -1,0 +1,48 @@
+/* ========================================
+   CAMPAIGN FX — RETEAR®
+   Efeitos compartilhados pelas páginas de campaigns/.
+   Como aplicar numa nova campanha:
+     1. <link rel="stylesheet" href="../css/campaign-fx.css">
+     2. data-campaign-scope  → contêiner do visual (ativa o zoom ao passar o cursor)
+        data-campaign-media  → moldura da imagem
+        data-campaign-hud    → cada HUD flutuante (anel tracejado girando + estado ativo)
+   Cores por página (opcionais, herdadas do contêiner):
+     --fx-ring   anel tracejado do HUD
+     --fx-accent fundo do HUD em foco/aberto
+     --fx-glow   brilho do HUD em foco/aberto
+======================================== */
+
+[data-campaign-hud]::after{
+  content:"";
+  position:absolute;
+  inset:-7px;
+  border-radius:50%;
+  border:1px dashed var(--fx-ring, rgba(255,255,255,.38));
+  animation:campaignHudSpin 18s linear infinite;
+  pointer-events:none;
+}
+
+[data-campaign-scope] [data-campaign-hud]:hover,
+[data-campaign-scope] [data-campaign-hud][aria-expanded="true"]{
+  background:var(--fx-accent, rgba(131,180,187,.55));
+  box-shadow:
+    0 30px 60px rgba(0,0,0,.22),
+    0 0 40px var(--fx-glow, rgba(131,180,187,.32));
+}
+
+[data-campaign-media] img{
+  transition:transform 6s ease;
+}
+
+[data-campaign-scope]:hover [data-campaign-media] img{
+  transform:scale(1.045);
+}
+
+@keyframes campaignHudSpin{
+  to{ transform:rotate(360deg); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  [data-campaign-hud]::after{ animation:none; }
+  [data-campaign-media] img{ transition:none; }
+}

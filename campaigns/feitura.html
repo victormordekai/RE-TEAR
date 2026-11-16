@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/sections.css"><link rel="stylesheet" href="../css/buttons.css">
   <link rel="stylesheet" href="../css/components.css"><link rel="stylesheet" href="../css/cta.css">
   <link rel="stylesheet" href="../css/footer.css"><link rel="stylesheet" href="../css/responsive.css">
-  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/animations.css"><link rel="stylesheet" href="../css/campaign-fx.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="../imagens/logo-corpo-URL.png">
   <link rel="apple-touch-icon" href="../imagens/logo-corpo-URL.png">
@@ -92,24 +92,24 @@
       </div>
 
       <!-- VISUAL + HUDS -->
-      <div class="ft-visual">
+      <div class="ft-visual" data-campaign-scope>
 
         <div class="ft-chip ft-chip--top">
           <span>Em lançamento</span>
           <strong>Produção · Pessoas · Possibilidades</strong>
         </div>
 
-        <div class="ft-card">
+        <div class="ft-card" data-campaign-media>
           <img src="../assets/img/feitura-banner-atelie-site.jpg" alt="Ateliê de produção: produto, processo, cronograma e romaneio em uma mesma mesa de trabalho" width="1600" height="1800">
         </div>
 
-        <button class="ft-hud ft-hud-1" type="button" data-topic="custo" aria-label="Custo: quanto vale um minuto de trabalho" aria-controls="ftHudDetail" aria-expanded="false">
+        <button data-campaign-hud class="ft-hud ft-hud-1" type="button" data-topic="custo" aria-label="Custo: quanto vale um minuto de trabalho" aria-controls="ftHudDetail" aria-expanded="false">
           <img src="../assets/icon/chart-pie.svg" alt="">
         </button>
-        <button class="ft-hud ft-hud-2" type="button" data-topic="romaneio" aria-label="Romaneio: um acordo claro para os dois lados" aria-controls="ftHudDetail" aria-expanded="false">
+        <button data-campaign-hud class="ft-hud ft-hud-2" type="button" data-topic="romaneio" aria-label="Romaneio: um acordo claro para os dois lados" aria-controls="ftHudDetail" aria-expanded="false">
           <img src="../assets/icon/dashboard.svg" alt="">
         </button>
-        <button class="ft-hud ft-hud-3" type="button" data-topic="rede" aria-label="Rede: qual é a sua FEITURA" aria-controls="ftHudDetail" aria-expanded="false">
+        <button data-campaign-hud class="ft-hud ft-hud-3" type="button" data-topic="rede" aria-label="Rede: qual é a sua FEITURA" aria-controls="ftHudDetail" aria-expanded="false">
           <img src="../assets/icon/puzzle.svg" alt="">
         </button>
 
@@ -170,6 +170,7 @@
   --ft-paper:#eee9df; --ft-cream:#f5f1e8; --ft-ink:#171713; --ft-muted:#716f66;
   --ft-olive:#394337; --ft-olive-dark:#252d25; --ft-clay:#a65f43; --ft-sand:#c8bca7;
   --ft-line:rgba(23,23,19,.14);
+  --fx-ring:rgba(238,233,223,.35); --fx-accent:rgba(166,95,67,.55); --fx-glow:rgba(166,95,67,.3);
   position:relative; overflow:hidden; padding:8rem 2rem 6rem;
   background:linear-gradient(180deg,var(--ft-cream),var(--ft-paper));
   font-family:'Inter',sans-serif; color:var(--ft-ink);
@@ -248,8 +249,7 @@
   clip-path:polygon(9% 0,100% 0,100% 100%,0 100%);
   box-shadow:0 40px 110px rgba(23,23,19,.22);
 }
-.ft-card img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center 40%; transform:scale(1.015); transition:transform 6s ease; }
-.ft-visual:hover .ft-card img{ transform:scale(1.045); }
+.ft-card img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center 40%; transform:scale(1.015); }
 
 .ft-chip{
   position:absolute; z-index:30; padding:.95rem 1.25rem; border-radius:3px;
@@ -268,8 +268,7 @@
   box-shadow:0 20px 40px rgba(23,23,19,.18),0 0 30px rgba(166,95,67,.12);
   transition:transform .35s ease, box-shadow .35s ease, background .35s ease;
 }
-.ft-hud::after{ content:""; position:absolute; inset:-7px; border-radius:50%; border:1px dashed rgba(238,233,223,.35); animation:ftSpin 18s linear infinite; pointer-events:none; }
-.ft-hud:hover, .ft-hud[aria-expanded="true"]{ transform:translateY(-4px) scale(1.05); background:rgba(166,95,67,.55); box-shadow:0 30px 60px rgba(23,23,19,.24),0 0 40px rgba(166,95,67,.3); }
+.ft-hud:hover, .ft-hud[aria-expanded="true"]{ transform:translateY(-4px) scale(1.05); }
 .ft-hud.dragging{ cursor:grabbing; transition:none; animation:none !important; }
 .ft-hud img{ width:32px; height:32px; object-fit:contain; pointer-events:none; filter:brightness(0) invert(1) opacity(.94); }
 .ft-hud-1{ top:9%; right:0; animation:ftFloat1 7s ease-in-out infinite; }
@@ -277,7 +276,6 @@
 .ft-hud-3{ bottom:26%; right:-10px; animation:ftFloat1 8s ease-in-out infinite reverse; }
 @keyframes ftFloat1{ 0%,100%{ translate:0 0; } 50%{ translate:0 -10px; } }
 @keyframes ftFloat2{ 0%,100%{ translate:0 0; } 50%{ translate:0 12px; } }
-@keyframes ftSpin{ to{ transform:rotate(360deg); } }
 
 .ft-hud-detail{
   position:absolute; z-index:60; inset:50% auto auto 50%; width:min(440px,calc(100% - 36px));
@@ -359,8 +357,7 @@
   .ft-close__actions .ft-btn{ flex:1 1 100%; justify-content:center; }
 }
 @media (prefers-reduced-motion:reduce){
-  .ft-hud, .ft-hud::after, .ft-status i, .ft-hud-detail{ animation:none; }
-  .ft-card img{ transition:none; }
+  .ft-hud, .ft-status i, .ft-hud-detail{ animation:none; }
 }
 </style>
 <script>
