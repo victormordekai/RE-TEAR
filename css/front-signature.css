@@ -1,0 +1,220 @@
+/* ========================================
+   front-signature.css · V001.15
+   Card "assinatura" (nível acima do premium), filtros das Frentes
+   e seção exclusiva OURELA-IA no index. Não altera o HUD premium.
+======================================== */
+
+/* ---------- Filtros das Frentes ---------- */
+.fronts-filter{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.7rem;
+  margin:0 0 2.2rem;
+}
+
+.fronts-filter button{
+  font:inherit;
+  font-size:.72rem;
+  letter-spacing:.1rem;
+  text-transform:uppercase;
+  padding:.7rem 1.15rem;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.1);
+  background:rgba(255,255,255,.45);
+  color:var(--text);
+  cursor:pointer;
+  transition:var(--transition);
+}
+
+.fronts-filter button:hover{ border-color:rgba(46,188,82,.4); }
+
+.fronts-filter button[aria-pressed="true"]{
+  background:var(--bg-dark);
+  color:var(--white);
+  border-color:var(--bg-dark);
+}
+
+.front-card{ transition:var(--transition), opacity .5s ease; }
+
+.front-card.is-dim{
+  opacity:.28;
+  transform:scale(.98);
+}
+
+/* ---------- Card assinatura (acima do premium) ---------- */
+.front-card.front-card-signature{
+  grid-column:1 / -1;
+  min-height:auto;
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
+  gap:2.5rem;
+  align-items:end;
+  padding:3rem;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(189,116,68,.22), transparent 45%),
+    linear-gradient(135deg, #0d0b0a, #060606 70%);
+  border:1px solid rgba(189,116,68,.35);
+  color:#f2ece6;
+  box-shadow:0 40px 90px rgba(0,0,0,.22);
+  transform:translateY(-4px);
+}
+
+.front-card.front-card-signature::before{
+  opacity:1;
+  background:
+    linear-gradient(180deg, transparent, rgba(224,164,119,.9) 30%, rgba(224,164,119,.9) 70%, transparent) right 0 top 0 / 3px 100% no-repeat;
+}
+
+.front-card.front-card-signature:hover{
+  border-color:rgba(224,164,119,.6);
+  box-shadow:0 45px 100px rgba(0,0,0,.28);
+}
+
+.front-card.front-card-signature small{
+  color:#e0a477;
+  font-weight:600;
+}
+
+.front-card.front-card-signature h4{
+  color:#ffffff;
+  font-size:clamp(2.4rem,4vw,3.6rem);
+}
+
+.front-card.front-card-signature p{
+  color:rgba(255,255,255,.72);
+}
+
+.front-card-signature__aside{
+  display:flex;
+  flex-direction:column;
+  gap:1.4rem;
+}
+
+.front-card-signature__aside strong{
+  font-size:1.35rem;
+  line-height:1.3;
+  font-weight:500;
+  color:#f5eee8;
+}
+
+.front-card-signature .front-tags span{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(224,164,119,.28);
+  color:#f2ece6;
+}
+
+.front-card-signature__badge{
+  position:absolute;
+  top:1.6rem;
+  right:2rem;
+  font-size:.62rem;
+  letter-spacing:.22rem;
+  text-transform:uppercase;
+  color:#e0a477;
+}
+
+/* ---------- Seção exclusiva OURELA-IA ---------- */
+.ourela-home{
+  position:relative;
+  background:#090909;
+  color:#f2ece6;
+  overflow:hidden;
+}
+
+.ourela-home::after{
+  content:"";
+  position:absolute;
+  top:0; bottom:0; right:6%;
+  width:2px;
+  background:linear-gradient(180deg, transparent, rgba(224,164,119,.8), transparent);
+}
+
+.ourela-home .container{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  gap:3rem;
+  align-items:center;
+}
+
+.ourela-home small{
+  display:inline-block;
+  margin-bottom:1.2rem;
+  font-size:.72rem;
+  letter-spacing:.18rem;
+  text-transform:uppercase;
+  color:#e0a477;
+}
+
+.ourela-home h3{
+  font-size:clamp(2.4rem,5vw,4.6rem);
+  line-height:1;
+  letter-spacing:-.12rem;
+  font-weight:500;
+  margin-bottom:1.6rem;
+}
+
+.ourela-home p{
+  color:rgba(255,255,255,.72);
+  line-height:1.9;
+  max-width:620px;
+}
+
+.ourela-home__pillars{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:rgba(224,164,119,.18);
+  border:1px solid rgba(224,164,119,.18);
+  border-radius:22px;
+  overflow:hidden;
+}
+
+.ourela-home__pillars div{
+  background:#0d0b0a;
+  padding:1.6rem;
+}
+
+.ourela-home__pillars b{
+  display:block;
+  font-size:.62rem;
+  letter-spacing:.18rem;
+  color:#e0a477;
+  margin-bottom:.6rem;
+  font-weight:500;
+}
+
+.ourela-home__pillars span{
+  font-size:1.05rem;
+  color:#f5eee8;
+}
+
+.ourela-home__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:2rem;
+}
+
+.ourela-home__actions .btn-primary{
+  background:#bd7444;
+  border-color:#bd7444;
+  color:#0b0908;
+}
+
+.ourela-home__actions .btn-secondary{
+  color:#f2ece6;
+  border-color:rgba(255,255,255,.25);
+}
+
+@media(max-width:900px){
+  .front-card.front-card-signature,
+  .ourela-home .container{ grid-template-columns:1fr; }
+  .front-card.front-card-signature{ padding:2.2rem; gap:1.5rem; }
+  .front-card-signature__badge{ position:static; order:-1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .front-card.is-dim{ transform:none; }
+}
