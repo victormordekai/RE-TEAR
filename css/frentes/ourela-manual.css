@@ -7,8 +7,7 @@ body.ourela-manual{min-height:100%;overflow-x:clip;overflow-y:auto;scroll-behavi
 .ourela-manual :target{scroll-margin-top:112px}
 .ourela-manual .nav{background:rgba(8,8,8,.82);border-bottom:1px solid rgba(189,116,68,.15);backdrop-filter:blur(18px)}
 .ourela-manual .nav-menu a{color:#d8d1ca}
-.ourela-manual .logo-text .re,.ourela-manual .logo-text .tear{color:#eee}
-.ourela-manual .logo-symbol{filter:brightness(1.35) saturate(.75)}
+/* Logo RE·TEAR: segue o padrão do site (css/navigation.css: RE azul, TEAR verde) · V001.15.1 */
 .ourela-manual .ourela-nav-mark{font-size:.66rem;letter-spacing:.2em;color:var(--ourela-copper-light);margin-left:.8rem;padding-left:.8rem;border-left:1px solid var(--ourela-line)}
 .ourela-manual .container{width:min(1180px,calc(100% - 48px))}
 .ourela-manual .section{padding:104px 0}
