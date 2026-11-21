@@ -1,0 +1,233 @@
+/* ========================================
+   ourela.css · OURELA-IA · Frente estrutural RETEAR®
+   Ourela: a borda que mantém a operação inteira.
+======================================== */
+
+.ourela-hero .gradient-orb{
+  background:
+  radial-gradient(
+    circle,
+    rgba(131,180,187,.30) 0%,
+    rgba(20,16,22,.10) 40%,
+    transparent 72%
+  );
+}
+
+/* Grade de fundo em CSS puro, sem imagem externa */
+.ourela-weave{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.35;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.035) 0 1px, transparent 1px 14px);
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
+          mask-image:linear-gradient(90deg, transparent, #000 30%, #000 70%, transparent);
+}
+
+/* Borda contínua animada */
+.ourela-edge{
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  width:6px;
+  background:
+    repeating-linear-gradient(180deg, var(--accent-blue) 0 10px, rgba(131,180,187,.35) 10px 14px);
+  border-radius:3px;
+  animation:ourela-fio 6s linear infinite;
+}
+
+@keyframes ourela-fio{
+  from{ background-position:0 0; }
+  to{ background-position:0 140px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ourela-edge{ animation:none; }
+}
+
+.ourela-panel{
+  position:relative;
+  padding:3rem 3.6rem 3rem 3rem;
+  border-radius:32px;
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.50),
+    rgba(131,180,187,.12)
+  );
+  border:1px solid rgba(255,255,255,.42);
+  backdrop-filter:blur(20px);
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.08);
+}
+
+.ourela-panel small,
+.ourela-card small,
+.ourela-offer small{
+  position:relative;
+  z-index:2;
+  display:inline-block;
+  margin-bottom:1rem;
+  text-transform:uppercase;
+  letter-spacing:.18rem;
+  font-size:.72rem;
+  color:rgba(0,0,0,.5);
+}
+
+.ourela-panel h3{
+  position:relative;
+  z-index:2;
+  font-size:2.2rem;
+  line-height:1.1;
+  margin-bottom:1.5rem;
+  font-weight:500;
+  letter-spacing:-.08rem;
+}
+
+.ourela-panel p{
+  position:relative;
+  z-index:2;
+  line-height:1.9;
+  color:var(--text-soft);
+  margin-bottom:2rem;
+}
+
+.ourela-tags{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem;
+}
+
+.ourela-tags span{
+  padding:.7rem 1rem;
+  border-radius:999px;
+  background:rgba(255,255,255,.48);
+  border:1px solid rgba(0,0,0,.06);
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.08rem;
+}
+
+.ourela-manifest{
+  padding-top:4rem;
+}
+
+.ourela-manifest .manifest-box{
+  max-width:1080px;
+}
+
+.ourela-manifest .manifest-box h3{
+  font-size:clamp(2rem,4vw,4rem);
+  line-height:1;
+  font-weight:500;
+  letter-spacing:-.12rem;
+  margin-bottom:2rem;
+}
+
+.ourela-manifest .manifest-box p{
+  max-width:860px;
+  font-size:1.05rem;
+  line-height:1.9;
+  color:var(--text-soft);
+}
+
+.ourela-motto{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding-left:1rem;
+  border-left:3px solid var(--accent-blue);
+  font-weight:500;
+  letter-spacing:.02rem;
+}
+
+.ourela-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+
+.ourela-card{
+  position:relative;
+  padding:3rem;
+  border-radius:32px;
+  background:rgba(255,255,255,.34);
+  border:1px solid rgba(255,255,255,.42);
+  backdrop-filter:blur(20px);
+  overflow:hidden;
+}
+
+.ourela-card h3,
+.ourela-offer h3{
+  font-size:2rem;
+  line-height:1.1;
+  margin-bottom:1.5rem;
+  font-weight:500;
+  letter-spacing:-.08rem;
+}
+
+.ourela-card p,
+.ourela-offer p{
+  line-height:1.9;
+  color:var(--text-soft);
+}
+
+.ourela-list{
+  list-style:none;
+  margin:1.2rem 0 0;
+  padding:0;
+}
+
+.ourela-list li{
+  position:relative;
+  padding:.7rem 0 .7rem 1.6rem;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+  color:var(--text-soft);
+}
+
+.ourela-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:1.25rem;
+  width:.7rem;
+  height:2px;
+  background:var(--accent-blue);
+}
+
+.ourela-card--limites .ourela-list li::before{
+  background:var(--accent-red);
+}
+
+.ourela-offer{
+  position:relative;
+  padding:3rem 3.6rem 3rem 3rem;
+  border-radius:32px;
+  background:var(--bg-dark);
+  color:var(--white);
+  overflow:hidden;
+}
+
+.ourela-offer small{ color:rgba(255,255,255,.55); }
+.ourela-offer p{ color:rgba(255,255,255,.72); max-width:860px; }
+.ourela-offer .btn{ margin-top:2rem; }
+
+@media(max-width:1100px){
+  .ourela-grid{ grid-template-columns:1fr; }
+}
+
+@media(max-width:768px){
+  .ourela-panel,
+  .ourela-card,
+  .ourela-offer{ padding:2rem 2.6rem 2rem 2rem; }
+
+  .ourela-panel h3,
+  .ourela-card h3,
+  .ourela-offer h3,
+  .ourela-manifest .manifest-box h3{ letter-spacing:-.04rem; }
+}
