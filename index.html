@@ -144,6 +144,7 @@
 <link rel="stylesheet" href="css/buttons.css"> 
 <link rel="stylesheet" href="css/fronts.css"> 
 <link rel="stylesheet" href="css/components.css"> 
+<link rel="stylesheet" href="css/front-signature.css"> 
 <link rel="stylesheet" href="css/philosophy.css"> 
 <link rel="stylesheet" href="css/cta.css"> 
 <link rel="stylesheet" href="css/footer.css"> 
@@ -222,6 +223,7 @@
       <nav class="nav-menu" id="nav-menu">
 	  
         <a href="#ecossistema">Ecossistema</a>
+        <a href="#ourela">OURELA-IA</a>
         <a href="#filosofia">Filosofia</a>
         <a href="#jacquard">MVPs</a>
         <a href="#contato">Diagnóstico</a>
@@ -310,11 +312,51 @@
 
       </div>
 
+     <div class="fronts-filter" data-fronts-filter role="group" aria-label="Filtrar Frentes por foco">
+       <button type="button" data-focus="todas" aria-pressed="true">Todas</button>
+       <button type="button" data-focus="governanca" aria-pressed="false">Governança</button>
+       <button type="button" data-focus="operacao" aria-pressed="false">Operação</button>
+       <button type="button" data-focus="mercado" aria-pressed="false">Mercado e produto</button>
+       <button type="button" data-focus="regeneracao" aria-pressed="false">Regeneração</button>
+     </div>
+
      <div class="fronts-grid">
+
+	  <!-- OURELA-IA · card assinatura (nível acima do premium; também alimenta o HUD) -->
+
+	  <a
+		href="/RE-TEAR/frentes/ourela.html"
+		class="front-card front-card-premium front-card-signature"
+		id="ourela-ia"
+		data-focus="governanca operacao mercado"
+	  >
+
+		<span class="front-card-signature__badge" aria-hidden="true">Assinatura RETEAR®</span>
+
+		<div>
+		  <small>Frente estrutural de Gestão com Continuidade</small>
+
+		  <h4>OURELA-IA</h4>
+
+		  <p>
+			Estrutura a delegação a agentes de inteligência artificial com mandato, alçadas, memória operacional e registro, para que a gestão continue quando o gestor não está.
+		  </p>
+		</div>
+
+		<div class="front-card-signature__aside">
+		  <strong>Sua gestão não para quando você para.</strong>
+		  <div class="front-tags">
+			<span>Mandato</span>
+			<span>Alçadas</span>
+			<span>Continuidade</span>
+		  </div>
+		</div>
+
+	  </a>
 
 	  <!-- MALHA -->
 
-	  <article class="front-card">
+	  <article class="front-card" data-focus="governanca">
 
 		<small>Frente estrutural de Sustentação</small>
 
@@ -334,7 +376,7 @@
 
 	  <!-- LONA -->
 
-	  <article class="front-card">
+	  <article class="front-card" data-focus="operacao">
 
 		<small>Frente estrutural de Abastecimento</small>
 
@@ -360,6 +402,7 @@
 		rel="noopener noreferrer"
 		class="front-card front-card-premium"
 		id="jacquard"
+		data-focus="operacao governanca"
 	  >
 
 		<small>Frente estrutural de Transformação</small>
@@ -380,7 +423,7 @@
 
 	  <!-- DENIM -->
 
-	  <article class="front-card">
+	  <article class="front-card" data-focus="mercado">
 
 		<small>Frente estrutural de Mercado</small>
 
@@ -404,8 +447,9 @@
 		href="/RE-TEAR/frentes/gabardine.html"
 		target="_blank"
 		rel="noopener noreferrer"
-		class="front-card front-card-premium"
+		class="front-card"
 		id="gabardine"
+		data-focus="mercado"
 	  >
 
 		<small>Frente estrutural de Materialização</small>
@@ -416,7 +460,7 @@
 		  Estrutura a manifestação institucional da organização através de branding, experiência digital, interfaces e desenvolvimento visual-tecnológico.
 		</p>
 
-		<div class="front-tags front-tags-select">
+		<div class="front-tags">
 		  <span>Branding</span>
 		  <span>UX/UI</span>
 		  <span>Creative-tech</span>
@@ -426,7 +470,7 @@
 
 	  <!-- RE-TEAR -->
 
-	  <article class="front-card">
+	  <article class="front-card" data-focus="regeneracao">
 
 		<small>Frente estrutural de Regeneração</small>
 
@@ -450,6 +494,7 @@
 		  href="/RE-TEAR/campaigns/feitura.html"
 		  class="front-card front-card-premium"
 		  id="feitura"
+		  data-focus="operacao mercado"
 		>
 
 		  <small>Frente estrutural de Conexão Produtiva</small>
@@ -474,6 +519,7 @@
 		href="/RE-TEAR/campaigns/nr1.html"
 		class="front-card front-card-premium"
 		id="nr1-campaign"
+		data-focus="governanca"
 	  >
 
 		<small>Programa temático</small>
@@ -493,6 +539,46 @@
 	  </a>
 
 	</div>
+
+  </section>
+
+  <!-- ========================================
+       OURELA-IA · SEÇÃO EXCLUSIVA
+  ========================================= -->
+
+  <section class="section ourela-home" id="ourela" aria-labelledby="ourela-home-title">
+
+    <div class="container">
+
+      <div>
+
+        <small>Frente estrutural · Gestão com continuidade</small>
+
+        <h3 id="ourela-home-title">Sua gestão não para quando você para.</h3>
+
+        <p>
+          A OURELA-IA estrutura a delegação a agentes de inteligência artificial: o que o agente executa, o que depende de aprovação, o que permanece com o responsável e como cada movimento fica registrado. O modelo de IA pode mudar; o mandato, as alçadas e a memória da operação continuam com a empresa.
+        </p>
+
+        <p>
+          A gestão do próprio ecossistema RETEAR® opera sobre a OURELA-IA.
+        </p>
+
+        <div class="ourela-home__actions">
+          <a href="frentes/ourela.html" class="btn btn-primary">Conhecer a Frente</a>
+          <a href="https://victormordekai.github.io/ourela-ia/" class="btn btn-secondary" target="_blank" rel="noopener">Site OURELA-IA ↗</a>
+        </div>
+
+      </div>
+
+      <div class="ourela-home__pillars" aria-label="Pilares da OURELA-IA">
+        <div><b>01 · AUTORIDADE</b><span>Mandato e alçadas</span></div>
+        <div><b>02 · RASTREABILIDADE</b><span>Registro</span></div>
+        <div><b>03 · PROTEÇÃO</b><span>Salvaguarda</span></div>
+        <div><b>04 · PERMANÊNCIA</b><span>Continuidade</span></div>
+      </div>
+
+    </div>
 
   </section>
 
@@ -591,5 +677,16 @@
 
 <script src="js/global.js"></script>
   <script src="js/footer.js" defer></script>
+  <script src="js/front-filters.js" defer></script>
+
+  <!-- VIGIA VMORDEKAI-IA: contagem anônima de visitas (sem nome, IP ou cookie). Ativa quando o endereço for preenchido. -->
+  <script>
+    (function () {
+      var VIGIA = '';
+      if (!VIGIA) return;
+      var dados = { projeto: 'RETEAR', pagina: location.pathname, origem: document.referrer ? new URL(document.referrer).hostname : 'direto', dispositivo: /Mobi/i.test(navigator.userAgent) ? 'celular' : 'computador' };
+      try { navigator.sendBeacon(VIGIA + '?' + new URLSearchParams(dados)); } catch (e) {}
+    })();
+  </script>
 </body>
 </html>
