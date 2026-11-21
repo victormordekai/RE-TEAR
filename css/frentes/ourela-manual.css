@@ -1,6 +1,10 @@
-/* OURELA-IA · extensão visual exclusiva da página manual · 21.11.2026 */
+/* OURELA-IA · identidade editorial e navegação · V001.17 11.26 */
 :root{--ourela-copper:#bd7444;--ourela-copper-light:#e0a477;--ourela-ink:#090909;--ourela-muted:#a8a29d;--ourela-line:rgba(189,116,68,.24)}
-.ourela-manual{background:#0a0a0a;color:#f3f0ed;overflow:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body.ourela-manual{min-height:100%;overflow-x:clip;overflow-y:auto;scroll-behavior:smooth}
+.ourela-manual{background:#0a0a0a;color:#f3f0ed;overflow-x:clip;overflow-y:visible}
+.ourela-manual .section[id],.ourela-manual .cta[id],.ourela-manual [id]{scroll-margin-top:112px}
+.ourela-manual :target{scroll-margin-top:112px}
 .ourela-manual .nav{background:rgba(8,8,8,.82);border-bottom:1px solid rgba(189,116,68,.15);backdrop-filter:blur(18px)}
 .ourela-manual .nav-menu a{color:#d8d1ca}
 .ourela-manual .logo-text .re,.ourela-manual .logo-text .tear{color:#eee}
@@ -13,7 +17,7 @@
 .ourela-manual .section-head h2,.ourela-manual .section-head h3{color:#f4efea;font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;letter-spacing:-.055em;font-weight:500;margin:.8rem 0 1rem}
 .ourela-manual .section-head p{color:#bcb5ae;line-height:1.8;max-width:680px}
 .ourela-manual .hero{min-height:780px;background:#080808;color:#f6f1ec;position:relative;isolation:isolate}
-.ourela-manual .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.87) 43%,rgba(5,5,5,.24) 100%),linear-gradient(0deg,#090909 0%,transparent 34%),url('../assets/img/ourela-weave.png') center/cover;z-index:-2}
+.ourela-manual .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.87) 43%,rgba(5,5,5,.24) 100%),linear-gradient(0deg,#090909 0%,transparent 34%),url('../../assets/img/ourela-weave.png') center/cover;z-index:-2}
 .ourela-manual .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 46%,rgba(189,116,68,.16),transparent 36%);z-index:-1;pointer-events:none}
 .ourela-manual .hero-gradient{display:none}
 .ourela-manual .hero-content{min-height:700px;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.62fr);align-items:center;gap:7vw;padding-top:100px;padding-bottom:90px}
@@ -44,7 +48,7 @@
 .ourela-manual .dark-band{background:#11100f;border-top:1px solid rgba(189,116,68,.12);border-bottom:1px solid rgba(189,116,68,.12)}
 .ourela-manual .architecture-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:46px;border:1px solid var(--ourela-line);border-radius:18px;overflow:hidden}
 .ourela-manual .architecture-step{padding:28px 24px;min-height:190px;position:relative;background:rgba(255,255,255,.025)}
-.ourela-manual .architecture-step+ .architecture-step{border-left:1px solid var(--ourela-line)}
+.ourela-manual .architecture-step+.architecture-step{border-left:1px solid var(--ourela-line)}
 .ourela-manual .architecture-step small{color:var(--ourela-copper-light);font-size:.66rem;letter-spacing:.16em}
 .ourela-manual .architecture-step h3{font-size:1.05rem;color:#f2eae3;font-weight:500;margin:22px 0 9px}
 .ourela-manual .architecture-step p{font-size:.82rem;line-height:1.65;color:#a9a19a}
@@ -71,12 +75,13 @@
 .ourela-manual .cta-box{border:1px solid var(--ourela-line);background:linear-gradient(120deg,rgba(189,116,68,.13),rgba(255,255,255,.025));border-radius:22px}
 .ourela-manual .cta-content h3{color:#f5eee8;font-size:clamp(2.2rem,4vw,4rem);letter-spacing:-.06em;font-weight:500}
 .ourela-manual .cta-content p{color:#b9afa7;line-height:1.8}
-.ourela-manual .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
+.ourela-manual .reveal{opacity:1;transform:none;transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
+.ourela-manual.reveal-enabled .reveal{opacity:0;transform:translateY(24px)}
 .ourela-manual .reveal.is-visible{opacity:1;transform:translateY(0)}
 .ourela-manual .retear-footer{background:#070707;border-top:1px solid var(--ourela-line)}
 .ourela-manual .retear-footer *{color:inherit}
 .ourela-manual .retear-footer__bottom{border-color:rgba(255,255,255,.1)}
 .ourela-manual .retear-footer__bottom p,.ourela-manual .retear-footer__back-top{color:#9e958d}
 @media(max-width:980px){.ourela-manual .hero-content{grid-template-columns:1fr;gap:30px}.ourela-hero-aside{margin:0 0 40px;max-width:460px}.ourela-manual .pillars-grid,.ourela-manual .demo-grid{grid-template-columns:repeat(2,1fr)}.ourela-manual .architecture-flow{grid-template-columns:repeat(2,1fr)}.ourela-manual .architecture-step:nth-child(3){border-left:0;border-top:1px solid var(--ourela-line)}.ourela-manual .architecture-step:nth-child(4){border-top:1px solid var(--ourela-line)}.ourela-manual .ecosystem-panel{grid-template-columns:1fr;gap:25px}}
-@media(max-width:640px){.ourela-manual .container{width:min(100% - 34px,1180px)}.ourela-manual .section{padding:76px 0}.ourela-manual .hero{min-height:auto}.ourela-manual .hero-content{min-height:700px;padding-top:125px;padding-bottom:40px}.ourela-manual .hero::before{background:linear-gradient(90deg,rgba(5,5,5,.91),rgba(5,5,5,.72)),linear-gradient(0deg,#090909 0%,transparent 55%),url('../assets/img/ourela-weave.png') 58% center/cover}.ourela-manual .hero-text h1{font-size:clamp(3rem,15vw,4.6rem)}.ourela-manual .hero-text p{font-size:.96rem}.ourela-hero-aside{padding-left:18px;margin-bottom:10px}.ourela-manual .pillars-grid,.ourela-manual .demo-grid,.ourela-manual .limits-grid{grid-template-columns:1fr}.ourela-manual .pillar-card{min-height:220px}.ourela-manual .pillar-card h3{margin-top:26px}.ourela-manual .architecture-flow{grid-template-columns:1fr}.ourela-manual .architecture-step{min-height:0}.ourela-manual .architecture-step+.architecture-step{border-left:0;border-top:1px solid var(--ourela-line)}.ourela-manual .ecosystem-panel{padding:28px 22px}.ourela-manual .limits-panel{padding:26px 22px}.ourela-manual .hero-actions{flex-direction:column;align-items:stretch}.ourela-manual .hero-actions .btn{text-align:center}}
-@media(prefers-reduced-motion:reduce){.ourela-manual .reveal{opacity:1;transform:none;transition:none}.ourela-manual .pillar-card,.ourela-manual .demo-card{transition:none}}
+@media(max-width:640px){html{scroll-padding-top:94px}.ourela-manual .section[id],.ourela-manual .cta[id],.ourela-manual [id]{scroll-margin-top:94px}.ourela-manual .container{width:min(100% - 34px,1180px)}.ourela-manual .section{padding:76px 0}.ourela-manual .hero{min-height:auto}.ourela-manual .hero-content{min-height:700px;padding-top:125px;padding-bottom:40px}.ourela-manual .hero::before{background:linear-gradient(90deg,rgba(5,5,5,.91),rgba(5,5,5,.72)),linear-gradient(0deg,#090909 0%,transparent 55%),url('../../assets/img/ourela-weave.png') 58% center/cover}.ourela-manual .hero-text h1{font-size:clamp(3rem,15vw,4.6rem)}.ourela-manual .hero-text p{font-size:.96rem}.ourela-hero-aside{padding-left:18px;margin-bottom:10px}.ourela-manual .pillars-grid,.ourela-manual .demo-grid,.ourela-manual .limits-grid{grid-template-columns:1fr}.ourela-manual .pillar-card{min-height:220px}.ourela-manual .pillar-card h3{margin-top:26px}.ourela-manual .architecture-flow{grid-template-columns:1fr}.ourela-manual .architecture-step{min-height:0}.ourela-manual .architecture-step+.architecture-step{border-left:0;border-top:1px solid var(--ourela-line)}.ourela-manual .ecosystem-panel{padding:28px 22px}.ourela-manual .limits-panel{padding:26px 22px}.ourela-manual .hero-actions{flex-direction:column;align-items:stretch}.ourela-manual .hero-actions .btn{text-align:center}}
+@media(prefers-reduced-motion:reduce){html,body{scroll-behavior:auto!important}.ourela-manual .reveal,.ourela-manual.reveal-enabled .reveal{opacity:1;transform:none;transition:none}.ourela-manual .pillar-card,.ourela-manual .demo-card{transition:none}}
