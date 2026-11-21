@@ -1,10 +1,13 @@
 /* =========================================================
-   OURELA-IA · botões exclusivos · V001.15.2 · 21.11.2026
-   .btn-ourela-cobre   → cobre brilhoso, texto branco em negrito
-   .btn-ourela-platina → platina brilhosa, texto preto em negrito
+   OURELA-IA · botões exclusivos · V001.15.3 · 21.11.2026
+   .btn-ourela-cobre   → cobre, texto branco em negrito
+   .btn-ourela-platina → platina, texto preto em negrito
+   Formato pill. Em repouso: acabamento fosco (opaco).
+   Ao passar o mouse, focar pelo teclado ou tocar: brilho
+   metálico e reflexo atravessando o botão.
    Usados no RETEAR® (index e frentes/ourela.html) e no site
-   próprio da OURELA-IA. Só cor, brilho e peso: o tamanho vem da
-   classe-base (.btn no RETEAR, .button na OURELA-IA).
+   próprio da OURELA-IA. O tamanho vem da classe-base
+   (.btn no RETEAR, .button na OURELA-IA).
    ========================================================= */
 
 .btn-ourela-cobre,
@@ -17,36 +20,64 @@
   border:1px solid transparent;
   background-size:220% 220% !important;
   background-position:0% 50% !important;
-  transition:transform .3s ease, box-shadow .3s ease, background-position .8s ease, filter .3s ease;
+  text-shadow:none;
+  transition:transform .3s ease, box-shadow .35s ease, background-position .8s ease, border-color .35s ease;
 }
 
+/* camada de brilho: invisível em repouso, acende na seleção */
+.btn-ourela-cobre::before,
+.btn-ourela-platina::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  opacity:0;
+  z-index:-1;
+  transition:opacity .35s ease;
+  pointer-events:none;
+}
+
+/* ---------- cobre ---------- */
 .btn-ourela-cobre{
-  background-image:linear-gradient(135deg,#6f3819 0%,#b0622f 24%,#e7a272 44%,#f7c9a3 50%,#c97c48 62%,#8e4a23 82%,#6f3819 100%) !important;
-  background-color:#a65b2c !important;
-  border-color:rgba(247,201,163,.65) !important;
+  background-image:linear-gradient(135deg,#8a4826 0%,#9d5530 50%,#8a4826 100%) !important;
+  background-color:#94502b !important;
+  border-color:rgba(189,116,68,.55) !important;
   color:#ffffff !important;
-  text-shadow:0 1px 2px rgba(50,20,5,.55);
-  box-shadow:inset 0 1px 0 rgba(255,232,212,.55), inset 0 -1px 0 rgba(60,25,8,.5), 0 10px 26px rgba(189,116,68,.3);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
 }
 
+.btn-ourela-cobre::before{
+  background:linear-gradient(135deg,#6f3819 0%,#b0622f 24%,#e7a272 44%,#f7c9a3 50%,#c97c48 62%,#8e4a23 82%,#6f3819 100%);
+  background-size:220% 220%;
+  background-position:inherit;
+}
+
+/* ---------- platina ---------- */
 .btn-ourela-platina{
-  background-image:linear-gradient(135deg,#8a9095 0%,#c4c9cd 24%,#eef0f2 44%,#ffffff 50%,#d3d7db 62%,#a4aaaf 82%,#8a9095 100%) !important;
-  background-color:#d6dade !important;
-  border-color:rgba(255,255,255,.75) !important;
+  background-image:linear-gradient(135deg,#a9afb3 0%,#bcc1c5 50%,#a9afb3 100%) !important;
+  background-color:#b4b9bd !important;
+  border-color:rgba(200,205,209,.6) !important;
   color:#0a0a0a !important;
-  text-shadow:0 1px 0 rgba(255,255,255,.55);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9), inset 0 -1px 0 rgba(70,76,82,.45), 0 10px 26px rgba(0,0,0,.28);
+  box-shadow:0 6px 16px rgba(0,0,0,.22);
+}
+
+.btn-ourela-platina::before{
+  background:linear-gradient(135deg,#8a9095 0%,#c4c9cd 24%,#eef0f2 44%,#ffffff 50%,#d3d7db 62%,#a4aaaf 82%,#8a9095 100%);
+  background-size:220% 220%;
+  background-position:inherit;
 }
 
 .btn-ourela-cobre *,
 .btn-ourela-platina *{ color:inherit !important; }
 
-/* reflexo que atravessa o botão no hover */
+/* reflexo que atravessa o botão na seleção */
 .btn-ourela-cobre::after,
 .btn-ourela-platina::after{
   content:"";
   position:absolute;
-  inset:-40% auto -40% -60%;
+  top:-40%;
+  bottom:-40%;
+  left:-60%;
   width:45%;
   background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
   transform:skewX(-20deg);
@@ -55,20 +86,44 @@
   z-index:-1;
 }
 
+/* ---------- selecionado: hover, foco de teclado, toque ---------- */
 .btn-ourela-cobre:hover,
-.btn-ourela-platina:hover,
 .btn-ourela-cobre:focus-visible,
-.btn-ourela-platina:focus-visible{
+.btn-ourela-cobre:active,
+.btn-ourela-platina:hover,
+.btn-ourela-platina:focus-visible,
+.btn-ourela-platina:active{
   transform:translateY(-3px);
   background-position:100% 50% !important;
-  filter:saturate(1.08);
 }
 
-.btn-ourela-cobre:hover{ box-shadow:inset 0 1px 0 rgba(255,232,212,.6), inset 0 -1px 0 rgba(60,25,8,.5), 0 16px 34px rgba(189,116,68,.42); }
-.btn-ourela-platina:hover{ box-shadow:inset 0 1px 0 #fff, inset 0 -1px 0 rgba(70,76,82,.45), 0 16px 34px rgba(0,0,0,.36); }
+.btn-ourela-cobre:hover::before,
+.btn-ourela-cobre:focus-visible::before,
+.btn-ourela-cobre:active::before,
+.btn-ourela-platina:hover::before,
+.btn-ourela-platina:focus-visible::before,
+.btn-ourela-platina:active::before{ opacity:1; }
+
+.btn-ourela-cobre:hover,
+.btn-ourela-cobre:focus-visible,
+.btn-ourela-cobre:active{
+  border-color:rgba(247,201,163,.75) !important;
+  text-shadow:0 1px 2px rgba(50,20,5,.55);
+  box-shadow:inset 0 1px 0 rgba(255,232,212,.6), inset 0 -1px 0 rgba(60,25,8,.5), 0 16px 34px rgba(189,116,68,.42);
+}
+
+.btn-ourela-platina:hover,
+.btn-ourela-platina:focus-visible,
+.btn-ourela-platina:active{
+  border-color:rgba(255,255,255,.85) !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.6);
+  box-shadow:inset 0 1px 0 #fff, inset 0 -1px 0 rgba(70,76,82,.45), 0 16px 34px rgba(0,0,0,.36);
+}
 
 .btn-ourela-cobre:hover::after,
-.btn-ourela-platina:hover::after{ animation:ourelaReflexo .9s ease forwards; }
+.btn-ourela-platina:hover::after,
+.btn-ourela-cobre:focus-visible::after,
+.btn-ourela-platina:focus-visible::after{ animation:ourelaReflexo .9s ease forwards; }
 
 .btn-ourela-cobre:focus-visible,
 .btn-ourela-platina:focus-visible{ outline:2px solid #f0b58a; outline-offset:3px; }
@@ -81,7 +136,11 @@
 
 @media (prefers-reduced-motion: reduce){
   .btn-ourela-cobre,
-  .btn-ourela-platina{ transition:none; }
+  .btn-ourela-platina,
+  .btn-ourela-cobre::before,
+  .btn-ourela-platina::before{ transition:none; }
   .btn-ourela-cobre:hover::after,
-  .btn-ourela-platina:hover::after{ animation:none; }
+  .btn-ourela-platina:hover::after,
+  .btn-ourela-cobre:focus-visible::after,
+  .btn-ourela-platina:focus-visible::after{ animation:none; }
 }
