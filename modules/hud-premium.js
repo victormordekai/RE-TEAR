@@ -18,19 +18,19 @@
 
   const FALLBACK_ITEMS = [
     {
+      category: 'Frente estrutural de Gestão com Continuidade',
+      title: 'OURELA-IA',
+      description: 'Estrutura a delegação a agentes de inteligência artificial com mandato, alçadas, memória operacional e registro, para que a gestão continue quando o gestor não está.',
+      tags: ['Mandato', 'Alçadas', 'Continuidade'],
+      href: 'frentes/ourela.html', target: '_self', rel: ''
+    },
+    {
       category: 'Frente estrutural de Transformação',
       title: 'JACQUARD',
       description: 'Estrutura os mecanismos que convertem recursos em entregas através de planejamento, execução, produtividade, qualidade e controle operacional.',
       tags: ['Produção', 'Qualidade', 'Indicadores'],
       href: 'https://wa.me/5541997584893?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20com%20a%20RETEAR%C2%AE%20e%20conhecer%20melhor%20as%20solu%C3%A7%C3%B5es%20para%20minha%20opera%C3%A7%C3%A3o.',
       target: '_blank', rel: 'noopener noreferrer'
-    },
-    {
-      category: 'Frente estrutural de Materialização',
-      title: 'GABARDINE',
-      description: 'Estrutura a manifestação institucional da organização através de branding, experiência digital, interfaces e desenvolvimento visual-tecnológico.',
-      tags: ['Branding', 'UX/UI', 'Creative-tech'],
-      href: 'frentes/gabardine.html', target: '_blank', rel: 'noopener noreferrer'
     },
     {
       category: 'Frente estrutural de Conexão Produtiva',
