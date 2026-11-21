@@ -1,5 +1,5 @@
 /* =========================================================
-   OURELA-IA · botões exclusivos · V001.15.1 · 21.11.2026
+   OURELA-IA · botões exclusivos · V001.15.2 · 21.11.2026
    .btn-ourela-cobre   → cobre brilhoso, texto branco em negrito
    .btn-ourela-platina → platina brilhosa, texto preto em negrito
    Usados no RETEAR® (index e frentes/ourela.html) e no site
@@ -13,6 +13,7 @@
   overflow:hidden;
   isolation:isolate;
   font-weight:700 !important;
+  border-radius:999px !important;
   border:1px solid transparent;
   background-size:220% 220% !important;
   background-position:0% 50% !important;
