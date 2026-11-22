@@ -1,5 +1,5 @@
 /* ========================================
-   ARQUITETURA OPERACIONAL — RETEAR®
+   ARQUITETURA OPERACIONAL — RETEAR
    Interações exclusivas dos acordeões.
    A navegação é controlada integralmente
    por js/global.js, como no index.html.

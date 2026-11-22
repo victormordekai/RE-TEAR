@@ -1,5 +1,5 @@
 /* =====================================================
-   RETEAR® — HUD ORBITAL PREMIUM GLOBAL
+   RETEAR — HUD ORBITAL PREMIUM GLOBAL
    Um único componente compartilhado por todas as páginas.
    Reabre a cada navegação/abertura; o fechamento vale apenas
    para a visualização atual e não é persistido em storage.

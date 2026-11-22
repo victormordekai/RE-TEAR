@@ -1,4 +1,4 @@
-/* RETEAR® · filtros das Frentes (index) · V001.15
+/* RETEAR · filtros das Frentes (index) · V001.15
    Destaca as Frentes do foco escolhido e esmaece as demais; nada é ocultado. */
 (() => {
   'use strict';

@@ -1,5 +1,5 @@
 /* ========================================
-   GLOBAL.JS — RETEAR®
+   GLOBAL.JS — RETEAR
    Infraestrutura global compartilhada
 ========================================= */
 
@@ -196,7 +196,7 @@ document
     moduleScript.src = moduleUrl;
     moduleScript.dataset.retearHudPremium = 'true';
     moduleScript.onload = () => window.RetearHudPremium?.init();
-    moduleScript.onerror = () => console.error('RETEAR®: falha ao carregar o componente global HUD Premium.', moduleUrl);
+    moduleScript.onerror = () => console.error('RETEAR: falha ao carregar o componente global HUD Premium.', moduleUrl);
     document.body.appendChild(moduleScript);
   }
 
@@ -214,7 +214,7 @@ document
     stylesheet.href = cssUrl;
     stylesheet.onload = loadModule;
     stylesheet.onerror = () => {
-      console.error('RETEAR®: falha ao carregar o CSS do HUD Premium.', cssUrl);
+      console.error('RETEAR: falha ao carregar o CSS do HUD Premium.', cssUrl);
       loadModule();
     };
     document.head.appendChild(stylesheet);

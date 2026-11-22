@@ -95,7 +95,7 @@
   const updateFooterVersion = () => {
     const footerLine = page.querySelector('.retear-footer__bottom p');
     if (footerLine && !footerLine.textContent.includes(version)) {
-      footerLine.textContent = `© ${new Date().getFullYear()} RETEAR® — Todos os direitos reservados. — ${version}`;
+      footerLine.textContent = `© ${new Date().getFullYear()} RETEAR™ — Todos os direitos reservados. — ${version}`;
     }
   };
   updateFooterVersion();

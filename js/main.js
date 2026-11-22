@@ -103,7 +103,7 @@ const testimonials = [
       '“A experiência vai além do produto. Existe cuidado em cada detalhe.”',
 
     author:
-      'Cliente Meu Petit Bolinho®'
+      'Cliente Meu Petit Bolinho'
   },
 
   {
@@ -111,7 +111,7 @@ const testimonials = [
       '“Os sabores conseguiram transformar a festa em uma memória ainda mais especial.”',
 
     author:
-      'Cliente Meu Petit Bolinho®'
+      'Cliente Meu Petit Bolinho'
   },
 
   {
@@ -119,7 +119,7 @@ const testimonials = [
       '“Tudo transmitia delicadeza, desde a apresentação até o atendimento.”',
 
     author:
-      'Cliente Meu Petit Bolinho®'
+      'Cliente Meu Petit Bolinho'
   },
 
   {
@@ -127,7 +127,7 @@ const testimonials = [
       '“Foi impossível não perceber o carinho colocado em cada detalhe.”',
 
     author:
-      'Cliente Meu Petit Bolinho®'
+      'Cliente Meu Petit Bolinho'
   },
 
   {
@@ -135,7 +135,7 @@ const testimonials = [
       '“Uma confeitaria que realmente consegue transformar momentos em lembranças.”',
 
     author:
-      'Cliente Meu Petit Bolinho®'
+      'Cliente Meu Petit Bolinho'
   }
 
 ];

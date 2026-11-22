@@ -1,4 +1,4 @@
-/* RETEAR® — carregador único do footer institucional */
+/* RETEAR — carregador único do footer institucional */
 (() => {
   const script = document.currentScript;
   if (!script) return;
@@ -21,6 +21,6 @@
     })
     .catch(error => {
       mount.dataset.loaded = 'error';
-      console.error('RETEAR®: não foi possível carregar footer.html.', error);
+      console.error('RETEAR: não foi possível carregar footer.html.', error);
     });
 })();
